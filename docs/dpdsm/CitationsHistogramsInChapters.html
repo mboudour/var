@@ -1,0 +1,555 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <style>
+            .panel-widget-box {
+                	min-height: 20px;
+                	background-color: #f5f5f5;
+                	border: 1px solid #e3e3e3 !important;
+                	border-radius: 4px;
+                	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	overflow-x: hidden;
+                	overflow-y: hidden;
+                }
+
+                .scrollable {
+                  overflow: scroll;
+                }
+
+                progress {
+                	appearance: none;
+                	-moz-appearance: none;
+                	-webkit-appearance: none;
+
+                	border: none;
+                	height: 20px;
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                	color: royalblue;
+                	position: relative;
+                	margin: 0 0 1.5em;
+                }
+
+                progress[value]::-webkit-progress-bar {
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                }
+
+                progress[value]::-webkit-progress-value {
+                	position: relative;
+
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress.active:not([value])::before {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress[value]::-moz-progress-bar {
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress:not([value])::-moz-progress-bar {
+                	border-radius:3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+
+                }
+
+                progress.active:not([value])::-moz-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.active:not([value])::-webkit-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.primary[value]::-webkit-progress-value { background-color: #007bff; }
+                progress.primary:not([value])::before { background-color: #007bff; }
+                progress.primary:not([value])::-webkit-progress-bar { background-color: #007bff; }
+                progress.primary::-moz-progress-bar { background-color: #007bff; }
+
+                progress.secondary[value]::-webkit-progress-value { background-color: #6c757d; }
+                progress.secondary:not([value])::before { background-color: #6c757d; }
+                progress.secondary:not([value])::-webkit-progress-bar { background-color: #6c757d; }
+                progress.secondary::-moz-progress-bar { background-color: #6c757d; }
+
+                progress.success[value]::-webkit-progress-value { background-color: #28a745; }
+                progress.success:not([value])::before { background-color: #28a745; }
+                progress.success:not([value])::-webkit-progress-bar { background-color: #28a745; }
+                progress.success::-moz-progress-bar { background-color: #28a745; }
+
+                progress.danger[value]::-webkit-progress-value { background-color: #dc3545; }
+                progress.danger:not([value])::before { background-color: #dc3545; }
+                progress.danger:not([value])::-webkit-progress-bar { background-color: #dc3545; }
+                progress.danger::-moz-progress-bar { background-color: #dc3545; }
+
+                progress.warning[value]::-webkit-progress-value { background-color: #ffc107; }
+                progress.warning:not([value])::before { background-color: #ffc107; }
+                progress.warning:not([value])::-webkit-progress-bar { background-color: #ffc107; }
+                progress.warning::-moz-progress-bar { background-color: #ffc107; }
+
+                progress.info[value]::-webkit-progress-value { background-color: #17a2b8; }
+                progress.info:not([value])::before { background-color: #17a2b8; }
+                progress.info:not([value])::-webkit-progress-bar { background-color: #17a2b8; }
+                progress.info::-moz-progress-bar { background-color: #17a2b8; }
+
+                progress.light[value]::-webkit-progress-value { background-color: #f8f9fa; }
+                progress.light:not([value])::before { background-color: #f8f9fa; }
+                progress.light:not([value])::-webkit-progress-bar { background-color: #f8f9fa; }
+                progress.light::-moz-progress-bar { background-color: #f8f9fa; }
+
+                progress.dark[value]::-webkit-progress-value { background-color: #343a40; }
+                progress.dark:not([value])::-webkit-progress-bar { background-color: #343a40; }
+                progress.dark:not([value])::before { background-color: #343a40; }
+                progress.dark::-moz-progress-bar { background-color: #343a40; }
+
+                progress:not([value])::-webkit-progress-bar {
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+                progress:not([value])::before {
+                	content:" ";
+                	position:absolute;
+                	height: 20px;
+                	top:0;
+                	left:0;
+                	right:0;
+                	bottom:0;
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+
+                @keyframes stripes {
+                  from {background-position: 0%}
+                  to {background-position: 100%}
+                }
+
+        </style>
+        <style>
+            .codehilite .hll { background-color: #ffffcc }
+                .codehilite  { background: #f8f8f8; }
+                .codehilite .c { color: #408080; font-style: italic } /* Comment */
+                .codehilite .err { border: 1px solid #FF0000 } /* Error */
+                .codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+                .codehilite .o { color: #666666 } /* Operator */
+                .codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+                .codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+                .codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+                .codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+                .codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+                .codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+                .codehilite .gd { color: #A00000 } /* Generic.Deleted */
+                .codehilite .ge { font-style: italic } /* Generic.Emph */
+                .codehilite .gr { color: #FF0000 } /* Generic.Error */
+                .codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+                .codehilite .gi { color: #00A000 } /* Generic.Inserted */
+                .codehilite .go { color: #888888 } /* Generic.Output */
+                .codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+                .codehilite .gs { font-weight: bold } /* Generic.Strong */
+                .codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+                .codehilite .gt { color: #0044DD } /* Generic.Traceback */
+                .codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+                .codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+                .codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+                .codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+                .codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+                .codehilite .kt { color: #B00040 } /* Keyword.Type */
+                .codehilite .m { color: #666666 } /* Literal.Number */
+                .codehilite .s { color: #BA2121 } /* Literal.String */
+                .codehilite .na { color: #7D9029 } /* Name.Attribute */
+                .codehilite .nb { color: #008000 } /* Name.Builtin */
+                .codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+                .codehilite .no { color: #880000 } /* Name.Constant */
+                .codehilite .nd { color: #AA22FF } /* Name.Decorator */
+                .codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+                .codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+                .codehilite .nf { color: #0000FF } /* Name.Function */
+                .codehilite .nl { color: #A0A000 } /* Name.Label */
+                .codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+                .codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+                .codehilite .nv { color: #19177C } /* Name.Variable */
+                .codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+                .codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+                .codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+                .codehilite .mf { color: #666666 } /* Literal.Number.Float */
+                .codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+                .codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+                .codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+                .codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+                .codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+                .codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+                .codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+                .codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+                .codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+                .codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+                .codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+                .codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+                .codehilite .sx { color: #008000 } /* Literal.String.Other */
+                .codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+                .codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+                .codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+                .codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+                .codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+                .codehilite .vc { color: #19177C } /* Name.Variable.Class */
+                .codehilite .vg { color: #19177C } /* Name.Variable.Global */
+                .codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+                .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+                .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+                .markdown h1 { margin-block-start: 0.34em }
+                .markdown h2 { margin-block-start: 0.42em }
+                .markdown h3 { margin-block-start: 0.5em }
+                .markdown h4 { margin-block-start: 0.67em }
+                .markdown h5 { margin-block-start: 0.84em }
+                .markdown h6 { margin-block-start: 1.17em }
+                .markdown ul { padding-inline-start: 2em }
+                .markdown ol { padding-inline-start: 2em }
+                .markdown strong { font-weight: 600 }
+                .markdown a { color: -webkit-link }
+                .markdown a { color: -moz-hyperlinkText }
+
+        </style>
+        <style>
+            .json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-row,
+                .json-formatter-row a,
+                .json-formatter-row a:hover {
+                  color: black;
+                  text-decoration: none;
+                }
+                .json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-row .json-formatter-string,
+                .json-formatter-row .json-formatter-stringifiable {
+                  color: green;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-row .json-formatter-number {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-boolean {
+                  color: red;
+                }
+                .json-formatter-row .json-formatter-null {
+                  color: #855A00;
+                }
+                .json-formatter-row .json-formatter-undefined {
+                  color: #ca0b69;
+                }
+                .json-formatter-row .json-formatter-function {
+                  color: #FF20ED;
+                }
+                .json-formatter-row .json-formatter-date {
+                  background-color: rgba(0, 0, 0, 0.05);
+                }
+                .json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: blue;
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-bracket {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-key {
+                  color: #00008B;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+                .json-formatter-dark.json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-dark.json-formatter-row,
+                .json-formatter-dark.json-formatter-row a,
+                .json-formatter-dark.json-formatter-row a:hover {
+                  color: white;
+                  text-decoration: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-string,
+                .json-formatter-dark.json-formatter-row .json-formatter-stringifiable {
+                  color: #31F031;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-number {
+                  color: #66C2FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-boolean {
+                  color: #EC4242;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-null {
+                  color: #EEC97D;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-undefined {
+                  color: #ef8fbe;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-function {
+                  color: #FD48CB;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-date {
+                  background-color: rgba(255, 255, 255, 0.05);
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: #027BFF;
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-bracket {
+                  color: #9494FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-key {
+                  color: #23A0DB;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+
+        </style>
+        <style>
+            table.panel-df {
+                    margin-left: auto;
+                    margin-right: auto;
+                    border: none;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    color: black;
+                    font-size: 12px;
+                    table-layout: fixed;
+                    width: 100%;
+                }
+
+                .panel-df tr, .panel-df th, .panel-df td {
+                    text-align: right;
+                    vertical-align: middle;
+                    padding: 0.5em 0.5em !important;
+                    line-height: normal;
+                    white-space: normal;
+                    max-width: none;
+                    border: none;
+                }
+
+                .panel-df tbody {
+                    display: table-row-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                }
+
+                .panel-df tbody tr:nth-child(odd) {
+                    background: #f5f5f5;
+                }
+
+                .panel-df thead {
+                    border-bottom: 1px solid black;
+                    vertical-align: bottom;
+                }
+
+                .panel-df tr:hover {
+                    background: lightblue !important;
+                    cursor: pointer;
+                }
+
+        </style>
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.1.1.min.js" integrity="sha384-kLr4fYcqcSpbuI95brIH3vnnYCquzzSxHPU6XGQCIkQRGJwhg0StNbj1eegrHs12" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.1.1.min.js" integrity="sha384-xIGPmVtaOm+z0BqfSOMn4lOR6ciex448GIKG4eE61LsAvmGj48XcMQZtKcE/UXZe" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="2f880ec6-3ec4-4d36-9b50-5511cbc17cfa" data-root-id="110754"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="114597">
+          {"8d433816-8ba3-4144-bec0-b4e338a949a3":{"roots":{"references":[{"attributes":{"children":[{"id":"110753"},{"id":"110752"}]},"id":"110754","type":"Column"},{"attributes":{"end":8.276315789473685,"reset_end":8.276315789473685,"reset_start":0.7236842105263157,"start":0.7236842105263157,"tags":[[["x","x",null]]]},"id":"110533","type":"Range1d"},{"attributes":{},"id":"110720","type":"UnionRenderers"},{"attributes":{"callback":null,"renderers":[{"id":"110437"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110400","type":"HoverTool"},{"attributes":{"axis":{"id":"110324"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110327","type":"Grid"},{"attributes":{"text":"5 Modes of Participation"},"id":"110447","type":"Title"},{"attributes":{"end":111.1,"reset_end":111.1,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110534","type":"Range1d"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110660","type":"Quad"},{"attributes":{"callback":null,"renderers":[{"id":"110572"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110535","type":"HoverTool"},{"attributes":{"source":{"id":"110296"}},"id":"110303","type":"CDSView"},{"attributes":{},"id":"110328","type":"SaveTool"},{"attributes":{"end":139.7,"reset_end":139.7,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110489","type":"Range1d"},{"attributes":{},"id":"110496","type":"LinearScale"},{"attributes":{"end":8.276315789473685,"reset_end":8.276315789473685,"reset_start":0.7236842105263157,"start":0.7236842105263157,"tags":[[["x","x",null]]]},"id":"110398","type":"Range1d"},{"attributes":{"data_source":{"id":"110656"},"glyph":{"id":"110659"},"hover_glyph":null,"muted_glyph":{"id":"110661"},"nonselection_glyph":{"id":"110660"},"selection_glyph":null,"view":{"id":"110663"}},"id":"110662","type":"GlyphRenderer"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110526","type":"Quad"},{"attributes":{},"id":"110620","type":"BasicTickFormatter"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110580"},{"id":"110598"},{"id":"110599"},{"id":"110600"},{"id":"110601"},{"id":"110602"}]},"id":"110604","type":"Toolbar"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110350"},"major_label_orientation":"horizontal","ticker":{"id":"110321"}},"id":"110320","type":"LinearAxis"},{"attributes":{"end":133.1,"reset_end":133.1,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110399","type":"Range1d"},{"attributes":{"end":143.0,"reset_end":143.0,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110264","type":"Range1d"},{"attributes":{"axis":{"id":"110500"},"grid_line_color":null,"ticker":null},"id":"110503","type":"Grid"},{"attributes":{},"id":"110591","type":"BasicTicker"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110659","type":"Quad"},{"attributes":{},"id":"110330","type":"WheelZoomTool"},{"attributes":{},"id":"110522","type":"Selection"},{"attributes":{},"id":"110283","type":"SaveTool"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110530"},"major_label_orientation":"horizontal","ticker":{"id":"110501"}},"id":"110500","type":"LinearAxis"},{"attributes":{"axis":{"id":"110590"},"grid_line_color":null,"ticker":null},"id":"110593","type":"Grid"},{"attributes":{},"id":"110622","type":"BasicTickFormatter"},{"attributes":{},"id":"110329","type":"PanTool"},{"attributes":{"end":9.31578947368421,"reset_end":9.31578947368421,"reset_start":0.6842105263157894,"start":0.6842105263157894,"tags":[[["x","x",null]]]},"id":"110263","type":"Range1d"},{"attributes":{},"id":"110498","type":"LinearScale"},{"attributes":{},"id":"110374","type":"PanTool"},{"attributes":{},"id":"110501","type":"BasicTicker"},{"attributes":{},"id":"110595","type":"BasicTicker"},{"attributes":{"source":{"id":"110656"}},"id":"110663","type":"CDSView"},{"attributes":{"overlay":{"id":"110648"}},"id":"110646","type":"BoxZoomTool"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110622"},"major_label_orientation":"horizontal","ticker":{"id":"110595"}},"id":"110594","type":"LinearAxis"},{"attributes":{"overlay":{"id":"110333"}},"id":"110331","type":"BoxZoomTool"},{"attributes":{},"id":"110645","type":"WheelZoomTool"},{"attributes":{"axis":{"id":"110594"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110597","type":"Grid"},{"attributes":{},"id":"110440","type":"BasicTickFormatter"},{"attributes":{"style":{"white-space":"nowrap"},"text":"&lt;span style=\"color:black;font-family:Arial;font-style:bold;font-weight:bold;font-size:12pt\"&gt;Histograms of Citations for Each Chapter&lt;/span&gt;","width":450},"id":"110753","type":"Div"},{"attributes":{},"id":"110332","type":"ResetTool"},{"attributes":{},"id":"110643","type":"SaveTool"},{"attributes":{"align":null,"below":[{"id":"110545"}],"center":[{"id":"110548"},{"id":"110552"}],"left":[{"id":"110549"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110572"}],"sizing_mode":"fixed","title":{"id":"110537"},"toolbar":{"id":"110559"},"toolbar_location":null,"x_range":{"id":"110533"},"x_scale":{"id":"110541"},"y_range":{"id":"110534"},"y_scale":{"id":"110543"}},"id":"110536","subtype":"Figure","type":"Plot"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110490"},{"id":"110508"},{"id":"110509"},{"id":"110510"},{"id":"110511"},{"id":"110512"}]},"id":"110514","type":"Toolbar"},{"attributes":{},"id":"110442","type":"BasicTickFormatter"},{"attributes":{},"id":"110599","type":"PanTool"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110513","type":"BoxAnnotation"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110301","type":"Quad"},{"attributes":{},"id":"110487","type":"BasicTickFormatter"},{"attributes":{"align":null,"below":[{"id":"110365"}],"center":[{"id":"110368"},{"id":"110372"}],"left":[{"id":"110369"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110392"}],"sizing_mode":"fixed","title":{"id":"110357"},"toolbar":{"id":"110379"},"toolbar_location":null,"x_range":{"id":"110353"},"x_scale":{"id":"110361"},"y_range":{"id":"110354"},"y_scale":{"id":"110363"}},"id":"110356","subtype":"Figure","type":"Plot"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110310"},{"id":"110328"},{"id":"110329"},{"id":"110330"},{"id":"110331"},{"id":"110332"}]},"id":"110334","type":"Toolbar"},{"attributes":{},"id":"110508","type":"SaveTool"},{"attributes":{},"id":"110647","type":"ResetTool"},{"attributes":{"axis":{"id":"110504"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110507","type":"Grid"},{"attributes":{"text":"7 Protests"},"id":"110537","type":"Title"},{"attributes":{"data":{"Frequency":[127,0,23,0,5,0,4,0,0,3],"left":{"__ndarray__":"AAAAAAAA8D8AAAAAAAD4PwAAAAAAAABAAAAAAAAABEAAAAAAAAAIQAAAAAAAAAxAAAAAAAAAEEAAAAAAAAASQAAAAAAAABRAAAAAAAAAFkA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"AAAAAAAA+D8AAAAAAAAAQAAAAAAAAARAAAAAAAAACEAAAAAAAAAMQAAAAAAAABBAAAAAAAAAEkAAAAAAAAAUQAAAAAAAABZAAAAAAAAAGEA=","dtype":"float64","order":"little","shape":[10]},"top":[127,0,23,0,5,0,4,0,0,3],"x":{"__ndarray__":"AAAAAAAA9D8AAAAAAAD8PwAAAAAAAAJAAAAAAAAABkAAAAAAAAAKQAAAAAAAAA5AAAAAAAAAEUAAAAAAAAATQAAAAAAAABVAAAAAAAAAF0A=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110522"},"selection_policy":{"id":"110720"}},"id":"110521","type":"ColumnDataSource"},{"attributes":{},"id":"110373","type":"SaveTool"},{"attributes":{"overlay":{"id":"110603"}},"id":"110601","type":"BoxZoomTool"},{"attributes":{},"id":"110541","type":"LinearScale"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110333","type":"BoxAnnotation"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110648","type":"BoxAnnotation"},{"attributes":{},"id":"110693","type":"UnionRenderers"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110532"},"major_label_orientation":"horizontal","ticker":{"id":"110505"}},"id":"110504","type":"LinearAxis"},{"attributes":{},"id":"110543","type":"LinearScale"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110300","type":"Quad"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110299","type":"Quad"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110575"},"major_label_orientation":"horizontal","ticker":{"id":"110546"}},"id":"110545","type":"LinearAxis"},{"attributes":{},"id":"110505","type":"BasicTicker"},{"attributes":{},"id":"110575","type":"BasicTickFormatter"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110625"},{"id":"110643"},{"id":"110644"},{"id":"110645"},{"id":"110646"},{"id":"110647"}]},"id":"110649","type":"Toolbar"},{"attributes":{"data":{"Frequency":[143,0,26,0,0,11,0,2,0,1],"left":{"__ndarray__":"AAAAAAAA8D9mZmZmZmb2P83MzMzMzPw/mpmZmZmZAUDNzMzMzMwEQAAAAAAAAAhANDMzMzMzC0BnZmZmZmYOQM3MzMzMzBBAZmZmZmZmEkA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"ZmZmZmZm9j/NzMzMzMz8P5qZmZmZmQFAzczMzMzMBEAAAAAAAAAIQDQzMzMzMwtAZ2ZmZmZmDkDNzMzMzMwQQGZmZmZmZhJAAAAAAAAAFEA=","dtype":"float64","order":"little","shape":[10]},"top":[143,0,26,0,0,11,0,2,0,1],"x":{"__ndarray__":"MzMzMzMz8z+amZmZmZn5PwAAAAAAAABANDMzMzMzA0BmZmZmZmYGQJqZmZmZmQlAzszMzMzMDEAAAAAAAAAQQJqZmZmZmRFAMzMzMzMzE0A=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110342"},"selection_policy":{"id":"110684"}},"id":"110341","type":"ColumnDataSource"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110435","type":"Quad"},{"attributes":{"source":{"id":"110521"}},"id":"110528","type":"CDSView"},{"attributes":{"text":"3 Symbolic Dimension"},"id":"110357","type":"Title"},{"attributes":{"data_source":{"id":"110521"},"glyph":{"id":"110524"},"hover_glyph":null,"muted_glyph":{"id":"110526"},"nonselection_glyph":{"id":"110525"},"selection_glyph":null,"view":{"id":"110528"}},"id":"110527","type":"GlyphRenderer"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110434","type":"Quad"},{"attributes":{},"id":"110546","type":"BasicTicker"},{"attributes":{"axis":{"id":"110545"},"grid_line_color":null,"ticker":null},"id":"110548","type":"Grid"},{"attributes":{"end":6.197368421052632,"reset_end":6.197368421052632,"reset_start":0.8026315789473684,"start":0.8026315789473684,"tags":[[["x","x",null]]]},"id":"110578","type":"Range1d"},{"attributes":{"data":{"Frequency":[93,0,23,0,5,0,1,0,0,1],"left":{"__ndarray__":"AAAAAAAA8D8AAAAAAAD4PwAAAAAAAABAAAAAAAAABEAAAAAAAAAIQAAAAAAAAAxAAAAAAAAAEEAAAAAAAAASQAAAAAAAABRAAAAAAAAAFkA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"AAAAAAAA+D8AAAAAAAAAQAAAAAAAAARAAAAAAAAACEAAAAAAAAAMQAAAAAAAABBAAAAAAAAAEkAAAAAAAAAUQAAAAAAAABZAAAAAAAAAGEA=","dtype":"float64","order":"little","shape":[10]},"top":[93,0,23,0,5,0,1,0,0,1],"x":{"__ndarray__":"AAAAAAAA9D8AAAAAAAD8PwAAAAAAAAJAAAAAAAAABkAAAAAAAAAKQAAAAAAAAA5AAAAAAAAAEUAAAAAAAAATQAAAAAAAABVAAAAAAAAAF0A=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110657"},"selection_policy":{"id":"110747"}},"id":"110656","type":"ColumnDataSource"},{"attributes":{},"id":"110276","type":"BasicTicker"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110524","type":"Quad"},{"attributes":{"callback":null,"renderers":[{"id":"110302"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110265","type":"HoverTool"},{"attributes":{"axis":{"id":"110369"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110372","type":"Grid"},{"attributes":{"data_source":{"id":"110431"},"glyph":{"id":"110434"},"hover_glyph":null,"muted_glyph":{"id":"110436"},"nonselection_glyph":{"id":"110435"},"selection_glyph":null,"view":{"id":"110438"}},"id":"110437","type":"GlyphRenderer"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110577"},"major_label_orientation":"horizontal","ticker":{"id":"110550"}},"id":"110549","type":"LinearAxis"},{"attributes":{"end":146.3,"reset_end":146.3,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110579","type":"Range1d"},{"attributes":{},"id":"110370","type":"BasicTicker"},{"attributes":{},"id":"110485","type":"BasicTickFormatter"},{"attributes":{"callback":null,"renderers":[{"id":"110617"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110580","type":"HoverTool"},{"attributes":{"source":{"id":"110431"}},"id":"110438","type":"CDSView"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110525","type":"Quad"},{"attributes":{},"id":"110550","type":"BasicTicker"},{"attributes":{"data":{"Frequency":[133,0,32,0,9,0,3,0,1,1],"left":{"__ndarray__":"AAAAAAAA8D8AAAAAAAD4PwAAAAAAAABAAAAAAAAABEAAAAAAAAAIQAAAAAAAAAxAAAAAAAAAEEAAAAAAAAASQAAAAAAAABRAAAAAAAAAFkA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"AAAAAAAA+D8AAAAAAAAAQAAAAAAAAARAAAAAAAAACEAAAAAAAAAMQAAAAAAAABBAAAAAAAAAEkAAAAAAAAAUQAAAAAAAABZAAAAAAAAAGEA=","dtype":"float64","order":"little","shape":[10]},"top":[133,0,32,0,9,0,3,0,1,1],"x":{"__ndarray__":"AAAAAAAA9D8AAAAAAAD8PwAAAAAAAAJAAAAAAAAABkAAAAAAAAAKQAAAAAAAAA5AAAAAAAAAEUAAAAAAAAATQAAAAAAAABVAAAAAAAAAF0A=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110612"},"selection_policy":{"id":"110738"}},"id":"110611","type":"ColumnDataSource"},{"attributes":{},"id":"110297","type":"Selection"},{"attributes":{"axis":{"id":"110549"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110552","type":"Grid"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110436","type":"Quad"},{"attributes":{},"id":"110598","type":"SaveTool"},{"attributes":{},"id":"110600","type":"WheelZoomTool"},{"attributes":{},"id":"110675","type":"UnionRenderers"},{"attributes":{"align":null,"below":[{"id":"110410"}],"center":[{"id":"110413"},{"id":"110417"}],"left":[{"id":"110414"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110437"}],"sizing_mode":"fixed","title":{"id":"110402"},"toolbar":{"id":"110424"},"toolbar_location":null,"x_range":{"id":"110398"},"x_scale":{"id":"110406"},"y_range":{"id":"110399"},"y_scale":{"id":"110408"}},"id":"110401","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"110586","type":"LinearScale"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110571","type":"Quad"},{"attributes":{},"id":"110684","type":"UnionRenderers"},{"attributes":{},"id":"110285","type":"WheelZoomTool"},{"attributes":{"text":"1 Why Social Movemnts?"},"id":"110267","type":"Title"},{"attributes":{"end":102.3,"reset_end":102.3,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110624","type":"Range1d"},{"attributes":{},"id":"110342","type":"Selection"},{"attributes":{},"id":"110553","type":"SaveTool"},{"attributes":{"callback":null,"renderers":[{"id":"110662"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110625","type":"HoverTool"},{"attributes":{"text":"4 Identities"},"id":"110402","type":"Title"},{"attributes":{"children":[[{"id":"110266"},0,0],[{"id":"110311"},0,1],[{"id":"110356"},0,2],[{"id":"110401"},1,0],[{"id":"110446"},1,1],[{"id":"110491"},1,2],[{"id":"110536"},2,0],[{"id":"110581"},2,1],[{"id":"110626"},2,2]]},"id":"110749","type":"GridBox"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110307"},"major_label_orientation":"horizontal","ticker":{"id":"110280"}},"id":"110279","type":"LinearAxis"},{"attributes":{"end":6.197368421052632,"reset_end":6.197368421052632,"reset_start":0.8026315789473684,"start":0.8026315789473684,"tags":[[["x","x",null]]]},"id":"110623","type":"Range1d"},{"attributes":{},"id":"110554","type":"PanTool"},{"attributes":{},"id":"110406","type":"LinearScale"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110288","type":"BoxAnnotation"},{"attributes":{},"id":"110530","type":"BasicTickFormatter"},{"attributes":{},"id":"110284","type":"PanTool"},{"attributes":{},"id":"110555","type":"WheelZoomTool"},{"attributes":{},"id":"110408","type":"LinearScale"},{"attributes":{},"id":"110532","type":"BasicTickFormatter"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110570","type":"Quad"},{"attributes":{"align":null,"below":[{"id":"110590"}],"center":[{"id":"110593"},{"id":"110597"}],"left":[{"id":"110594"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110617"}],"sizing_mode":"fixed","title":{"id":"110582"},"toolbar":{"id":"110604"},"toolbar_location":null,"x_range":{"id":"110578"},"x_scale":{"id":"110586"},"y_range":{"id":"110579"},"y_scale":{"id":"110588"}},"id":"110581","subtype":"Figure","type":"Plot"},{"attributes":{"overlay":{"id":"110558"}},"id":"110556","type":"BoxZoomTool"},{"attributes":{"data_source":{"id":"110296"},"glyph":{"id":"110299"},"hover_glyph":null,"muted_glyph":{"id":"110301"},"nonselection_glyph":{"id":"110300"},"selection_glyph":null,"view":{"id":"110303"}},"id":"110302","type":"GlyphRenderer"},{"attributes":{},"id":"110287","type":"ResetTool"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110440"},"major_label_orientation":"horizontal","ticker":{"id":"110411"}},"id":"110410","type":"LinearAxis"},{"attributes":{"data":{"Frequency":[130,20,6,4,0,1,0,0,0,1],"left":{"__ndarray__":"AAAAAAAA8D/NzMzMzMz8P83MzMzMzARANDMzMzMzC0DNzMzMzMwQQAAAAAAAABRANDMzMzMzF0BnZmZmZmYaQJqZmZmZmR1AZmZmZmZmIEA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"zczMzMzM/D/NzMzMzMwEQDQzMzMzMwtAzczMzMzMEEAAAAAAAAAUQDQzMzMzMxdAZ2ZmZmZmGkCamZmZmZkdQGZmZmZmZiBAAAAAAAAAIkA=","dtype":"float64","order":"little","shape":[10]},"top":[130,20,6,4,0,1,0,0,0,1],"x":{"__ndarray__":"ZmZmZmZm9j+amZmZmZkBQAAAAAAAAAhAZ2ZmZmZmDkBmZmZmZmYSQJqZmZmZmRVAzszMzMzMGEAAAAAAAAAcQDMzMzMzMx9AMzMzMzMzIUA=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110297"},"selection_policy":{"id":"110675"}},"id":"110296","type":"ColumnDataSource"},{"attributes":{},"id":"110366","type":"BasicTicker"},{"attributes":{},"id":"110557","type":"ResetTool"},{"attributes":{},"id":"110411","type":"BasicTicker"},{"attributes":{},"id":"110577","type":"BasicTickFormatter"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110265"},{"id":"110283"},{"id":"110284"},{"id":"110285"},{"id":"110286"},{"id":"110287"}]},"id":"110289","type":"Toolbar"},{"attributes":{"axis":{"id":"110279"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110282","type":"Grid"},{"attributes":{"text":"8 Opportunities"},"id":"110582","type":"Title"},{"attributes":{"axis":{"id":"110410"},"grid_line_color":null,"ticker":null},"id":"110413","type":"Grid"},{"attributes":{"axis":{"id":"110275"},"grid_line_color":null,"ticker":null},"id":"110278","type":"Grid"},{"attributes":{"data":{"Frequency":[101,16,8,0,5,1,0,0,0,2],"left":{"__ndarray__":"AAAAAAAA8D8zMzMzMzP7PzMzMzMzMwNAzMzMzMzMCEBmZmZmZmYOQAAAAAAAABJAzMzMzMzMFECZmZmZmZkXQGZmZmZmZhpAMzMzMzMzHUA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"MzMzMzMz+z8zMzMzMzMDQMzMzMzMzAhAZmZmZmZmDkAAAAAAAAASQMzMzMzMzBRAmZmZmZmZF0BmZmZmZmYaQDMzMzMzMx1AAAAAAAAAIEA=","dtype":"float64","order":"little","shape":[10]},"top":[101,16,8,0,5,1,0,0,0,2],"x":{"__ndarray__":"mpmZmZmZ9T9mZmZmZmYAQAAAAAAAAAZAmZmZmZmZC0CamZmZmZkQQGZmZmZmZhNAMjMzMzMzFkAAAAAAAAAZQMzMzMzMzBtAmpmZmZmZHkA=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110567"},"selection_policy":{"id":"110729"}},"id":"110566","type":"ColumnDataSource"},{"attributes":{},"id":"110640","type":"BasicTicker"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110661","type":"Quad"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110535"},{"id":"110553"},{"id":"110554"},{"id":"110555"},{"id":"110556"},{"id":"110557"}]},"id":"110559","type":"Toolbar"},{"attributes":{},"id":"110361","type":"LinearScale"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110442"},"major_label_orientation":"horizontal","ticker":{"id":"110415"}},"id":"110414","type":"LinearAxis"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110558","type":"BoxAnnotation"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110614","type":"Quad"},{"attributes":{"source":{"id":"110611"}},"id":"110618","type":"CDSView"},{"attributes":{},"id":"110729","type":"UnionRenderers"},{"attributes":{},"id":"110280","type":"BasicTicker"},{"attributes":{},"id":"110415","type":"BasicTicker"},{"attributes":{},"id":"110738","type":"UnionRenderers"},{"attributes":{},"id":"110363","type":"LinearScale"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110616","type":"Quad"},{"attributes":{"axis":{"id":"110414"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110417","type":"Grid"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110615","type":"Quad"},{"attributes":{},"id":"110747","type":"UnionRenderers"},{"attributes":{"callback":null,"renderers":[{"id":"110527"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110490","type":"HoverTool"},{"attributes":{},"id":"110271","type":"LinearScale"},{"attributes":{"align":null,"below":[{"id":"110275"}],"center":[{"id":"110278"},{"id":"110282"}],"left":[{"id":"110279"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110302"}],"sizing_mode":"fixed","title":{"id":"110267"},"toolbar":{"id":"110289"},"toolbar_location":null,"x_range":{"id":"110263"},"x_scale":{"id":"110271"},"y_range":{"id":"110264"},"y_scale":{"id":"110273"}},"id":"110266","subtype":"Figure","type":"Plot"},{"attributes":{"overlay":{"id":"110288"}},"id":"110286","type":"BoxZoomTool"},{"attributes":{"toolbars":[{"id":"110289"},{"id":"110334"},{"id":"110379"},{"id":"110424"},{"id":"110469"},{"id":"110514"},{"id":"110559"},{"id":"110604"},{"id":"110649"}],"tools":[{"id":"110265"},{"id":"110283"},{"id":"110284"},{"id":"110285"},{"id":"110286"},{"id":"110287"},{"id":"110310"},{"id":"110328"},{"id":"110329"},{"id":"110330"},{"id":"110331"},{"id":"110332"},{"id":"110355"},{"id":"110373"},{"id":"110374"},{"id":"110375"},{"id":"110376"},{"id":"110377"},{"id":"110400"},{"id":"110418"},{"id":"110419"},{"id":"110420"},{"id":"110421"},{"id":"110422"},{"id":"110445"},{"id":"110463"},{"id":"110464"},{"id":"110465"},{"id":"110466"},{"id":"110467"},{"id":"110490"},{"id":"110508"},{"id":"110509"},{"id":"110510"},{"id":"110511"},{"id":"110512"},{"id":"110535"},{"id":"110553"},{"id":"110554"},{"id":"110555"},{"id":"110556"},{"id":"110557"},{"id":"110580"},{"id":"110598"},{"id":"110599"},{"id":"110600"},{"id":"110601"},{"id":"110602"},{"id":"110625"},{"id":"110643"},{"id":"110644"},{"id":"110645"},{"id":"110646"},{"id":"110647"}]},"id":"110750","type":"ProxyToolbar"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110397"},"major_label_orientation":"horizontal","ticker":{"id":"110370"}},"id":"110369","type":"LinearAxis"},{"attributes":{},"id":"110325","type":"BasicTicker"},{"attributes":{},"id":"110665","type":"BasicTickFormatter"},{"attributes":{},"id":"110418","type":"SaveTool"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110569","type":"Quad"},{"attributes":{"axis":{"id":"110320"},"grid_line_color":null,"ticker":null},"id":"110323","type":"Grid"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110395"},"major_label_orientation":"horizontal","ticker":{"id":"110366"}},"id":"110365","type":"LinearAxis"},{"attributes":{},"id":"110667","type":"BasicTickFormatter"},{"attributes":{"children":[{"id":"110751"},{"id":"110749"}]},"id":"110752","type":"Column"},{"attributes":{},"id":"110419","type":"PanTool"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110352"},"major_label_orientation":"horizontal","ticker":{"id":"110325"}},"id":"110324","type":"LinearAxis"},{"attributes":{"axis":{"id":"110365"},"grid_line_color":null,"ticker":null},"id":"110368","type":"Grid"},{"attributes":{},"id":"110588","type":"LinearScale"},{"attributes":{},"id":"110420","type":"WheelZoomTool"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110620"},"major_label_orientation":"horizontal","ticker":{"id":"110591"}},"id":"110590","type":"LinearAxis"},{"attributes":{"data_source":{"id":"110611"},"glyph":{"id":"110614"},"hover_glyph":null,"muted_glyph":{"id":"110616"},"nonselection_glyph":{"id":"110615"},"selection_glyph":null,"view":{"id":"110618"}},"id":"110617","type":"GlyphRenderer"},{"attributes":{"toolbar":{"id":"110750"},"toolbar_location":"above"},"id":"110751","type":"ToolbarBox"},{"attributes":{"overlay":{"id":"110423"}},"id":"110421","type":"BoxZoomTool"},{"attributes":{},"id":"110321","type":"BasicTicker"},{"attributes":{},"id":"110612","type":"Selection"},{"attributes":{"end":5.157894736842105,"reset_end":5.157894736842105,"reset_start":0.8421052631578947,"start":0.8421052631578947,"tags":[[["x","x",null]]]},"id":"110308","type":"Range1d"},{"attributes":{},"id":"110422","type":"ResetTool"},{"attributes":{},"id":"110432","type":"Selection"},{"attributes":{"end":157.3,"reset_end":157.3,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110309","type":"Range1d"},{"attributes":{"end":114.4,"reset_end":114.4,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110354","type":"Range1d"},{"attributes":{"end":6.197368421052632,"reset_end":6.197368421052632,"reset_start":0.8026315789473684,"start":0.8026315789473684,"tags":[[["x","x",null]]]},"id":"110488","type":"Range1d"},{"attributes":{},"id":"110397","type":"BasicTickFormatter"},{"attributes":{},"id":"110509","type":"PanTool"},{"attributes":{"callback":null,"renderers":[{"id":"110347"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110310","type":"HoverTool"},{"attributes":{"data":{"Frequency":[121,28,5,0,0,2,0,0,0,1],"left":{"__ndarray__":"AAAAAAAA8D8zMzMzMzP7PzMzMzMzMwNAzMzMzMzMCEBmZmZmZmYOQAAAAAAAABJAzMzMzMzMFECZmZmZmZkXQGZmZmZmZhpAMzMzMzMzHUA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"MzMzMzMz+z8zMzMzMzMDQMzMzMzMzAhAZmZmZmZmDkAAAAAAAAASQMzMzMzMzBRAmZmZmZmZF0BmZmZmZmYaQDMzMzMzMx1AAAAAAAAAIEA=","dtype":"float64","order":"little","shape":[10]},"top":[121,28,5,0,0,2,0,0,0,1],"x":{"__ndarray__":"mpmZmZmZ9T9mZmZmZmYAQAAAAAAAAAZAmZmZmZmZC0CamZmZmZkQQGZmZmZmZhNAMjMzMzMzFkAAAAAAAAAZQMzMzMzMzBtAmpmZmZmZHkA=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110432"},"selection_policy":{"id":"110702"}},"id":"110431","type":"ColumnDataSource"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110400"},{"id":"110418"},{"id":"110419"},{"id":"110420"},{"id":"110421"},{"id":"110422"}]},"id":"110424","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110423","type":"BoxAnnotation"},{"attributes":{},"id":"110631","type":"LinearScale"},{"attributes":{"source":{"id":"110566"}},"id":"110573","type":"CDSView"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110305"},"major_label_orientation":"horizontal","ticker":{"id":"110276"}},"id":"110275","type":"LinearAxis"},{"attributes":{},"id":"110633","type":"LinearScale"},{"attributes":{},"id":"110387","type":"Selection"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110667"},"major_label_orientation":"horizontal","ticker":{"id":"110640"}},"id":"110639","type":"LinearAxis"},{"attributes":{"align":null,"below":[{"id":"110500"}],"center":[{"id":"110503"},{"id":"110507"}],"left":[{"id":"110504"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110527"}],"sizing_mode":"fixed","title":{"id":"110492"},"toolbar":{"id":"110514"},"toolbar_location":null,"x_range":{"id":"110488"},"x_scale":{"id":"110496"},"y_range":{"id":"110489"},"y_scale":{"id":"110498"}},"id":"110491","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"110350","type":"BasicTickFormatter"},{"attributes":{},"id":"110477","type":"Selection"},{"attributes":{"text":"6 Organizing"},"id":"110492","type":"Title"},{"attributes":{},"id":"110510","type":"WheelZoomTool"},{"attributes":{},"id":"110711","type":"UnionRenderers"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110391","type":"Quad"},{"attributes":{"align":null,"below":[{"id":"110320"}],"center":[{"id":"110323"},{"id":"110327"}],"left":[{"id":"110324"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110347"}],"sizing_mode":"fixed","title":{"id":"110312"},"toolbar":{"id":"110334"},"toolbar_location":null,"x_range":{"id":"110308"},"x_scale":{"id":"110316"},"y_range":{"id":"110309"},"y_scale":{"id":"110318"}},"id":"110311","subtype":"Figure","type":"Plot"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110345","type":"Quad"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110480","type":"Quad"},{"attributes":{"text":"2 Social Transformations"},"id":"110312","type":"Title"},{"attributes":{"data":{"Frequency":[105,0,22,0,0,4,0,1,0,1],"left":{"__ndarray__":"AAAAAAAA8D9mZmZmZmb2P83MzMzMzPw/mpmZmZmZAUDNzMzMzMwEQAAAAAAAAAhANDMzMzMzC0BnZmZmZmYOQM3MzMzMzBBAZmZmZmZmEkA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"ZmZmZmZm9j/NzMzMzMz8P5qZmZmZmQFAzczMzMzMBEAAAAAAAAAIQDQzMzMzMwtAZ2ZmZmZmDkDNzMzMzMwQQGZmZmZmZhJAAAAAAAAAFEA=","dtype":"float64","order":"little","shape":[10]},"top":[105,0,22,0,0,4,0,1,0,1],"x":{"__ndarray__":"MzMzMzMz8z+amZmZmZn5PwAAAAAAAABANDMzMzMzA0BmZmZmZmYGQJqZmZmZmQlAzszMzMzMDEAAAAAAAAAQQJqZmZmZmRFAMzMzMzMzE0A=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110477"},"selection_policy":{"id":"110711"}},"id":"110476","type":"ColumnDataSource"},{"attributes":{"overlay":{"id":"110513"}},"id":"110511","type":"BoxZoomTool"},{"attributes":{},"id":"110316","type":"LinearScale"},{"attributes":{},"id":"110318","type":"LinearScale"},{"attributes":{"end":8.276315789473685,"reset_end":8.276315789473685,"reset_start":0.7236842105263157,"start":0.7236842105263157,"tags":[[["x","x",null]]]},"id":"110353","type":"Range1d"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110468","type":"BoxAnnotation"},{"attributes":{},"id":"110602","type":"ResetTool"},{"attributes":{},"id":"110305","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"110386"}},"id":"110393","type":"CDSView"},{"attributes":{},"id":"110567","type":"Selection"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110445"},{"id":"110463"},{"id":"110464"},{"id":"110465"},{"id":"110466"},{"id":"110467"}]},"id":"110469","type":"Toolbar"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110479","type":"Quad"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"110355"},{"id":"110373"},{"id":"110374"},{"id":"110375"},{"id":"110376"},{"id":"110377"}]},"id":"110379","type":"Toolbar"},{"attributes":{},"id":"110467","type":"ResetTool"},{"attributes":{"overlay":{"id":"110468"}},"id":"110466","type":"BoxZoomTool"},{"attributes":{"callback":null,"renderers":[{"id":"110392"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110355","type":"HoverTool"},{"attributes":{"data":{"Frequency":[104,13,6,0,3,1,0,1,0,1],"left":{"__ndarray__":"AAAAAAAA8D8zMzMzMzP7PzMzMzMzMwNAzMzMzMzMCEBmZmZmZmYOQAAAAAAAABJAzMzMzMzMFECZmZmZmZkXQGZmZmZmZhpAMzMzMzMzHUA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"MzMzMzMz+z8zMzMzMzMDQMzMzMzMzAhAZmZmZmZmDkAAAAAAAAASQMzMzMzMzBRAmZmZmZmZF0BmZmZmZmYaQDMzMzMzMx1AAAAAAAAAIEA=","dtype":"float64","order":"little","shape":[10]},"top":[104,13,6,0,3,1,0,1,0,1],"x":{"__ndarray__":"mpmZmZmZ9T9mZmZmZmYAQAAAAAAAAAZAmZmZmZmZC0CamZmZmZkQQGZmZmZmZhNAMjMzMzMzFkAAAAAAAAAZQMzMzMzMzBtAmpmZmZmZHkA=","dtype":"float64","order":"little","shape":[10]}},"selected":{"id":"110387"},"selection_policy":{"id":"110693"}},"id":"110386","type":"ColumnDataSource"},{"attributes":{},"id":"110465","type":"WheelZoomTool"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110378","type":"BoxAnnotation"},{"attributes":{},"id":"110657","type":"Selection"},{"attributes":{},"id":"110377","type":"ResetTool"},{"attributes":{},"id":"110463","type":"SaveTool"},{"attributes":{},"id":"110464","type":"PanTool"},{"attributes":{"axis":{"id":"110459"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110462","type":"Grid"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"110603","type":"BoxAnnotation"},{"attributes":{},"id":"110375","type":"WheelZoomTool"},{"attributes":{},"id":"110512","type":"ResetTool"},{"attributes":{"overlay":{"id":"110378"}},"id":"110376","type":"BoxZoomTool"},{"attributes":{"axis":{"id":"110639"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"110642","type":"Grid"},{"attributes":{},"id":"110352","type":"BasicTickFormatter"},{"attributes":{"align":null,"below":[{"id":"110635"}],"center":[{"id":"110638"},{"id":"110642"}],"left":[{"id":"110639"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110662"}],"sizing_mode":"fixed","title":{"id":"110627"},"toolbar":{"id":"110649"},"toolbar_location":null,"x_range":{"id":"110623"},"x_scale":{"id":"110631"},"y_range":{"id":"110624"},"y_scale":{"id":"110633"}},"id":"110626","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"110702","type":"UnionRenderers"},{"attributes":{},"id":"110460","type":"BasicTicker"},{"attributes":{},"id":"110273","type":"LinearScale"},{"attributes":{"text":"9 Movement Effects"},"id":"110627","type":"Title"},{"attributes":{"axis_label":"Count","bounds":"auto","formatter":{"id":"110487"},"major_label_orientation":"horizontal","ticker":{"id":"110460"}},"id":"110459","type":"LinearAxis"},{"attributes":{"axis":{"id":"110455"},"grid_line_color":null,"ticker":null},"id":"110458","type":"Grid"},{"attributes":{"data_source":{"id":"110566"},"glyph":{"id":"110569"},"hover_glyph":null,"muted_glyph":{"id":"110571"},"nonselection_glyph":{"id":"110570"},"selection_glyph":null,"view":{"id":"110573"}},"id":"110572","type":"GlyphRenderer"},{"attributes":{},"id":"110636","type":"BasicTicker"},{"attributes":{"data_source":{"id":"110386"},"glyph":{"id":"110389"},"hover_glyph":null,"muted_glyph":{"id":"110391"},"nonselection_glyph":{"id":"110390"},"selection_glyph":null,"view":{"id":"110393"}},"id":"110392","type":"GlyphRenderer"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110665"},"major_label_orientation":"horizontal","ticker":{"id":"110636"}},"id":"110635","type":"LinearAxis"},{"attributes":{"end":5.157894736842105,"reset_end":5.157894736842105,"reset_start":0.8421052631578947,"start":0.8421052631578947,"tags":[[["x","x",null]]]},"id":"110443","type":"Range1d"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110389","type":"Quad"},{"attributes":{"end":115.5,"reset_end":115.5,"reset_start":0.0,"tags":[[["Frequency","Frequency",null]]]},"id":"110444","type":"Range1d"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.1},"right":{"field":"right"},"top":{"field":"top"}},"id":"110390","type":"Quad"},{"attributes":{"callback":null,"renderers":[{"id":"110482"}],"tags":["hv_created"],"tooltips":[["x","@{x}"],["Frequency","@{Frequency}"]]},"id":"110445","type":"HoverTool"},{"attributes":{"data_source":{"id":"110476"},"glyph":{"id":"110479"},"hover_glyph":null,"muted_glyph":{"id":"110481"},"nonselection_glyph":{"id":"110480"},"selection_glyph":null,"view":{"id":"110483"}},"id":"110482","type":"GlyphRenderer"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"right":{"field":"right"},"top":{"field":"top"}},"id":"110344","type":"Quad"},{"attributes":{},"id":"110456","type":"BasicTicker"},{"attributes":{"axis_label":"Citations","bounds":"auto","formatter":{"id":"110485"},"major_label_orientation":"horizontal","ticker":{"id":"110456"}},"id":"110455","type":"LinearAxis"},{"attributes":{"source":{"id":"110341"}},"id":"110348","type":"CDSView"},{"attributes":{"data_source":{"id":"110341"},"glyph":{"id":"110344"},"hover_glyph":null,"muted_glyph":{"id":"110346"},"nonselection_glyph":{"id":"110345"},"selection_glyph":null,"view":{"id":"110348"}},"id":"110347","type":"GlyphRenderer"},{"attributes":{},"id":"110453","type":"LinearScale"},{"attributes":{"source":{"id":"110476"}},"id":"110483","type":"CDSView"},{"attributes":{},"id":"110644","type":"PanTool"},{"attributes":{},"id":"110307","type":"BasicTickFormatter"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110481","type":"Quad"},{"attributes":{},"id":"110451","type":"LinearScale"},{"attributes":{},"id":"110395","type":"BasicTickFormatter"},{"attributes":{"axis":{"id":"110635"},"grid_line_color":null,"ticker":null},"id":"110638","type":"Grid"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"left":{"field":"left"},"line_alpha":{"value":0.2},"right":{"field":"right"},"top":{"field":"top"}},"id":"110346","type":"Quad"},{"attributes":{"align":null,"below":[{"id":"110455"}],"center":[{"id":"110458"},{"id":"110462"}],"left":[{"id":"110459"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":150,"plot_width":380,"renderers":[{"id":"110482"}],"sizing_mode":"fixed","title":{"id":"110447"},"toolbar":{"id":"110469"},"toolbar_location":null,"x_range":{"id":"110443"},"x_scale":{"id":"110451"},"y_range":{"id":"110444"},"y_scale":{"id":"110453"}},"id":"110446","subtype":"Figure","type":"Plot"}],"root_ids":["110754"]},"title":"Bokeh Application","version":"2.1.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('114597').textContent;
+                  var render_items = [{"docid":"8d433816-8ba3-4144-bec0-b4e338a949a3","root_ids":["110754"],"roots":{"110754":"2f880ec6-3ec4-4d36-9b50-5511cbc17cfa"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
