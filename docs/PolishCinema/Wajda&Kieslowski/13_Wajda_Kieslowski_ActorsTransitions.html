@@ -1,0 +1,554 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Wajda_Kieslowski_ActorsTransitions</title>
+      
+      
+        
+          
+        <style>
+            .panel-widget-box {
+                	min-height: 20px;
+                	background-color: #f5f5f5;
+                	border: 1px solid #e3e3e3 !important;
+                	border-radius: 4px;
+                	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	overflow-x: hidden;
+                	overflow-y: hidden;
+                }
+
+                .scrollable {
+                  overflow: scroll;
+                }
+
+                progress {
+                	appearance: none;
+                	-moz-appearance: none;
+                	-webkit-appearance: none;
+
+                	border: none;
+                	height: 20px;
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                	color: royalblue;
+                	position: relative;
+                	margin: 0 0 1.5em;
+                }
+
+                progress[value]::-webkit-progress-bar {
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                }
+
+                progress[value]::-webkit-progress-value {
+                	position: relative;
+
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress.active:not([value])::before {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress[value]::-moz-progress-bar {
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress:not([value])::-moz-progress-bar {
+                	border-radius:3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+
+                }
+
+                progress.active:not([value])::-moz-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.active:not([value])::-webkit-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.primary[value]::-webkit-progress-value { background-color: #007bff; }
+                progress.primary:not([value])::before { background-color: #007bff; }
+                progress.primary:not([value])::-webkit-progress-bar { background-color: #007bff; }
+                progress.primary::-moz-progress-bar { background-color: #007bff; }
+
+                progress.secondary[value]::-webkit-progress-value { background-color: #6c757d; }
+                progress.secondary:not([value])::before { background-color: #6c757d; }
+                progress.secondary:not([value])::-webkit-progress-bar { background-color: #6c757d; }
+                progress.secondary::-moz-progress-bar { background-color: #6c757d; }
+
+                progress.success[value]::-webkit-progress-value { background-color: #28a745; }
+                progress.success:not([value])::before { background-color: #28a745; }
+                progress.success:not([value])::-webkit-progress-bar { background-color: #28a745; }
+                progress.success::-moz-progress-bar { background-color: #28a745; }
+
+                progress.danger[value]::-webkit-progress-value { background-color: #dc3545; }
+                progress.danger:not([value])::before { background-color: #dc3545; }
+                progress.danger:not([value])::-webkit-progress-bar { background-color: #dc3545; }
+                progress.danger::-moz-progress-bar { background-color: #dc3545; }
+
+                progress.warning[value]::-webkit-progress-value { background-color: #ffc107; }
+                progress.warning:not([value])::before { background-color: #ffc107; }
+                progress.warning:not([value])::-webkit-progress-bar { background-color: #ffc107; }
+                progress.warning::-moz-progress-bar { background-color: #ffc107; }
+
+                progress.info[value]::-webkit-progress-value { background-color: #17a2b8; }
+                progress.info:not([value])::before { background-color: #17a2b8; }
+                progress.info:not([value])::-webkit-progress-bar { background-color: #17a2b8; }
+                progress.info::-moz-progress-bar { background-color: #17a2b8; }
+
+                progress.light[value]::-webkit-progress-value { background-color: #f8f9fa; }
+                progress.light:not([value])::before { background-color: #f8f9fa; }
+                progress.light:not([value])::-webkit-progress-bar { background-color: #f8f9fa; }
+                progress.light::-moz-progress-bar { background-color: #f8f9fa; }
+
+                progress.dark[value]::-webkit-progress-value { background-color: #343a40; }
+                progress.dark:not([value])::-webkit-progress-bar { background-color: #343a40; }
+                progress.dark:not([value])::before { background-color: #343a40; }
+                progress.dark::-moz-progress-bar { background-color: #343a40; }
+
+                progress:not([value])::-webkit-progress-bar {
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+                progress:not([value])::before {
+                	content:" ";
+                	position:absolute;
+                	height: 20px;
+                	top:0;
+                	left:0;
+                	right:0;
+                	bottom:0;
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+
+                @keyframes stripes {
+                  from {background-position: 0%}
+                  to {background-position: 100%}
+                }
+
+        </style>
+        <style>
+            .codehilite .hll { background-color: #ffffcc }
+                .codehilite  { background: #f8f8f8; }
+                .codehilite .c { color: #408080; font-style: italic } /* Comment */
+                .codehilite .err { border: 1px solid #FF0000 } /* Error */
+                .codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+                .codehilite .o { color: #666666 } /* Operator */
+                .codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+                .codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+                .codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+                .codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+                .codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+                .codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+                .codehilite .gd { color: #A00000 } /* Generic.Deleted */
+                .codehilite .ge { font-style: italic } /* Generic.Emph */
+                .codehilite .gr { color: #FF0000 } /* Generic.Error */
+                .codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+                .codehilite .gi { color: #00A000 } /* Generic.Inserted */
+                .codehilite .go { color: #888888 } /* Generic.Output */
+                .codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+                .codehilite .gs { font-weight: bold } /* Generic.Strong */
+                .codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+                .codehilite .gt { color: #0044DD } /* Generic.Traceback */
+                .codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+                .codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+                .codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+                .codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+                .codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+                .codehilite .kt { color: #B00040 } /* Keyword.Type */
+                .codehilite .m { color: #666666 } /* Literal.Number */
+                .codehilite .s { color: #BA2121 } /* Literal.String */
+                .codehilite .na { color: #7D9029 } /* Name.Attribute */
+                .codehilite .nb { color: #008000 } /* Name.Builtin */
+                .codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+                .codehilite .no { color: #880000 } /* Name.Constant */
+                .codehilite .nd { color: #AA22FF } /* Name.Decorator */
+                .codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+                .codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+                .codehilite .nf { color: #0000FF } /* Name.Function */
+                .codehilite .nl { color: #A0A000 } /* Name.Label */
+                .codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+                .codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+                .codehilite .nv { color: #19177C } /* Name.Variable */
+                .codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+                .codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+                .codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+                .codehilite .mf { color: #666666 } /* Literal.Number.Float */
+                .codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+                .codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+                .codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+                .codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+                .codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+                .codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+                .codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+                .codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+                .codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+                .codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+                .codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+                .codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+                .codehilite .sx { color: #008000 } /* Literal.String.Other */
+                .codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+                .codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+                .codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+                .codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+                .codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+                .codehilite .vc { color: #19177C } /* Name.Variable.Class */
+                .codehilite .vg { color: #19177C } /* Name.Variable.Global */
+                .codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+                .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+                .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+                .markdown h1 { margin-block-start: 0.34em }
+                .markdown h2 { margin-block-start: 0.42em }
+                .markdown h3 { margin-block-start: 0.5em }
+                .markdown h4 { margin-block-start: 0.67em }
+                .markdown h5 { margin-block-start: 0.84em }
+                .markdown h6 { margin-block-start: 1.17em }
+                .markdown ul { padding-inline-start: 2em }
+                .markdown ol { padding-inline-start: 2em }
+                .markdown strong { font-weight: 600 }
+                .markdown a { color: -webkit-link }
+                .markdown a { color: -moz-hyperlinkText }
+
+        </style>
+        <style>
+            .json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-row,
+                .json-formatter-row a,
+                .json-formatter-row a:hover {
+                  color: black;
+                  text-decoration: none;
+                }
+                .json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-row .json-formatter-string,
+                .json-formatter-row .json-formatter-stringifiable {
+                  color: green;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-row .json-formatter-number {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-boolean {
+                  color: red;
+                }
+                .json-formatter-row .json-formatter-null {
+                  color: #855A00;
+                }
+                .json-formatter-row .json-formatter-undefined {
+                  color: #ca0b69;
+                }
+                .json-formatter-row .json-formatter-function {
+                  color: #FF20ED;
+                }
+                .json-formatter-row .json-formatter-date {
+                  background-color: rgba(0, 0, 0, 0.05);
+                }
+                .json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: blue;
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-bracket {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-key {
+                  color: #00008B;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+                .json-formatter-dark.json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-dark.json-formatter-row,
+                .json-formatter-dark.json-formatter-row a,
+                .json-formatter-dark.json-formatter-row a:hover {
+                  color: white;
+                  text-decoration: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-string,
+                .json-formatter-dark.json-formatter-row .json-formatter-stringifiable {
+                  color: #31F031;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-number {
+                  color: #66C2FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-boolean {
+                  color: #EC4242;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-null {
+                  color: #EEC97D;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-undefined {
+                  color: #ef8fbe;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-function {
+                  color: #FD48CB;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-date {
+                  background-color: rgba(255, 255, 255, 0.05);
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: #027BFF;
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-bracket {
+                  color: #9494FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-key {
+                  color: #23A0DB;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+
+        </style>
+        <style>
+            table.panel-df {
+                    margin-left: auto;
+                    margin-right: auto;
+                    border: none;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    color: black;
+                    font-size: 12px;
+                    table-layout: fixed;
+                    width: 100%;
+                }
+
+                .panel-df tr, .panel-df th, .panel-df td {
+                    text-align: right;
+                    vertical-align: middle;
+                    padding: 0.5em 0.5em !important;
+                    line-height: normal;
+                    white-space: normal;
+                    max-width: none;
+                    border: none;
+                }
+
+                .panel-df tbody {
+                    display: table-row-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                }
+
+                .panel-df tbody tr:nth-child(odd) {
+                    background: #f5f5f5;
+                }
+
+                .panel-df thead {
+                    border-bottom: 1px solid black;
+                    vertical-align: bottom;
+                }
+
+                .panel-df tr:hover {
+                    background: lightblue !important;
+                    cursor: pointer;
+                }
+
+        </style>
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.3.min.js" integrity="sha384-T2yuo9Oe71Cz/I4X9Ac5+gpEa5a8PpJCDlqKYO0CfAuEszu1JrXLl8YugMqYe3sM" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="d034e344-575a-497d-8db7-b7280575c53c" data-root-id="2214"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="2421">
+          {"01512aac-5cec-407b-8529-ab1a850c9a43":{"roots":{"references":[{"attributes":{"text":"Transitions among chronologically successive films of Wajda &amp; Kieslowski in terms of common actors","text_color":{"value":"black"},"text_font_size":{"value":"12pt"}},"id":"2220","type":"Title"},{"attributes":{"source":{"id":"2250"}},"id":"2261","type":"CDSView"},{"attributes":{"callback":null,"renderers":[{"id":"2262"}],"tags":["hv_created"],"tooltips":[["index","@{index_hover}"],["Common Actors with Previous Film","@{Common_Actors_with_Previous_Film}"],["New Actors appearing in this Film","@{New_Actors_appearing_in_this_Film}"],["Total number of actors","@{Total_number_of_actors}"]]},"id":"2218","type":"HoverTool"},{"attributes":{"data":{"Common_Actors_with_Previous_Film":["","Serge Merlin","Artur Barcis","Piotr Machalica","Mateusz Janicki","Adam Pawlikowski","Tadeusz Lomnicki","","Jerzy Trela, Andrzej Seweryn, Marek Kondrat, Boguslaw Linda","","Roman Polanski","Tadeusz Janczar, Kazimierz Kutz","Tadeusz Wojtych, Waldemar Czyszak","Jerzy Zass","Krystyna Janda","Zygmunt Malanowicz, Daniel Olbrychski, Malgorzata Braunek, J\u00f3zef Pieracki, Jerzy Pr\u00f3chnicki, Leszek Drogosz, Stefan Friedmann, Witold Holtz, Tomasz Lengren","Tadeusz Lomnicki","Krystyna Janda, Andrzej Seweryn, Janusz Gajos","Michal Tarkowski","Jerzy Gudejko","Daniel Olbrychski, Jerzy Karaszkiewicz, Witold Dederko, Witold Holtz, Irena Laskowska","Jerzy Radziwilowicz, Andrzej Seweryn, Magda Teresa W\u00f3jcik, Krystyna Wolanska, Boguslaw Sobczuk, Krystyna Janda, Kazimierz Kaczor, Krzysztof Kiersznowski","Roman Polanski","Artur Mlodnicki, Mieczyslaw Loza, Adam Pawlikowski","Jan Englert","Daniel Olbrychski, Jerzy Oblamski, Alina Szpak, Jerzy Pr\u00f3chnicki, Mieczyslaw Stoor","","Aleksander Bardini, Jacek W\u00f3jcicki","Zbigniew Zapasiewicz, Jolanta Kozak-Sutowicz, Krystyna Wolanska","Daniel Olbrychski, Andrzej Lapicki, Franciszek Pieczka, Emilia Krakowska, Bozena Dykiel, Wojciech Pszoniak, Kazimierz Opalinski, Marek Walczewski","","","Emilia Krakowska, Jerzy Zelnik, Bozena Dykiel, Wojciech Pszoniak","","Zbigniew Zamachowski, Juliette Binoche, Julie Delpy","Florence Pernel, Juliette Binoche, Philippe Morier-Genoud, Zbigniew Zamachowski, Michel Lisowski, Julie Delpy, Jacques Disses","Krystyna Janda","Daniel Olbrychski, Olgierd Lukaszewicz, Emilia Krakowska, Mieczyslaw Stoor, Marek Perepeczko"],"New_Actors_appearing_in_this_Film":["Tadeusz Lomnicki, Urszula Modrzynska, Tadeusz Janczar, Janusz Paluszkiewicz, Ryszard Kotys, Roman Polanski, Ludwik Benoit, Zofia Czerwinska, Zbigniew Cybulski, Tadeusz Fijewski, Zygmunt Hobot, Cezary Julski, Bronislaw Kassowski, August Kowalczyk, Jerzy Krasowski, Zenon Laurentowski, Stanislaw Milski, Juliusz Roland, Hanna Skarzanka, Janusz Sciwiarski, Kazimierz Wichniarz, Zygmunt Zintel, Ryszard Ber, Bronislaw Dardzinski, Wieslaw Golas, Zofia Jamry, Mieczyslaw Kalenik, Henryk Kucharski, Kazimierz Kutz, Jan Machulski, Franciszek Pieczka, Janusz Strachocki, Mieczyslaw Waskowski, Danuta Wodynska, Stefan Wroncki","Gudrun Geier, Ilse Bahrs, G\u00e9rard Desarthe, Gernot Duda, Dieter Kursawe, Rainer Basedow, Dorothea Moritz, Gundula Petrovska, Piotr Lysak, Andr\u00e9 Mantz, Hannes Kaetner, Hanna Schygulla, Sigfrit Steiner, Ulrich Heimann, Dietrich Mattausch, Ben Becker, Daniel Olbrychski, Elisabeth Trissenaar, Thomas Ringelmann, Gerd Holtenau, Friedrich G. Beckhaus, Marie-Christine Barrault, Ellen Esser, Christoph Beyertt, Evelyn Meyka, Erika Wackernagel, Bernhard Wicki, J\u00fcrgen von Alten, J\u00fcrgen Born, Bernhard Papke, Armin Mueller-Stahl, Heidi Joschko, Marie-H\u00e9l\u00e8ne Dast\u00e9, Herbert Weissbach, Ralf Wolter, Jutta Kl\u00f6ppel, Dieter Kirchlechner, Otto Sander","Wladyslaw Byrdy, Ryszard W. Borsucki, Andrzej Mastalerz, Krystyna Janda, Lech Pietrasz, Peter Falchi, Zbigniew Plato, Aleksander Bednarz, Zbigniew Borek, Boguslaw Hubicki, Andrzej Gawronski, Marlena Miarczynska, Olgierd Lukaszewicz, Alicja Wolska, Helena Kowalczykowa, Zbigniew Zapasiewicz, Henryk Guzek, Krzysztof Globisz, Jolanta Mielech, Marzena Manteska, Cezary Switkowski, Karol Stepkowski, Henryk Lapinski, Zdzislaw Rychter, Krzysztof Luft, Bogdan Niewinowski, Leonard Andrzejewski, Elzbieta Helman, Jerzy Zass, Wieslaw Bednarz, Zdzislaw Tobiasz, Iwona Glebicka, Maciej Maciejewski, Maciej Szary, Malgorzata Pieczynska, Miroslaw Baka, Barbara Dziekan, Krzysztof Stelmaszyk, Jan Tesarz, Borys Marynowski","Artur Barcis, Grazyna Szapolowska, Tomasz Gradowski, Stanislaw Gawlik, Stefania Iwinska, Hanna Chojnacka, Malgorzata Rozniatowska, Olaf Lubaszenko, Emilia Zi\u00f3lkowska, Jan Piechocinski, Rafal Imbro, Anna Gornostaj, Jaroslawa Michalewska, Krzysztof Koperski","Tomasz Wlosok, Adrian Zaremba, Andrzej Konopka, Henryk Niebudek, Ewa Wencel, Dominika Kluzniak, Anna Majcher, Mariusz Bonaszewski, Filip Gurlacz, Magdalena Zak, Michal Wlodarczyk, Maria Semotiuk, Izabela Dabrowska, Boguslaw Linda, Magdalena Warzecha, Dariusz Siastacz, Bronislawa Zamachowska, Mariusz Slupinski, Danuta Borsuk, Adam Zawislak, Aleksandra Justa, Zofia Wichlacz, Nina Czerkies, Jerzy Rogalski, Paulina Galazka, Anna Markowicz, Jan Peczek, Adam Szyszkowski, Grazyna Walasek, Jacek Beler, Magdalena Kuta, Hanna Wrycza-Kurkowska, Ewa Oksza-Lapicka, Dorota Kolak, Robert Ostolski, Mateusz Rzezniczak, Szymon Bobrowski, Malgorzata Rudzka, Anna Grzeszczak, Robert Latusek, Maja Kwiatkowska, Krzysztof Pieczynski, Mariusz Witkowski, Gabriela Chojecka, Irena Melcer, Barbara Wypych, Mateusz Rusin, Rafal Zawierucha, Mateusz Bieryt, Monika Mielnicka, Aleksander Fabisiak, Tomasz Chodorowski","Mieczyslaw Loza, Zbigniew Cybulski, Stanislaw Milski, Ewa Krzyzewska, Halina Kwiatkowska, J\u00f3zef Pieracki, Barbara Krafft\u00f3wna, Jerzy Jogalla, Adolf Chronicki, Bogumil Kobiela, Zofia Czerwinska, Jan Ciecierski, Juliusz Grabowski, Ferdynand Matysik, Ignacy Machowski, Zbigniew Skowronski, Waclaw Zastrzezynski, Tadeusz Kalinowski, Grazyna Staniszewska, Wiktor Grotowicz, Irena Orzecka, Halina Siekierko, Aleksander Sewruk, Artur Mlodnicki, Ryszard Pietruski, Jerzy Adamczak","Krzysztof Kalczynski, Adam Ferency, Marzena Trybala, Boguslaw Linda, Aleksander Mikolajczak, Kazimiera Nogaj\u00f3wna, Irena Byrska, Monika Gozdzik, Jolanta Nowinska, Zbigniew Zapasiewicz, Jacek Borkowski, Jerzy Stuhr, Boguslawa Pawelec, Jacek Sas-Uhrynowski, Krzysztof Zaleski, Zygmunt H\u00fcbner","Paulina Mlynarska, Piotr Wawrzynczak, Bernadetta Machala-Krzeminska, Dariusz Dobkowski, Jaroslaw Gruda, Tadeusz Konwicki, Tadeusz Lomnicki, Jaroslaw Dobrowski, Krystyna Zachwatowicz, Joanna Szczepkowska, Gabriela Kownacka, Magdalena W\u00f3jcik, Bohdana Majda, Adrianna Godlewska, Leonard Pietraszak, Jerzy Klesyk, Jerzy Block, Beata Pozniak, Marian Opania, Andrzej Krasinski, Andrzej Szenajch, Zbigniew Buczkowski","Patrice Ch\u00e9reau, Franciszek Starowieyski, G\u00e9rard Depardieu, Alain Mac\u00e9, Artus de Penguern, Emmanuelle Debever, Tadeusz Huk, Angel Sedgwick, Roger Planchon, Ronald Guttman, Krzysztof Globisz, Wladimir Yordanoff, G\u00e9rard Hardy, Bernard Ma\u00eetre, Leonard Pietraszak, Wojciech Pszoniak, Jacques Villeret, Jean-Loup Wolff, Serge Merlin, Eugeniusz Priwieziencew, Malgorzata Zajaczkowska, Marian Kociniak, St\u00e9phane Jobert, Lucien Melki, Szymon Zaleski, Roland Blanche, Erwin Nowiaszek, Angela Winkler, Anne Alvaro, Czeslaw Wollejko","Beata Tyszkiewicz, Elzbieta Czyzewska, Andrzej Lapicki, Daniel Olbrychski, Witold Holtz, Malgorzata Potocka, Bogumil Kobiela, Elzbieta Kepinska, Irena Laskowska, Tadeusz Kalinowski, Wieslaw Dymny, Wojciech Solarz, J\u00f3zef Fuks, Witold Dederko, Andrzej Kostenko, Tadeusz Baljon, Jacek Domanski, Bohdan Ejmont, Krzysztof Fus, Andrzej Gawronski, Ireneusz Harasimowicz, Walentyna Hoffman, Mieczyslaw Kalenik, Jerzy Karaszkiewicz, Bogdan Lysakowski, Elzbieta Nowacka, Ryszard Ostalowski, Adam Pawlikowski, Leonard Pietraszak, Andrzej Jerzy Piotrowski, J. Turowicz, Franciszek Starowieyski, Wanda Warska","Andrzej Nowakowski, Zbigniew Cybulski, Jerzy Skolimowski, Andrzej Trzaskowski, Henryk Kurek, Krzysztof Komeda, Tadeusz Lomnicki, Jan Zylber, Andrzej Gawronski, Marian Kociniak, Wanda Koczeska, Krystyna Stypulkowska, Teresa Szmigiel\u00f3wna, Slawa Przybylska, Kalina Jedrusik","Emil Karewicz, Vladek Sheybal, Jan Englert, Wladyslaw Kowalski, Wlodzimierz Bednarski, Adam Pawlikowski, Zofia Lindorf, Zdzislaw Lesniak, Tomasz Witt, Teresa Berezowska, Maciej Maciejewski, Tadeusz Gwiazdowski, Ryszard Filipski, Maria Kretz, Stanislaw Mikulski, Teresa Izewska, Kazimierz Dejunowicz, Wienczyslaw Glinski, Janina Jablonowska, Ewa Wisniewska","Joachim Paul Assb\u00f6ck, Jakub Snochowski, Modest Rucinski, Piotr Cichon, Piotr Kolski, Agnieszka Wensorra, Wojciech Chorazy, Szymon Rzaca, Tomasz Leszczynski, Joanna Kawiorska, Oleg Drach, Stanislaw Brudny, Dymitr Hol\u00f3wko, Piotr Polak, Waldemar Barwinski, Andrzej Pieczynski, Maja Ostaszewska, Piotr Sieklucki, Artur Zmijewski, Maria Maj, Anna Radwan, Andrzej Sitek, Barbara Kurzaj, Magdalena Cielecka, Rafal Sadowski, Waldemar Pokromski, Zbigniew Kozlowski, J\u00f3zef Kielar, Sergey Garmash, Rafal Kronenberger, Danuta Stenka, Filip Kowalczyk, Stefan W\u00f3jcicki, Andrzej Chyra, Jakub Przebindowski, Sebastian Bezzel, Alicja Dabrowska, Dariusz Poleszak, Pawel Malaszynski, Olgierd Lukaszewicz, Robert Cichon, Tomasz Miedzik, Krzysztof Globisz, Wiktoria Gasiewska, Leon Charewicz, Jacek Braciak, Marek Karpowicz, Andrzej Szenajch, Zbigniew Swiderski, Agnieszka Glinska, Wojciech Leonowicz, Oleg Savkin, Krzysztof Kolberger, Karlos Granada, Jacek Romanowski, Jan Englert, Wladyslaw Kowalski, Wieslaw W\u00f3jcik, Andrzej Mlynarczyk, Grzegorz Kwiecien, Roman Leus, Klaudia Siemek, Maciej Mikolajczyk, Janusz Lagodzinski, Jacek Lenartowicz, Jacek Rathe, Maja Komorowska, Roman Gruszkiewicz, Agnieszka Kawiorska, Ilja Zmiejew, Rafal Czachur, Miroslaw Bala, Antoni Pawlicki, Dariusz Toczek, Andrzej Kociubinski, Jacek Drozd, Stanislawa Celinska, Aleksander Fabisiak, Krystyna Zachwatowicz, Leszek Piskorz, Adam Graczyk, Krzysztof Plewako-Szczerbinski, J\u00f3zef Mika, Vladimir Abramushkin","Witold Bielinski, Zbigniew Suszynski, Janusz Bukowski, Michal Staszczak, Katarzyna Laniewska, Jerzy Kozlowski, Zbigniew Zamachowski, Maria Weymayr, Marzena Trybala, Andrzej Kopiczynski, Jacek Domanski, Maciej Winkler, Aleksander Bardini, Ewa Dalkowska, Zygmunt Kestowicz, Maria Chwalib\u00f3g, Robert Atzorn, Grzegorz Klein, Jan Peszek, Teresa Szmigiel\u00f3wna, Stanislaw Brudny, Wojciech Pszoniak, Aniela Swiderska-Pawlik, Wlodzimierz Press, Danuta Szaflarska, Jacek W\u00f3jcicki, Piotr Kazimierski, Piotr Kozlowski, Tadeusz Hanusek, Roman Szafranski, Adam Siemion, Wojciech Skibinski, Agnieszka Kruk\u00f3wna, Olaf Lubaszenko, Anna Mucha, Wojciech Klata, Grzegorz Pawlowski, Ryszard Janikowski, Jan Prochyra, Etl Szyc, Agnieszka Kumor, Jerzy Walczak, Edgar Hoppe, Hanna Kossowska, Ewa Telega, Karolina Czernicka, Bernhard Howe, Aleksander Trabczynski, Stanislawa Celinska, Alicja Migulanka, Krystyna Zachwatowicz, Wojciech Radecki, Tomasz Traczynski, Teresa Budzisz-Krzyzanowska, Rafal Walentynowicz","Kurt Weber, Edward Klosinski","Konrad Wawrzyniak, Alina Szpak, Herman Lercher, Leonard Mokicz, Tadeusz Janczar, Malgorzata Lesniewska, Stanislaw Michalski, Aleksander Bardini, Agnieszka Perepeczko, Jerzy Zelnik, Leszek Kowalski, Jerzy Bekker, Anna German, Oskar Dewitz, Bohdan Tomaszewski, Wojciech Lewandowski, J\u00f3zef Pitorak, Andrzej Piszczatowski, J\u00f3zef Harasiewicz, Jerzy Oblamski, Kazimierz Rowinski, Andrzej Boksinski, Stanislawa Celinska, Mieczyslaw Stoor, Jerzy Lapinski","Jerzy Radziwilowicz, Wojciech Zag\u00f3rski, Krzysztof Kumor, Zbigniew Zamachowski, Bozena Dykiel, Jerzy Klesyk, Isabelle Huppert, Grzegorz Wons, J\u00f3zef Kalita, Helena Kowalczykowa, Jutta Lampe, Stanislaw G\u00f3rka, R\u00e9mi Martin, Wladimir Yordanoff, Ryszard Jablonski, Philippe Chambon, Bogusz Bilewski, Jean-Philippe \u00c9coffey, Omar Sharif, Jaroslaw Kopaczewski, Serge Spira, Pawel Szczesny, Laurent Malet, Eugeniusz Kaminski, Beata Niedzielska, Tadeusz Wludarski, Jean-Quentin Ch\u00e2telain, Lambert Wilson, Piotr Machalica, Bernard Blier, Philippine Leroy-Beaulieu, Witold Skaruch, Alina Swidowska","Stanislaw Staniek, Jerzy Radziwilowicz, Ludmila Terlecka, Tadeusz Fiszbach, Marian Opania, Bozena Dykiel, Adam Ferency, Wojciech Alaborski, Zbigniew Lis, Jacek Domanski, Irena Kownas, Helena Kowalczykowa, Magdalena Jarosz, Jolanta Kozak-Sutowicz, Krzysztof Janczar, Lech Walesa, Leonard Andrzejewski, Bogdan Lis, Piotr Suchora, Zbigniew Buczkowski, Michal Juszczakiewicz, Krzysztof Machowski, Marek Kondrat, Halina Labonarska, Jan Tesarz, Maciej Michalak, Wieslawa Kosmalska, Janusz Pawlowski, Teodor Kudla, Jerzy Kiszkis, Janusz Zaorski, Jerzy Kolodziejski, Boguslaw Linda, Klemens Mielczarek, Irena Byrska, Andrzej Gawronski, Stanislaw Michalski, Jerzy Borowczak, Mieczyslaw Jagielski, Marcin Tronski, Andrzej Szenajch, Krzysztof Zaleski, Witold Kaluski, Lech Grzmocinski, Lech Soluba, Jerzy Trela, Artur Barcis, Boguslaw Sobczuk, Beata Pozniak, Jan Szczepanski, Maja Komorowska, Franciszek Trzeciak, Zofia Mayr, Kazimierz Orzechowski, Tatiana Sosna-Sarno, Andrzej Gwiazda, Anna Walentynowicz, Krystyna Zachwatowicz, Jerzy Popielarczyk, Tadeusz Gwiazdowski, Krzysztof Wieczorek","Jerzy Radziwilowicz, Magda Teresa W\u00f3jcik, Leonard Zajaczkowski, Krystyna Janda, Mariusz Swigon, Kazimierz Kaczor, Stanislaw Frackowiak, Stefania Kornacka, Jacek Domanski, Zdzislaw Kozien, Dorota Stalinska, Jacek Lomnicki, Edmund Karwanski, Stanislaw Michalik, Zbigniew Ploszaj, Feliks Falk, Wieslaw Drzewicz, Grzegorz Skurski, Jaroslaw Kopaczewski, Andrzej Seweryn, Krystyna Wolanska, Boguslaw Sobczuk, Henryk Lapinski, Wieslaw W\u00f3jcik, Maciej Rayzacher, Krzysztof Kiersznowski, Piotr Cieslak, Tadeusz Lomnicki, Jerzy Moniak, Juliusz Roland, Irena Laskowska, Andrzej Graziewicz, Mieczyslaw Grabka, Irena Oberska, Andrzej Wykretowicz, Elzbieta Borkowska, Ewa Zietek, Krystyna Zachwatowicz, Zdzislaw Szymborski","Witold Bielinski, Michal Staszczak, Katarzyna Laniewska, Piotr Rzymyszkiewicz, Michal Trojaczek, Stanislaw Michalski, Tomasz Rojek, Barbara Baryzewska, Maria Chwalib\u00f3g, Piotr Gasowski, Boguslaw Parchimowicz, Piotr Bajor, Andrzej Szenajch, Andrzej Grzybowski, Czeslaw Mroczek, Rafal Kr\u00f3likowski, Bartosz Zukowski, Tomasz Konieczny, Agnieszka Wagner, Katarzyna Kwiatkowska, Miroslaw Zbrojewicz, Jerzy Trela, Stanislaw Bielinski, Wojciech Lasota, Pawel Szczesny, Cezary Pazura, Jadwiga Jankowska-Cieslak, Jerzy Kamas, Andrzej Blumenfeld, Adrianna Biedrzynska, Slawomir Holland, Wlodzimierz Musial, Wojciech Klata, Ilja Zmiejew, Aleksander Wysocki, Magdalena Stuzynska, Tomasz Mandes, Jaroslaw Gruda, Stanislaw Melski, Miroslaw Baka, Daniel Wyszynski, Dominik Los, K. Kepinski, Mariusz Leszczynski, Mieczyslaw Mazur","Leon Bukowiecki, J\u00f3zef Pieracki, Jerzy Pr\u00f3chnicki, Marek Siatecki, Kazimiera Utrata, Janusz Glowacki, Jerzy Kaczmarek, Urszula Galecka, Mieczyslaw Waskowski, Zygmunt Malanowicz, Ewa Skarzanka, Jacek Fedorowicz, Artur Litwinski, Krzysztof Burnatowicz, Julia Bratna, Andrzej Krasicki, Marek Perepeczko, Ryszard Poznakowski, Irena Dziedzic, Antonina Girycz, Slawomir Kowalewski, Stefan Friedmann, Miroslaw Majchrowski, Tomasz Lengren, Elzbieta Strzalkowska, Hanna Skarzanka, M. Zi\u00f3lkowski, Marek Grechuta, Malgorzata Braunek, Jolanta Lothe, E. Odrobinski, Ryszard Pracz, Ludwik Pak, Leszek Drogosz, Marian Lichtman, Wanda Stanislawska-Lothe, Krzysztof Krawczyk, Ryszard Pietruski","W. Niecjegiewicz, Krzysztof Bauman, Tomasz Zygadlo, Grzegorz Wons, Wojciech Wysocki, Andrzej Mrowiec, Stanislaw Michalski, Marlena Miarczynska, Ewa Dalkowska, Zygmunt Kestowicz, Zbigniew Zapasiewicz, Tadeusz Andrzejewski, Maria Kulina, Ryszard Labedz, Jolanta Kozak-Sutowicz, Iga Mayr, Andrzej Wajda, Krzysztof Zaleski, Zbigniew Grusznic, Teodor Gendera, Michal Kula, Emilia Krakowska, Stefania Iwinska, Halina Golanko, Tomasz Stockinger, Roman Wilhelmi, Waldemar Kapitulka, Aleksandra Jasienska, Marta Salinger, Jacek Kalucki, Bogdan Szymkowski, Witold Pyrkosz, Jerzy Stuhr, Izabella Olejnik, Alicja Bienicewicz, Wanda Stanislawska-Lothe, Sylwester Maciejewski, Danuta Balicka","Zbigniew J\u00f3zefowicz, Magda Teresa W\u00f3jcik, Elzbieta Kepinska, Serge Merlin, Andrzej Zulawski, Tadeusz Bartosik, Wladyslaw Kowalski, Edward Kowalczyk, Zygmunt Malawski, Irena Netto, Jan Ciecierski, Edmund Fetting, Zdzislaw Maklakiewicz, Andrzej Herder, Roland Glowacki, Tomasz Zaliwski, Beata Tyszkiewicz, Zofia Jamry, Zygmunt Listkiewicz, Ryszard Pracz, Jan Ibel, Krystyna Zachwatowicz, Bogumil Antczak, Alina Janowska, Zygmunt H\u00fcbner, Jerzy Lapinski, Ryszard Ronczewski","Henryk Cudnowski, Wieslaw Golas, Czeslaw Piaskowski, Tadeusz Kosudarski, Kazimiera Utrata, Jerzy Pichelski, Adam Dzieszynski, Jerzy Moes, Halina Buyno-Loza, Marian Lacz, Bozena Kurowska, Roman Polanski, Boleslaw Wozniak, Karol R\u00f3mmel, Tadeusz Somogi, Henryk Hunko, Wojciech Zukrowski, Ludwik Pak, Irena Malkiewicz, Bronislaw Dardzinski, Marian Wisniowski","Jerzy Mizak, Jakub Mazurek, Krystyna Janda, Tomasz Lukaszewski, Roma Gasiorowska, Pawel Szajda, Jadwiga Jankowska-Cieslak, Julia Pietrucha, Krystian Kopanski, Marcin Luczak, Maciej Switajski, Pawel Tomaszewski, Marcin Korcz, Jaroslaw Panter, Zbigniew Sznitko, Arkadiusz Lewicki, Michal Kasprzak-Komarczewski, Marcin Starzecki, Krzysztof Skonieczny, Karol Kosik, Magdalena Michel, Agnieszka Sowa, Andrzej Wajda, Maciej Kowalik, Mateusz Kosciukiewicz","Olgierd Lukaszewicz, Andrzej Kotkowski, Danuta Wodynska, Emilia Krakowska, Elzbieta Zolek, Irena Skwierczynska, Jan Domanski, Marek Perepeczko","John Gielgud, Krystyna Janda, Andrzej Seweryn, Jan Ciecierski, Maria Seweryn, J\u00f3zef Fryzlewicz, Janusz Gajos, Mary Ann Krasinski, Anna Lopatowska, Mavis Walker, Tadeusz Czechowski, Marek Dabrowski, Stanislaw G\u00f3rka, Jerzy Kleyn, Elzbieta Strzalkowska, Jerzy Szmidt, Wojciech Wysocki, Stanislaw Zatloka, Andr\u00e9a Ferr\u00e9ol","Philippe Campos, Anna Gornostaj, Janusz Sterninski, Katarzyna Gajdarska, Claude Duneton, Alain Fr\u00e9rot, Ir\u00e8ne Jacob, Wanda Kruszewska, Jerzy Gudejko, Halina Gryglaszewska, Nausicaa Rampony, Lucyna Zabawa, Sandrine Dumas, Nicole Pinaud, Bernadetta Kus, Pauline Monier, Guillaume de Tonqu\u00e9dec, Wladyslaw Kowalski, Lorraine Evanoff, Philippe Volter, Anna Kadulska, Youssef Hamid, Dominika Szady, Louis Ducreux, Barbara Szalapak, Thierry de Carbonni\u00e8res, Boguslawa Schubert, Jacques Potin, Gilles Gaston-Dreyfus, Kalina Jedrusik, Beata Malczewska, Chantal Neuwirth","Daniel Olbrychski, Andrzej Lapicki, Joanna Poraska, Anna Seniuk, Zofia Jaroszewska, Filip Jasienski, Maja Komorowska, Malgorzata Wachnicka, Anna Wachnicka, Edward Ozana, Halina Michalska, Paul Guers, Kazimierz Brodzikowski, Tadeusz Bialoszczynski, Kazimierz Orzechowski, Alina Rostkowska, Andrzej Grzybowski, Jaroslaw Iwaszkiewicz, Andrzej Szenajch, Stanislawa Celinska, Krystyna Zachwatowicz, Barbara Stepniak\u00f3wna, Christine Pascal, Witold Kaluski","Jerzy Przybylski, Jadwiga Andrzejewska, Kazimierz Kaczor, Krzysztof Majchrzak, Grazyna Michalska, Zofia Wilczynska, Maciej G\u00f3raj, Ryszard Bromowicz, Janina Tur-Kirylow, Mieczyslaw Waskowski, Piotr Fronczewski, Bernard Ladysz, Zbigniew Zapasiewicz, Andrzej Szalawski, Jerzy Zelnik, Zdzislaw Kuzniar, Halina Gryglaszewska, Janina Grzegorczyk, Bronislaw Pawlik, Andrzej Seweryn, Marian Glinka, Jerzy Nowak, Wojciech Siemion, Danuta Wodynska, Teodor Gendera, Maciej Korwin, Stanislaw Igar, Witold Dederko, Mariola Kukula, Teresa Budzisz-Krzyzanowska, Boguslaw Sochnacki, Antoni Byszewski, Tomasz Lengren, Jerzy Stasiuk, Jerzy Braszka, Lena Wilczynska, Kazimierz Wichniarz, Wlodzimierz Borunski, Aleksander Dzwonkowski, Jerzy Oblamski, Andrzej Wohl, Lidia Korsak\u00f3wna, Alicja Sobieraj, Tadeusz Bialoszczynski, Bohdana Majda, Jan Pawel Kruk, Kalina Jedrusik, Anna Nehrebecka","Roman Polanski, Janusz Gajos, Andrzej Seweryn, Katarzyna Figura, Daniel Olbrychski, Agata Buzek, Rafal Kr\u00f3likowski, Lech Dyblik, Cezary Zak, Jerzy Nowak, Tadeusz Wojtych, Henryk Golebiewski, Jerzy Slonka, Magdalena Smalara, Grazyna Zielinska, Wieslaw Lagiewka, Kazimierz Mazur, Waldemar Czyszak, Malgorzata J\u00f3zwiak, Michal Sieczkowski, Yann Seweryn, Romuald Ficek, Mieczyslaw Gasienica, Adam Hejger, Tomasz Olszewski, Jerzy Rybinski, Maximilien Seweryn, Andrzej Skupien","Franciszek Pieczka, Mariusz Dmochowski, Jerzy Stuhr, Jan Skotnicki, Stanislaw Igar, Stanislaw Michalski, Michal Tarkowski, Andrzej Skupien, Halina Winiarska, Joanna Orzeszkowska, Jadwiga Bryniarska, Agnieszka Holland, Malgorzata Lesniewska, Asja Lamtiugina, Ryszard Bacciarelli, Franciszek Barfuss, Bohdan Ejmont, Henryk Hunko, Jan Jeruzal, Zbigniew Lesien, Konrad Morawski, Jerzy Prazmowski, Jan Stawarz, Wojciech Stockinger, Kazimierz Sulkowski, Halina Rasiak\u00f3wna, Tomasz Zygadlo","John Quentin, Jeffry Wickham, Krzysztof Kumor, Stanislaw Tym, Tomasz Moscicki, Adam Perzyk, Igor Sawin, Maciej Staniewicz, Piotr Garlicki, John Bennett, Radoslaw Piwowarski, Bernard Archard, Zygmunt H\u00fcbner, Marian Czyzewski, Eugeniusz Priwieziencew, Tadeusz Bartosik, Joanna Z\u00f3lkowska, Geoffrey Collins, Piotr Cieslak, Stefan Friedmann, Peter Cartwright, Malgorzata Braunek, Richard Bartlett, Jolanta Lothe, Zygmunt Maciejewski, Iga Cembrzynska, Graham Lines, Tom Wilkinson, Marek Kondrat, Martin Wyldeck, Gordon Richardson, Tadeusz Jastrzebowski, Geoffrey Hinsliff","Juliette Binoche, Beno\u00eet R\u00e9gent, Florence Pernel, Charlotte V\u00e9ry, H\u00e9l\u00e8ne Vincent, Philippe Volter, Claude Duneton, Hugues Quester, Emmanuelle Riva, Florence Vignon, Daniel Martin, Jacek Ostaszewski, Catherine Therouenne, Yann Tr\u00e9gou\u00ebt, Alain Ollivier, Isabelle Sadoyan, Pierre Forget, Philippe Manesse, Arno Chevrier, Idit Cebula, Stanislas Nordey, Jacques Disses, Michel Lisowski, Yves Penay, Philippe Morier-Genoud, Julie Delpy, Zbigniew Zamachowski, Alain Decaux, Julie Gayet, Piotr Jaxa","Beno\u00eet R\u00e9gent, Teco Celio, Brigitte Raul, Nader Farman, Bernard Escalon, Marion Stalens, Jessica Korinek, Elzbieta Jasinska, Fr\u00e9d\u00e9rique Feder, C\u00e9cile Tanner, Ir\u00e8ne Jacob, Neige Dolsky, Jean-Louis Trintignant, Jean-Marie Daunas, Jean Schlegel, Roland Carey, Leo Ramseyer, Paul Vermeulen, Samuel Le Bihan, Marc Autheman, Anne Theurillat, Jean-Pierre Lorit","Maria Robaszkiewicz, Cezary Harasimowicz, Marzena Trybala, Krystyna Bigelmajer, Wanda Wr\u00f3blewska, Joanna Ladynska, Aleksander Bardini, Adam Paplinski, Jakub Grzegorek, Grzegorz Warchol, Yannick Evely, J. Modet, Stan Latek, Bozena Szymanska, M. Verner, Jerzy Dominik, Jan Mayzel, Jerzy Trela, Malgorzata Prazmowska, Bartlomiej Topa, Jerzy Nowak, Cezary Pazura, Zdzislaw Rychter, Marianna Grodzka-Marciano, Andrzej Precigs, Janusz Gajos, Wojciech Paszkowski, Piotr Zelt, Jerzy Stuhr, Malgorzata Kaczmarska, Aleksander Kalinowski, Francis Coffinet, Barbara Dziekan, Piotr Machalica, Liliana Okowity-Brosset, Teresa Budzisz-Krzyzanowska","Marek Czetwertynski, Maciej Marczewski, Lukasz Pellowski, Przemyslaw Bluszcz, Wojciech Kalarus, Henryk Golebiewski, Marcin Perchuc, Marcin Hycnar, Tomasz Budyta, Mateusz Janicki, Artur Swies, Boguslaw Kudlek, Cezary Kosinski, Maciej Konopinski, Mateusz Kosciukiewicz, Aleksander Skowronski, Ireneusz Dydlinski, Waldemar Barwinski, Arkadiusz Janiczek, Malgorzata Zajaczkowska, Piotr Probosz, Ewa Bzdega, Pawel Tomaszewski, Maria Ciunelis, Katarzyna Ankudowicz, Wojciech Rotowski, Ewa Konstancja Bulhak, Ewa Kolasinska, Grzegorz Malecki, Miroslaw Baka, Iwona Bielska, Michal Czernecki, Dorota Wellman, Arkadiusz Detmer, Cezary Lukaszewicz, Jakub Mazurek, Tomasz Schuchardt, Zbigniew Zamachowski, Wiktor Malinowski, Michal Meyer, J\u00f3zef Pawlowski, Olga Milaszewska, Grzegorz Przybyl, Robert Wieckiewicz, Jakub Swiderski, Agnieszka Grochowska, Wojciech Blach, Magdalena Smalara, Maciej Robakiewicz, Maciej Stuhr, Wojciech Leonowicz, Karlos Granada, Piotr Jankowski, Piotr Lukawski, Remigiusz Jankowski, Jerzy Nasierowski, Andrzej Grabowski, Wojciech Solarz, Adam Woronowicz, Marcel Glogowski, Maria Rosaria Omaggio, Pawel Ciolkosz, Miroslaw Haniszewski, Kamil Jaworski, Ewa Kurylo, Mateusz Nedza, Krystyna Zachwatowicz, Piotr Witkowski, Krzysztof Skonieczny, Anna Gryszka","Barbara Wrzesinska, Henryk Borowski, Andrzej Lapicki, Janusz Bukowski, Anna G\u00f3ralska, Mieczyslaw Voit, Marek Walczewski, Andrzej Szczepkowski, Izabella Olszewska, Bozena Dykiel, Wirgiliusz Gryn, Malgorzata Lorentowicz, Czeslaw Niemen, Mieczyslaw Czechowicz, Hanna Skarzanka, Maja Komorowska, Franciszek Pieczka, Wiktor Grotowicz, Maria Konwicka, Gabriela Kownacka, Ewa Zietek, Leszek Piskorz, Wojciech Pszoniak, Kazimierz Opalinski, Artur Mlodnicki, Czeslaw Wollejko"],"Total_number_of_actors":[35,39,41,15,53,27,17,22,34,33,16,22,86,56,3,34,34,64,40,46,43,46,28,24,26,13,19,34,27,56,28,27,37,30,25,43,71,31],"index":{"__ndarray__":"AAAAAAEAAAACAAAAAwAAAAQAAAAFAAAABgAAAAcAAAAIAAAACQAAAAoAAAALAAAADAAAAA0AAAAOAAAADwAAABAAAAARAAAAEgAAABMAAAAUAAAAFQAAABYAAAAXAAAAGAAAABkAAAAaAAAAGwAAABwAAAAdAAAAHgAAAB8AAAAgAAAAIQAAACIAAAAjAAAAJAAAACUAAAA=","dtype":"int32","order":"little","shape":[38]},"index_hover":["A Generation (1955)","A Love in Germany (1983)","A Short Film About Killing (1988)","A Short Film About Love (1988)","Afterimage (2016)","Ashes and Diamonds (1958)","Blind Chance (1987)","Chronicle of Amorous Accidents (1986)","Danton (1983)","Everything for Sale (1969)","Innocent Sorcerers (1960)","Kanal (1957)","Katyn (2007)","Korczak (1990)","Krec! Jak kochasz, to krec! (2010)","Landscape After Battle (1970)","Les poss\u00e9d\u00e9s (1988)","Man of Iron (1981)","Man of Marble (1977)","Pierscionek z orlem w koronie (1992)","Polowanie na muchy (1969)","Rough Treatment (1978)","Samson (1961)","Speed (1959)","Tatarak (2009)","The Birch Wood (1970)","The Conductor (1980)","The Double Life of V\u00e9ronique (1991)","The Maids of Wilko (1979)","The Promised Land (1975)","The Revenge (2002)","The Scar (1976)","The Shadow Line (1976)","Three Colors: Blue (1993)","Three Colors: Red (1994)","Three Colors: White (1994)","Walesa: Man of Hope (2013)","Wesele (1973)"],"node_size":[35,39,41,15,53,27,17,22,34,33,16,22,86,56,3,34,34,64,40,46,43,46,28,24,26,13,19,34,27,56,28,27,37,30,25,43,71,31]},"selected":{"id":"2285"},"selection_policy":{"id":"2286"}},"id":"2249","type":"ColumnDataSource"},{"attributes":{"overlay":{"id":"2241"}},"id":"2239","type":"BoxZoomTool"},{"attributes":{"data":{"edge_line_width":{"__ndarray__":"AAAAAAAADEBmZmZmZmYGQMzMzMzMzBBAZmZmZmZmBkBmZmZmZmYGQGZmZmZmZhZAzMzMzMzMIEBmZmZmZmYWQGZmZmZmZhZAzMzMzMzMHkCZmZmZmZkTQGZmZmZmZgZAzMzMzMzMHkDMzMzMzMwQQMzMzMzMzBBAmZmZmZmZE0BmZmZmZmYGQGZmZmZmZgZAZmZmZmZmBkBmZmZmZmYGQGZmZmZmZgZAZmZmZmZmBkAAAAAAAAAMQGZmZmZmZgZAAAAAAAAAHEDMzMzMzMwQQAAAAAAAAAxAZmZmZmZmBkBmZmZmZmYGQGZmZmZmZgZAZmZmZmZmBkA=","dtype":"float64","order":"little","shape":[31]},"end":{"__ndarray__":"CwAAAAUAAAAXAAAACgAAABYAAAAUAAAADwAAABkAAAAlAAAAHQAAACAAAAASAAAAFQAAABwAAAARAAAACAAAAAEAAAAGAAAAEAAAAAMAAAACAAAADQAAABsAAAATAAAAIwAAACIAAAAMAAAAGAAAAA4AAAAkAAAABAAAAA==","dtype":"int32","order":"little","shape":[31]},"start":{"__ndarray__":"AAAAAAsAAAAFAAAAFwAAAAoAAAAJAAAAFAAAAA8AAAAZAAAAJQAAAB0AAAAfAAAAEgAAABUAAAAaAAAAEQAAAAgAAAAHAAAABgAAABAAAAADAAAAAgAAAA0AAAAbAAAAIQAAACMAAAAeAAAADAAAABgAAAAOAAAAJAAAAA==","dtype":"int32","order":"little","shape":[31]}},"selected":{"id":"2287"},"selection_policy":{"id":"2288"}},"id":"2250","type":"ColumnDataSource"},{"attributes":{},"id":"2271","type":"NodesAndLinkedEdges"},{"attributes":{"graph_layout":{"0":[0,0],"1":[2,0],"10":[0,4],"11":[0,1],"12":[3,6],"13":[2,6],"14":[3,4],"15":[0,8],"16":[2,3],"17":[1,1],"18":[1,5],"19":[2,8],"2":[2,5],"20":[0,7],"21":[1,4],"22":[0,5],"23":[0,3],"24":[3,5],"25":[0,9],"26":[1,2],"27":[2,7],"28":[1,3],"29":[1,8],"3":[2,4],"30":[3,7],"31":[1,6],"32":[1,7],"33":[2,9],"34":[3,8],"35":[3,9],"36":[3,3],"37":[1,9],"4":[3,2],"5":[0,2],"6":[2,2],"7":[2,1],"8":[1,0],"9":[0,6]}},"id":"2251","type":"StaticLayoutProvider"},{"attributes":{},"id":"2240","type":"ResetTool"},{"attributes":{},"id":"2238","type":"WheelZoomTool"},{"attributes":{"margin":[5,5,5,5],"name":"HSpacer10665","sizing_mode":"stretch_width"},"id":"2215","type":"Spacer"},{"attributes":{},"id":"2237","type":"PanTool"},{"attributes":{},"id":"2273","type":"NodesAndLinkedEdges"},{"attributes":{},"id":"2236","type":"SaveTool"},{"attributes":{},"id":"2233","type":"BasicTicker"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"2218"},{"id":"2236"},{"id":"2237"},{"id":"2238"},{"id":"2239"},{"id":"2240"}]},"id":"2242","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"2241","type":"BoxAnnotation"},{"attributes":{"children":[{"id":"2215"},{"id":"2219"},{"id":"2299"}],"margin":[0,0,0,0],"name":"Row10661","tags":["embedded"]},"id":"2214","type":"Row"},{"attributes":{"axis":{"id":"2232"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"2235","type":"Grid"},{"attributes":{"margin":[5,5,5,5],"name":"HSpacer10666","sizing_mode":"stretch_width"},"id":"2299","type":"Spacer"},{"attributes":{},"id":"2275","type":"BasicTickFormatter"},{"attributes":{"axis_label":"y","bounds":"auto","formatter":{"id":"2277"},"major_label_orientation":"horizontal","ticker":{"id":"2233"},"visible":false},"id":"2232","type":"LinearAxis"},{"attributes":{},"id":"2277","type":"BasicTickFormatter"},{"attributes":{"axis":{"id":"2228"},"grid_line_color":null,"ticker":null},"id":"2231","type":"Grid"},{"attributes":{},"id":"2229","type":"BasicTicker"},{"attributes":{"end":3.3,"reset_end":3.3,"reset_start":-0.30000000000000004,"start":-0.30000000000000004,"tags":[[["x","x",null]]]},"id":"2216","type":"Range1d"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#30a2da"},"line_alpha":{"value":0.2},"size":{"field":"node_size","units":"screen"}},"id":"2253","type":"Circle"},{"attributes":{"axis_label":"x","bounds":"auto","formatter":{"id":"2275"},"major_label_orientation":"horizontal","ticker":{"id":"2229"},"visible":false},"id":"2228","type":"LinearAxis"},{"attributes":{"line_color":{"value":"green"},"line_width":{"field":"edge_line_width"}},"id":"2259","type":"MultiLine"},{"attributes":{},"id":"2288","type":"UnionRenderers"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"field":"edge_line_width"}},"id":"2258","type":"MultiLine"},{"attributes":{"fill_color":{"value":"red"},"size":{"field":"node_size","units":"screen"}},"id":"2254","type":"Circle"},{"attributes":{"fill_color":{"value":"lime"},"size":{"field":"node_size","units":"screen"}},"id":"2252","type":"Circle"},{"attributes":{},"id":"2287","type":"Selection"},{"attributes":{},"id":"2286","type":"UnionRenderers"},{"attributes":{"align":null,"below":[{"id":"2228"}],"center":[{"id":"2231"},{"id":"2235"}],"left":[{"id":"2232"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":1000,"plot_width":1000,"renderers":[{"id":"2262"}],"sizing_mode":"fixed","title":{"id":"2220"},"toolbar":{"id":"2242"},"toolbar_location":null,"x_range":{"id":"2216"},"x_scale":{"id":"2224"},"y_range":{"id":"2217"},"y_scale":{"id":"2226"}},"id":"2219","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"2224","type":"LinearScale"},{"attributes":{"data_source":{"id":"2249"},"glyph":{"id":"2252"},"hover_glyph":{"id":"2254"},"muted_glyph":null,"nonselection_glyph":{"id":"2253"},"selection_glyph":null,"view":{"id":"2256"}},"id":"2255","type":"GlyphRenderer"},{"attributes":{},"id":"2226","type":"LinearScale"},{"attributes":{"line_color":{"value":"gold"},"line_width":{"field":"edge_line_width"}},"id":"2257","type":"MultiLine"},{"attributes":{"edge_renderer":{"id":"2260"},"inspection_policy":{"id":"2273"},"layout_provider":{"id":"2251"},"node_renderer":{"id":"2255"},"selection_policy":{"id":"2271"}},"id":"2262","type":"GraphRenderer"},{"attributes":{"end":9.9,"reset_end":9.9,"reset_start":-0.9,"start":-0.9,"tags":[[["y","y",null]]]},"id":"2217","type":"Range1d"},{"attributes":{"data_source":{"id":"2250"},"glyph":{"id":"2257"},"hover_glyph":{"id":"2259"},"muted_glyph":null,"nonselection_glyph":{"id":"2258"},"selection_glyph":null,"view":{"id":"2261"}},"id":"2260","type":"GlyphRenderer"},{"attributes":{"source":{"id":"2249"}},"id":"2256","type":"CDSView"},{"attributes":{},"id":"2285","type":"Selection"}],"root_ids":["2214"]},"title":"Bokeh Application","version":"2.2.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('2421').textContent;
+                  var render_items = [{"docid":"01512aac-5cec-407b-8529-ab1a850c9a43","root_ids":["2214"],"roots":{"2214":"d034e344-575a-497d-8db7-b7280575c53c"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
