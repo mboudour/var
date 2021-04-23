@@ -1,0 +1,554 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>WikipediaNetworkHyperlinkContinentalPhilosophers&amp;PhilosophicalMovements_LSCC_Harman</title>
+      
+      
+        
+          
+        <style>
+            .panel-widget-box {
+                	min-height: 20px;
+                	background-color: #f5f5f5;
+                	border: 1px solid #e3e3e3 !important;
+                	border-radius: 4px;
+                	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	overflow-x: hidden;
+                	overflow-y: hidden;
+                }
+
+                .scrollable {
+                  overflow: scroll;
+                }
+
+                progress {
+                	appearance: none;
+                	-moz-appearance: none;
+                	-webkit-appearance: none;
+
+                	border: none;
+                	height: 20px;
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                	color: royalblue;
+                	position: relative;
+                	margin: 0 0 1.5em;
+                }
+
+                progress[value]::-webkit-progress-bar {
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                }
+
+                progress[value]::-webkit-progress-value {
+                	position: relative;
+
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress.active:not([value])::before {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress[value]::-moz-progress-bar {
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress:not([value])::-moz-progress-bar {
+                	border-radius:3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+
+                }
+
+                progress.active:not([value])::-moz-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.active:not([value])::-webkit-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.primary[value]::-webkit-progress-value { background-color: #007bff; }
+                progress.primary:not([value])::before { background-color: #007bff; }
+                progress.primary:not([value])::-webkit-progress-bar { background-color: #007bff; }
+                progress.primary::-moz-progress-bar { background-color: #007bff; }
+
+                progress.secondary[value]::-webkit-progress-value { background-color: #6c757d; }
+                progress.secondary:not([value])::before { background-color: #6c757d; }
+                progress.secondary:not([value])::-webkit-progress-bar { background-color: #6c757d; }
+                progress.secondary::-moz-progress-bar { background-color: #6c757d; }
+
+                progress.success[value]::-webkit-progress-value { background-color: #28a745; }
+                progress.success:not([value])::before { background-color: #28a745; }
+                progress.success:not([value])::-webkit-progress-bar { background-color: #28a745; }
+                progress.success::-moz-progress-bar { background-color: #28a745; }
+
+                progress.danger[value]::-webkit-progress-value { background-color: #dc3545; }
+                progress.danger:not([value])::before { background-color: #dc3545; }
+                progress.danger:not([value])::-webkit-progress-bar { background-color: #dc3545; }
+                progress.danger::-moz-progress-bar { background-color: #dc3545; }
+
+                progress.warning[value]::-webkit-progress-value { background-color: #ffc107; }
+                progress.warning:not([value])::before { background-color: #ffc107; }
+                progress.warning:not([value])::-webkit-progress-bar { background-color: #ffc107; }
+                progress.warning::-moz-progress-bar { background-color: #ffc107; }
+
+                progress.info[value]::-webkit-progress-value { background-color: #17a2b8; }
+                progress.info:not([value])::before { background-color: #17a2b8; }
+                progress.info:not([value])::-webkit-progress-bar { background-color: #17a2b8; }
+                progress.info::-moz-progress-bar { background-color: #17a2b8; }
+
+                progress.light[value]::-webkit-progress-value { background-color: #f8f9fa; }
+                progress.light:not([value])::before { background-color: #f8f9fa; }
+                progress.light:not([value])::-webkit-progress-bar { background-color: #f8f9fa; }
+                progress.light::-moz-progress-bar { background-color: #f8f9fa; }
+
+                progress.dark[value]::-webkit-progress-value { background-color: #343a40; }
+                progress.dark:not([value])::-webkit-progress-bar { background-color: #343a40; }
+                progress.dark:not([value])::before { background-color: #343a40; }
+                progress.dark::-moz-progress-bar { background-color: #343a40; }
+
+                progress:not([value])::-webkit-progress-bar {
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+                progress:not([value])::before {
+                	content:" ";
+                	position:absolute;
+                	height: 20px;
+                	top:0;
+                	left:0;
+                	right:0;
+                	bottom:0;
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+
+                @keyframes stripes {
+                  from {background-position: 0%}
+                  to {background-position: 100%}
+                }
+
+        </style>
+        <style>
+            .codehilite .hll { background-color: #ffffcc }
+                .codehilite  { background: #f8f8f8; }
+                .codehilite .c { color: #408080; font-style: italic } /* Comment */
+                .codehilite .err { border: 1px solid #FF0000 } /* Error */
+                .codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+                .codehilite .o { color: #666666 } /* Operator */
+                .codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+                .codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+                .codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+                .codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+                .codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+                .codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+                .codehilite .gd { color: #A00000 } /* Generic.Deleted */
+                .codehilite .ge { font-style: italic } /* Generic.Emph */
+                .codehilite .gr { color: #FF0000 } /* Generic.Error */
+                .codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+                .codehilite .gi { color: #00A000 } /* Generic.Inserted */
+                .codehilite .go { color: #888888 } /* Generic.Output */
+                .codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+                .codehilite .gs { font-weight: bold } /* Generic.Strong */
+                .codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+                .codehilite .gt { color: #0044DD } /* Generic.Traceback */
+                .codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+                .codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+                .codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+                .codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+                .codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+                .codehilite .kt { color: #B00040 } /* Keyword.Type */
+                .codehilite .m { color: #666666 } /* Literal.Number */
+                .codehilite .s { color: #BA2121 } /* Literal.String */
+                .codehilite .na { color: #7D9029 } /* Name.Attribute */
+                .codehilite .nb { color: #008000 } /* Name.Builtin */
+                .codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+                .codehilite .no { color: #880000 } /* Name.Constant */
+                .codehilite .nd { color: #AA22FF } /* Name.Decorator */
+                .codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+                .codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+                .codehilite .nf { color: #0000FF } /* Name.Function */
+                .codehilite .nl { color: #A0A000 } /* Name.Label */
+                .codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+                .codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+                .codehilite .nv { color: #19177C } /* Name.Variable */
+                .codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+                .codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+                .codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+                .codehilite .mf { color: #666666 } /* Literal.Number.Float */
+                .codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+                .codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+                .codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+                .codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+                .codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+                .codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+                .codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+                .codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+                .codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+                .codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+                .codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+                .codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+                .codehilite .sx { color: #008000 } /* Literal.String.Other */
+                .codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+                .codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+                .codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+                .codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+                .codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+                .codehilite .vc { color: #19177C } /* Name.Variable.Class */
+                .codehilite .vg { color: #19177C } /* Name.Variable.Global */
+                .codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+                .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+                .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+                .markdown h1 { margin-block-start: 0.34em }
+                .markdown h2 { margin-block-start: 0.42em }
+                .markdown h3 { margin-block-start: 0.5em }
+                .markdown h4 { margin-block-start: 0.67em }
+                .markdown h5 { margin-block-start: 0.84em }
+                .markdown h6 { margin-block-start: 1.17em }
+                .markdown ul { padding-inline-start: 2em }
+                .markdown ol { padding-inline-start: 2em }
+                .markdown strong { font-weight: 600 }
+                .markdown a { color: -webkit-link }
+                .markdown a { color: -moz-hyperlinkText }
+
+        </style>
+        <style>
+            .json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-row,
+                .json-formatter-row a,
+                .json-formatter-row a:hover {
+                  color: black;
+                  text-decoration: none;
+                }
+                .json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-row .json-formatter-string,
+                .json-formatter-row .json-formatter-stringifiable {
+                  color: green;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-row .json-formatter-number {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-boolean {
+                  color: red;
+                }
+                .json-formatter-row .json-formatter-null {
+                  color: #855A00;
+                }
+                .json-formatter-row .json-formatter-undefined {
+                  color: #ca0b69;
+                }
+                .json-formatter-row .json-formatter-function {
+                  color: #FF20ED;
+                }
+                .json-formatter-row .json-formatter-date {
+                  background-color: rgba(0, 0, 0, 0.05);
+                }
+                .json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: blue;
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-bracket {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-key {
+                  color: #00008B;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+                .json-formatter-dark.json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-dark.json-formatter-row,
+                .json-formatter-dark.json-formatter-row a,
+                .json-formatter-dark.json-formatter-row a:hover {
+                  color: white;
+                  text-decoration: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-string,
+                .json-formatter-dark.json-formatter-row .json-formatter-stringifiable {
+                  color: #31F031;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-number {
+                  color: #66C2FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-boolean {
+                  color: #EC4242;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-null {
+                  color: #EEC97D;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-undefined {
+                  color: #ef8fbe;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-function {
+                  color: #FD48CB;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-date {
+                  background-color: rgba(255, 255, 255, 0.05);
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: #027BFF;
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-bracket {
+                  color: #9494FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-key {
+                  color: #23A0DB;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+
+        </style>
+        <style>
+            table.panel-df {
+                    margin-left: auto;
+                    margin-right: auto;
+                    border: none;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    color: black;
+                    font-size: 12px;
+                    table-layout: fixed;
+                    width: 100%;
+                }
+
+                .panel-df tr, .panel-df th, .panel-df td {
+                    text-align: right;
+                    vertical-align: middle;
+                    padding: 0.5em 0.5em !important;
+                    line-height: normal;
+                    white-space: normal;
+                    max-width: none;
+                    border: none;
+                }
+
+                .panel-df tbody {
+                    display: table-row-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                }
+
+                .panel-df tbody tr:nth-child(odd) {
+                    background: #f5f5f5;
+                }
+
+                .panel-df thead {
+                    border-bottom: 1px solid black;
+                    vertical-align: bottom;
+                }
+
+                .panel-df tr:hover {
+                    background: lightblue !important;
+                    cursor: pointer;
+                }
+
+        </style>
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.3.min.js" integrity="sha384-T2yuo9Oe71Cz/I4X9Ac5+gpEa5a8PpJCDlqKYO0CfAuEszu1JrXLl8YugMqYe3sM" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="c1cc7196-487d-4473-81d9-967380409a8e" data-root-id="5731"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="6064">
+          {"899932d5-043b-4020-a6c2-c75a1d1b1c22":{"roots":{"references":[{"attributes":{},"id":"5741","type":"LinearScale"},{"attributes":{"source":{"id":"5773"}},"id":"5782","type":"CDSView"},{"attributes":{},"id":"5817","type":"UnionRenderers"},{"attributes":{"end":322.4625,"reset_end":322.4625,"reset_start":96.0675,"start":96.0675,"tags":[[["x","x",null]]]},"id":"5733","type":"Range1d"},{"attributes":{"fill_color":{"value":"red"},"size":{"field":"node_size","units":"screen"}},"id":"5779","type":"Circle"},{"attributes":{"children":[{"id":"5732"},{"id":"5736"},{"id":"5918"}],"margin":[0,0,0,0],"name":"Row1732105","tags":["embedded"]},"id":"5731","type":"Row"},{"attributes":{},"id":"5746","type":"BasicTicker"},{"attributes":{"line_alpha":{"value":0.2}},"id":"5784","type":"MultiLine"},{"attributes":{},"id":"5754","type":"PanTool"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"5772"}},"line_alpha":{"value":0.2},"size":{"field":"node_size","units":"screen"}},"id":"5777","type":"Circle"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"5759","type":"BoxAnnotation"},{"attributes":{},"id":"5755","type":"WheelZoomTool"},{"attributes":{},"id":"5771","type":"BasicTickFormatter"},{"attributes":{},"id":"5757","type":"ResetTool"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"5772"}},"size":{"field":"node_size","units":"screen"}},"id":"5778","type":"Circle"},{"attributes":{},"id":"5799","type":"NodesAndLinkedEdges"},{"attributes":{"end":221.2625,"reset_end":221.2625,"reset_start":-8.5125,"start":-8.5125,"tags":[[["y","y",null]]]},"id":"5734","type":"Range1d"},{"attributes":{"text":"The Graham Harman egocentric subgraph","text_color":{"value":"black"},"text_font_size":{"value":"9pt"}},"id":"5737","type":"Title"},{"attributes":{"line_color":{"value":"green"}},"id":"5785","type":"MultiLine"},{"attributes":{"text":{"field":"index"},"text_align":"center","text_baseline":"middle","text_color":{"value":"black"},"text_font_size":{"value":"9pt"},"x":{"field":"x","transform":{"id":"5801"}},"y":{"field":"y","transform":{"id":"5802"}}},"id":"5806","type":"Text"},{"attributes":{"data_source":{"id":"5803"},"glyph":{"id":"5806"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"5807"},"selection_glyph":null,"view":{"id":"5809"}},"id":"5808","type":"GlyphRenderer"},{"attributes":{},"id":"5753","type":"SaveTool"},{"attributes":{},"id":"5797","type":"NodesAndLinkedEdges"},{"attributes":{"align":null,"background_fill_color":"white","below":[{"id":"5745"}],"center":[{"id":"5748"},{"id":"5752"}],"left":[{"id":"5749"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"outline_line_alpha":0,"plot_height":1000,"plot_width":1000,"renderers":[{"id":"5788"},{"id":"5808"}],"sizing_mode":"fixed","title":{"id":"5737"},"toolbar":{"id":"5760"},"toolbar_location":null,"x_range":{"id":"5733"},"x_scale":{"id":"5741"},"y_range":{"id":"5734"},"y_scale":{"id":"5743"}},"id":"5736","subtype":"Figure","type":"Plot"},{"attributes":{"line_color":{"value":"lightblue"}},"id":"5783","type":"MultiLine"},{"attributes":{"axis_label":"x","bounds":"auto","formatter":{"id":"5769"},"major_label_orientation":"horizontal","ticker":{"id":"5746"},"visible":false},"id":"5745","type":"LinearAxis"},{"attributes":{"source":{"id":"5774"}},"id":"5787","type":"CDSView"},{"attributes":{"margin":[5,5,5,5],"name":"HSpacer1732110","sizing_mode":"stretch_width"},"id":"5918","type":"Spacer"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"5772"}},"size":{"field":"node_size","units":"screen"}},"id":"5780","type":"Circle"},{"attributes":{},"id":"5769","type":"BasicTickFormatter"},{"attributes":{"data":{"end":{"__ndarray__":"DQAAAAUAAAADAAAABwAAABAAAAACAAAACQAAAA8AAAAGAAAAEQAAAAcAAAAKAAAAEAAAAAMAAAAJAAAAAQAAAA8AAAAGAAAAEQAAAAcAAAAKAAAAEAAAAAIAAAARAAAABwAAAAoAAAADAAAABwAAAAgAAAASAAAAEAAAAAIAAAADAAAAAQAAAAsAAAAPAAAADAAAAAcAAAAEAAAADgAAAAoAAAAFAAAAEAAAAAIAAAADAAAACQAAAAEAAAAPAAAAEQAAAAcAAAAKAAAAEAAAAAIAAAADAAAACQAAAAEAAAAPAAAABgAAABEAAAAKAAAAEgAAAAUAAAADAAAAAQAAAAcAAAAOAAAADQAAAAgAAAAFAAAAEAAAAAIAAAABAAAADwAAAAYAAAARAAAABwAAAAoAAAAQAAAAAgAAAAMAAAAJAAAAAQAAAA8AAAAGAAAAEQAAAAcAAAAQAAAABQAAABAAAAACAAAAAAAAAAkAAAAPAAAABwAAAAgAAAAFAAAAEAAAAAIAAAADAAAADwAAAAwAAAANAAAABQAAABAAAAACAAAAAwAAAAkAAAABAAAABgAAABEAAAAHAAAACgAAAAUAAAACAAAAAwAAAAkAAAABAAAACwAAAA8AAAAGAAAAEQAAAAcAAAAOAAAACgAAAAUAAAAQAAAAAgAAAAMAAAAHAAAADgAAAAoAAAAHAAAA","dtype":"int32","order":"little","shape":[132]},"start":{"__ndarray__":"AAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAwAAAAMAAAADAAAAAwAAAAMAAAAEAAAABAAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACQAAAAkAAAAJAAAACQAAAAkAAAAJAAAACQAAAAkAAAAJAAAACQAAAAkAAAAKAAAACgAAAAoAAAAKAAAACgAAAAoAAAAKAAAACgAAAAoAAAALAAAADQAAAA0AAAANAAAADQAAAA0AAAANAAAADQAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABEAAAARAAAAEQAAABEAAAARAAAAEQAAABEAAAASAAAA","dtype":"int32","order":"little","shape":[132]},"xs":[{"__ndarray__":"AAAAAAAIYUDNzMzMzGRhQAAAAAAAAPh/IK5PqSQhYUDNzMzMzGRhQGt5arOMmmFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAIYUAfhetRuE5qQAAAAAAAAPh/r7Cc/O6vaUAfhetRuE5qQODsd+LK3GlA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAIYUCPwvUoXA9uQAAAAAAAAPh/aJIMa/5xbUCPwvUoXA9uQKjCMtsCkW1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAIYUB7FK5H4bJnQAAAAAAAAPh/yGBXl5gWZ0B7FK5H4bJnQFQRLVJLWGdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"FK5H4XqkcEC4HoXrUVBoQAAAAAAAAPh/Iav7NSOnaEC4HoXrUVBoQDUmsuW762hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"FK5H4XqkcEAfhetRuPZrQAAAAAAAAPh/O1cqG+cxbEAfhetRuPZrQMx3tivFiGxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"FK5H4XqkcEBxPQrXo3hnQAAAAAAAAPh/HBg+kI72Z0BxPQrXo3hnQHYSZJwZFmhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"FK5H4XqkcEA9CtejcD1tQAAAAAAAAPh/GSYfqyGcbUA9CtejcD1tQCrT9KWK2m1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"FK5H4XqkcECamZmZmUVwQAAAAAAAAPh/aX7tY6sucECamZmZmUVwQB8Vs5Qja3BA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"FK5H4XqkcED2KFyPwl1xQAAAAAAAAPh/1jVgZaEocUD2KFyPwl1xQPBzIZnqYXFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"FK5H4XqkcEB7FK5H4bJnQAAAAAAAAPh/5eqhVpFPaEB7FK5H4bJnQK0Rs7bxM2hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"FK5H4XqkcEBI4XoUrk9sQAAAAAAAAPh/dbbUNMdfbEBI4XoUrk9sQMpZCJfGymxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0C4HoXrUVBoQAAAAAAAAPh/0rC+8w7VaEC4HoXrUVBoQLgmzhfS62hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0CPwvUoXA9uQAAAAAAAAPh/o25+d1EnbkCPwvUoXA9uQGJsoZNLsW1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0BxPQrXo3hnQAAAAAAAAPh/kldsfEsVaEBxPQrXo3hnQJq3vYoA1WdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0AUrkfheqRwQAAAAAAAAPh/BkWofOOGcEAUrkfheqRwQL40YnR0W3BA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0A9CtejcD1tQAAAAAAAAPh/3XUoB0A8bUA9CtejcD1tQA4oYolPzGxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0CamZmZmUVwQAAAAAAAAPh/VMUHMmnsb0CamZmZmUVwQMeYutI3DnBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0D2KFyPwl1xQAAAAAAAAPh/laH8ysIbcUD2KFyPwl1xQNjRr2LgD3FA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0B7FK5H4bJnQAAAAAAAAPh/785FdUQvaEB7FK5H4bJnQEUQGe4GxWdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbj2a0BI4XoUrk9sQAAAAAAAAPh/X6GWksYFbEBI4XoUrk9sQGiSr8vPfmxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFwPbkC4HoXrUVBoQAAAAAAAAPh/2j3wKmFqaEC4HoXrUVBoQMAlUAeE0WhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFwPbkAfhetRuPZrQAAAAAAAAPh/C9liA8Pea0AfhetRuPZrQEzbP+fIVGxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFwPbkD2KFyPwl1xQAAAAAAAAPh/b0C1WkAccUD2KFyPwl1xQMq+ZncqT3FA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFwPbkB7FK5H4bJnQAAAAAAAAPh/kvWHxVA8aEB7FK5H4bJnQPjtuvVRTGhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFwPbkBI4XoUrk9sQAAAAAAAAPh/ytsqsiQobEBI4XoUrk9sQOzBFol6oGxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"pHA9CtdLakCPwvUoXA9uQAAAAAAAAPh/St+yJfShbUCPwvUoXA9uQMFjsnpjE25A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"pHA9CtdLakB7FK5H4bJnQAAAAAAAAPh/xhirK6+aZ0B7FK5H4bJnQDR5S0bAEGhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakBxPQrXozhtQAAAAAAAAPh/5yEd/d8zbUBxPQrXozhtQNIlprMHxWxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakDD9Shcj4JkQAAAAAAAAPh/UfUQOcAFZUDD9Shcj4JkQB2SA/cMoGRA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakC4HoXrUVBoQAAAAAAAAPh/o+7nydM0aEC4HoXrUVBoQP5J1qd5q2hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakAfhetRuPZrQAAAAAAAAPh/2arx4FWea0AfhetRuPZrQIrh47qDFWxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakCPwvUoXA9uQAAAAAAAAPh/MaRWaeqAbUCPwvUoXA9uQCzJHjz/eG1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakAUrkfheqRwQAAAAAAAAPh/5tB9cxRVcEAUrkfheqRwQJq1iJ74a3BA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakBcj8L1KIxeQAAAAAAAAPh/03iFDEYoX0Bcj8L1KIxeQJ4iWvIgvl9A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakA9CtejcD1tQAAAAAAAAPh/HA5nV+bAbEA9CtejcD1tQCxiL2sMK21A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakA9CtejcIVyQAAAAAAAAPh/nCfmdLpackA9CtejcIVyQHlilmPoN3JA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakB7FK5H4bJnQAAAAAAAAPh/pSCIqD00aEB7FK5H4bJnQHRWiuB7T2hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakCkcD0K10tqQAAAAAAAAPh/A/EvrcaIakCkcD0K10tqQMcus7A7D2pA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakCuR+F6FCZyQAAAAAAAAPh/DskSD0nccUCuR+F6FCZyQDVHbMos3XFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"H4XrUbhOakBI4XoUrk9sQAAAAAAAAPh/moy+brL7a0BI4XoUrk9sQNjMWiyZc2xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcEAfhetRuE5qQAAAAAAAAPh/2vUC0OrOakAfhetRuE5qQNwkXsgYZ2pA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcEC4HoXrUVBoQAAAAAAAAPh/lubLD5vqaEC4HoXrUVBoQHqg67UC2GhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcEAfhetRuPZrQAAAAAAAAPh///IWU4KVbEAfhetRuPZrQMWGqd97ZWxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcECPwvUoXA9uQAAAAAAAAPh/m0YLAE1sbkCPwvUoXA9uQNUC1ysH9m1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcEBxPQrXo3hnQAAAAAAAAPh/LEWG+scWaEBxPQrXo3hnQFtGapE33mdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcEAUrkfheqRwQAAAAAAAAPh/RcnzFmm7cEAUrkfheqRwQI8yLubwfnBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcEA9CtejcD1tQAAAAAAAAPh/iXtUXiHBbUA9CtejcD1tQLhvyQPOW21A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcED2KFyPwl1xQAAAAAAAAPh/vIoCxr9OcUD2KFyPwl1xQPBqAToDHHFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcEB7FK5H4bJnQAAAAAAAAPh/eODeCdVCaEB7FK5H4bJnQBGISDJB6WdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"mpmZmZlFcEBI4XoUrk9sQAAAAAAAAPh/dPZZvGS+bEBI4XoUrk9sQBWzZdZ37mxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0C4HoXrUVBoQAAAAAAAAPh/D1LsI/YIaEC4HoXrUVBoQCe8RIEtgmhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0AfhetRuPZrQAAAAAAAAPh/q8pTJFV6a0AfhetRuPZrQFWJgKuS5GtA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0CPwvUoXA9uQAAAAAAAAPh/eOEbq+yFbUCPwvUoXA9uQBLp6HrrdW1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0BxPQrXo3hnQAAAAAAAAPh/oVRjScZCZ0BxPQrXo3hnQMu3xnUvvGdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0AUrkfheqRwQAAAAAAAAPh/38LN2SJWcEAUrkfheqRwQHsvxanyY3BA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0A9CtejcD1tQAAAAAAAAPh/DTWN+wambEA9CtejcD1tQHMRNbg79GxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0CamZmZmUVwQAAAAAAAAPh/N2cCcT/7b0CamZmZmUVwQM9fTKRpKnBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0D2KFyPwl1xQAAAAAAAAPh/1LO+gQEPcUD2KFyPwl1xQPOpJ6A6LXFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"exSuR+GyZ0BI4XoUrk9sQAAAAAAAAPh/g2OLgozga0BI4XoUrk9sQG87K+FPUWxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16M4bUDD9Shcj4JkQAAAAAAAAPh/tCUQfBsgZUDD9Shcj4JkQMRMIxgPAGVA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16M4bUAfhetRuE5qQAAAAAAAAPh/qaDYK3xTakAfhetRuE5qQL6cT3VUwmpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16M4bUCPwvUoXA9uQAAAAAAAAPh/fj0AOZC/bUCPwvUoXA9uQGVa+jwFOG5A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16M4bUAUrkfheqRwQAAAAAAAAPh/0lYVq0trcEAUrkfheqRwQCF+MTj/onBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16M4bUB7FK5H4bJnQAAAAAAAAPh/Sx48RTndZ0B7FK5H4bJnQBsZAhQMPWhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16M4bUCuR+F6FCZyQAAAAAAAAPh/KuWtXMLbcUCuR+F6FCZyQABXOQhKBXJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0DNzMzMzGRhQAAAAAAAAPh/SdiS1d4BYkDNzMzMzGRhQHbgBgNp5GFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0BxPQrXozhtQAAAAAAAAPh/DJkETswvbUBxPQrXozhtQDPg0VpFwmxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0AfhetRuE5qQAAAAAAAAPh/spvqUzBBakAfhetRuE5qQME5Pe9E1WlA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0C4HoXrUVBoQAAAAAAAAPh/KPeMON7yZ0C4HoXrUVBoQH/AV08HaWhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0AfhetRuPZrQAAAAAAAAPh//mqJrBBaa0AfhetRuPZrQPYKOJ5bmmtA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0AUrkfheqRwQAAAAAAAAPh/vsCthIVlcEAUrkfheqRwQJLDmv6/VXBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0A9CtejcD1tQAAAAAAAAPh/FmUFHxytbEA9CtejcD1tQLQyetuLqGxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0CamZmZmUVwQAAAAAAAAPh/eSu3Dw/tb0CamZmZmUVwQCWVabzPEnBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0D2KFyPwl1xQAAAAAAAAPh/BUlHIh8RcUD2KFyPwl1xQFxqjJfiGHFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0B7FK5H4bJnQAAAAAAAAPh/S/1U1b7oZ0B7FK5H4bJnQCGa8ahVb2dA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"cT0K16N4Z0BI4XoUrk9sQAAAAAAAAPh/m6Tjp97Ha0BI4XoUrk9sQKhxx6LYKWxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbEC4HoXrUVBoQAAAAAAAAPh/mIhYTIXpaEC4HoXrUVBoQJw/T7EVn2hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbEAfhetRuPZrQAAAAAAAAPh/CMXP059AbEAfhetRuPZrQP/TtpqWx2tA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbECPwvUoXA9uQAAAAAAAAPh/DchFi+U2bkCPwvUoXA9uQOvhWbSPvm1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbEBxPQrXo3hnQAAAAAAAAPh/HnqhQ3MAaEBxPQrXo3hnQBGtvUh5nmdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbEAUrkfheqRwQAAAAAAAAPh/fsMaUW6ccEAUrkfheqRwQNPxAKDuZnBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbEA9CtejcD1tQAAAAAAAAPh/9gUu6dNlbUA9CtejcD1tQD5sXFBm7WxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbECamZmZmUVwQAAAAAAAAPh/BA+qRT4OcECamZmZmUVwQGdhSHFp7G9A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbED2KFyPwl1xQAAAAAAAAPh/pjV60343cUD2KFyPwl1xQCrPTMqBEXFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5PbEB7FK5H4bJnQAAAAAAAAPh/QJKd2QIiaEB7FK5H4bJnQFS6/Xo/sWdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"XI/C9SiMXkC4HoXrUVBoQAAAAAAAAPh/5J5oT3m7Z0C4HoXrUVBoQD84iNTuv2dA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"zczMzMxkYUAfhetRuE5qQAAAAAAAAPh/vs3FjEXhaUAfhetRuE5qQMr5vFD3r2lA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"zczMzMxkYUC4HoXrUVBoQAAAAAAAAPh/D0Nfqtu1Z0C4HoXrUVBoQNtptzIt/WdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"zczMzMxkYUAfhetRuPZrQAAAAAAAAPh/j90eFOtXa0AfhetRuPZrQLpwMXvjhWtA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"zczMzMxkYUAAAAAAAAhhQAAAAAAAAPh/rR59I6hLYUAAAAAAAAhhQGJTYhlA0mBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"zczMzMxkYUBxPQrXo3hnQAAAAAAAAPh/9TFEzpHbZkBxPQrXo3hnQMgp0KAH+WZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"zczMzMxkYUA9CtejcD1tQAAAAAAAAPh/bzp7BPekbEA9CtejcD1tQNDJ2F89smxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"zczMzMxkYUB7FK5H4bJnQAAAAAAAAPh/WFFDrexNZ0B7FK5H4bJnQImUJoPQFGdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"rkfhehQmckBxPQrXozhtQAAAAAAAAPh/eQJxE0jNbUBxPQrXozhtQM0eWrw4em1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"rkfhehQmckAfhetRuE5qQAAAAAAAAPh/X4KIKU/iakAfhetRuE5qQBCG1bKH4GpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"rkfhehQmckC4HoXrUVBoQAAAAAAAAPh/BX0VQ22iaEC4HoXrUVBoQBOOLdp+6mhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"rkfhehQmckAfhetRuPZrQAAAAAAAAPh/pVua3FA1bEAfhetRuPZrQC/9gX0uimxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"rkfhehQmckCPwvUoXA9uQAAAAAAAAPh/MNGyj5elbkCPwvUoXA9uQJVSza/7nW5A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"rkfhehQmckA9CtejcD1tQAAAAAAAAPh/ttTq2Z2QbUA9CtejcD1tQHn/HDXp121A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"rkfhehQmckA9CtejcIVyQAAAAAAAAPh/ZJyt0pKcckA9CtejcIVyQIKwiowWYHJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUDNzMzMzGRhQAAAAAAAAPh/m5wobEb9YUDNzMzMzGRhQDoNyxAA8GFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUAfhetRuE5qQAAAAAAAAPh/P4FbnkLLakAfhetRuE5qQDAtk4ocYWpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUC4HoXrUVBoQAAAAAAAAPh/h0KeKOigaEC4HoXrUVBoQKGqedIP6mhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUAfhetRuPZrQAAAAAAAAPh/fxma7uj3a0AfhetRuPZrQE5nYGzZZ2xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUCPwvUoXA9uQAAAAAAAAPh/PJXb89c1bkCPwvUoXA9uQK9lB8SgvW1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUBxPQrXo3hnQAAAAAAAAPh/mOLbW/gIaEBxPQrXo3hnQPoUZ5+IDWhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUAUrkfheqRwQAAAAAAAAPh/JqCjXSJ1cEAUrkfheqRwQJ3JOODtVXBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUCamZmZmUVwQAAAAAAAAPh/9OBaPMEDcECamZmZmUVwQN1moOlqNnBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUD2KFyPwl1xQAAAAAAAAPh/J5IKNr0OcUD2KFyPwl1xQFcFaRdkIHFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUB7FK5H4bJnQAAAAAAAAPh/q+n370pKaEB7FK5H4bJnQEUNUDMW/GdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"PQrXo3A9bUBI4XoUrk9sQAAAAAAAAPh/j+Ujz0onbEBI4XoUrk9sQEd/9We4n2xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaEAfhetRuE5qQAAAAAAAAPh/NLWIczZqakAfhetRuE5qQNlZmpWQ82lA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaEAfhetRuPZrQAAAAAAAAPh/BfOxSftxa0AfhetRuPZrQB99oiU4W2tA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaECPwvUoXA9uQAAAAAAAAPh/baOK6Uz1bUCPwvUoXA9uQIe7Kg0qjm1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaEBxPQrXo3hnQAAAAAAAAPh/AGUCihfWZ0BxPQrXo3hnQKqbN3PuX2dA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaEAUrkfheqRwQAAAAAAAAPh/4GcMPBJ5cEAUrkfheqRwQFUqMeTFVnBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaEBcj8L1KIxeQAAAAAAAAPh/BY/7Ldq1X0Bcj8L1KIxeQE5cvCPvrF9A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaEA9CtejcD1tQAAAAAAAAPh/bua9ZtrsbEA9CtejcD1tQFR+4ryyo2xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaECamZmZmUVwQAAAAAAAAPh/VmvsDurwb0CamZmZmUVwQLlYZjTBAXBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaED2KFyPwl1xQAAAAAAAAPh/a/52f6EbcUD2KFyPwl1xQNBMRyfsD3FA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaEB7FK5H4bJnQAAAAAAAAPh/JOFGDz36Z0B7FK5H4bJnQAx37rEFgWdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaECuR+F6FCZyQAAAAAAAAPh/iBgZzwb9cUCuR+F6FCZyQAAQjQP+2HFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61FQaEBI4XoUrk9sQAAAAAAAAPh/aHens3q2a0BI4XoUrk9sQGTAsE7qAGxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"9ihcj8JdcUAfhetRuE5qQAAAAAAAAPh/B+4veKbmakAfhetRuE5qQDcwvfF4mWpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"9ihcj8JdcUC4HoXrUVBoQAAAAAAAAPh/znNPC5TUaEC4HoXrUVBoQATXrrv+62hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"9ihcj8JdcUAfhetRuPZrQAAAAAAAAPh/4pOq2rd6bEAfhetRuPZrQFwzRKt8kmxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"9ihcj8JdcUCPwvUoXA9uQAAAAAAAAPh/nJNDkmCSbkCPwvUoXA9uQOaW4FiMLG5A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"9ihcj8JdcUB7FK5H4bJnQAAAAAAAAPh/v/7oYmNQaEB7FK5H4bJnQIESFybxE2hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"9ihcj8JdcUCuR+F6FCZyQAAAAAAAAPh/nFZvXy8zckCuR+F6FCZyQN5X15v493FA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"9ihcj8JdcUBI4XoUrk9sQAAAAAAAAPh/6Mc+jDWcbEBI4XoUrk9sQOGUmZ4v6GxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+CZEB7FK5H4bJnQAAAAAAAAPh/etSmdGxKZ0B7FK5H4bJnQCRjqw+ZvWdA","dtype":"float64","order":"little","shape":[6]}],"ys":[{"__ndarray__":"uB6F61EAYkAbL90kBrlUQAAAAAAAAPh/5AhMTF3YVUAbL90kBrlUQMzzEbLi41VA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61EAYkDD9Shcj6JcQAAAAAAAAPh/q7POt+WdXEDD9Shcj6JcQERvfyrSf11A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61EAYkAAAAAAACBdQAAAAAAAAPh/rlgwJl31XEAAAAAAACBdQBoVba1m4F1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"uB6F61EAYkCPwvUoXG9bQAAAAAAAAPh/qgO4bbanW0CPwvUoXG9bQIHfFuc5dFxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"2c73U+P1VkAzMzMzM2NFQAAAAAAAAPh/wSvQghV3R0AzMzMzM2NFQDonveC95UVA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"2c73U+P1VkCyne+nxitIQAAAAAAAAPh/Bkpyyjp5SkCyne+nxitIQDiDK0UwJUlA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"2c73U+P1VkBWDi2yna9RQAAAAAAAAPh/+8aefyVxUkBWDi2yna9RQN8E8atjhlFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"2c73U+P1VkA730+Nlx5SQAAAAAAAAPh/vVtaM48dU0A730+Nlx5SQGL/DZb3TFJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"2c73U+P1VkDRItv5fkpAQAAAAAAAAPh/sI/kLKWqQkDRItv5fkpAQC2q66k8ekJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"2c73U+P1VkBSuB6F65FNQAAAAAAAAPh/vze2DPtpT0BSuB6F65FNQEMBDbchBlBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"2c73U+P1VkCPwvUoXG9bQAAAAAAAAPh/oFiCgAijW0CPwvUoXG9bQIJ6Sf5OtlpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"2c73U+P1VkAAAAAAAAAyQAAAAAAAAPh/dnxGV+LvNkAAAAAAAAAyQDuLeduiIjVA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSEAzMzMzM2NFQAAAAAAAAPh/82uhGuS/RkAzMzMzM2NFQGuZXSVS4kRA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSEAAAAAAACBdQAAAAAAAAPh/Z3MfNgfmW0AAAAAAACBdQD4J3TgbIFxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSEBWDi2yna9RQAAAAAAAAPh/kKdmuIt7UUBWDi2yna9RQH55FNxArVBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSEDZzvdT4/VWQAAAAAAAAPh/r3i2QinPVUDZzvdT4/VWQBbcWYUueVZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSEA730+Nlx5SQAAAAAAAAPh/fkDjZ/7gUEA730+Nlx5SQLArE+uyP1FA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSEDRItv5fkpAQAAAAAAAAPh/VYSLwhNTQEDRItv5fkpAQNjJkOmvEUJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSEBSuB6F65FNQAAAAAAAAPh/Dida9sIwTEBSuB6F65FNQB2fWOiLDU5A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSECPwvUoXG9bQAAAAAAAAPh/J/W8r+mpWkCPwvUoXG9bQJIv+lnVM1pA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"sp3vp8YrSEAAAAAAAAAyQAAAAAAAAPh/Hwp9DHhkNkAAAAAAAAAyQNgtSIQvvTZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAgXUAzMzMzM2NFQAAAAAAAAPh/iuvkns3VR0AzMzMzM2NFQHhcs1uR1EZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAgXUCyne+nxitIQAAAAAAAAPh/5LawO7ifSkCyne+nxitIQDeLNTaQK0pA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAgXUBSuB6F65FNQAAAAAAAAPh/i2lyF+D4TkBSuB6F65FNQG6Cr/4nAVBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAgXUCPwvUoXG9bQAAAAAAAAPh/9qmdt3sOXECPwvUoXG9bQBN46JODHVtA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAgXUAAAAAAAAAyQAAAAAAAAPh/o1To+GzONkAAAAAAAAAyQLPLVwiyRTZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAABYaEAAAAAAACBdQAAAAAAAAPh/H2pzCTUGXkAAAAAAACBdQLxn8kKBXV5A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAABYaECPwvUoXG9bQAAAAAAAAPh/ma+3S0KpXECPwvUoXG9bQM2kfLyJb1xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEDsUbgehctkQAAAAAAAAPh/2WsPtsksZEDsUbgehctkQLURqhymXmRA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXECF61G4Hi1nQAAAAAAAAPh/fFFYnKLTZkCF61G4Hi1nQE+IASgUkWZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEAzMzMzM2NFQAAAAAAAAPh/kGeUlNLUR0AzMzMzM2NFQNeiT9NXa0dA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXECyne+nxitIQAAAAAAAAPh/VpoLuYM7SkCyne+nxitIQCeC38bumkpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEAAAAAAACBdQAAAAAAAAPh/qYU8EJmTXEAAAAAAACBdQGWbp9wqhl1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEDZzvdT4/VWQAAAAAAAAPh/jcrVg9PzVkDZzvdT4/VWQCg6Ou4B1VdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEDXo3A9CrdGQAAAAAAAAPh/F1Z5EDngSEDXo3A9CrdGQM/mMd9rYUdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEA730+Nlx5SQAAAAAAAAPh/667OSafjUkA730+Nlx5SQM5JFN4PWlNA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEDD9Shcj9JlQAAAAAAAAPh/SJEvZbBMZUDD9Shcj9JlQGFAGmZNsGVA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXECPwvUoXG9bQAAAAAAAAPh/kk1UvJQnXECPwvUoXG9bQBPAaxeuOltA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEAAAAAAAFhoQAAAAAAAAPh/+6ltWFrFZ0AAAAAAAFhoQEIPxm43xWdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEBI4XoUrldcQAAAAAAAAPh//TOT/nHiW0BI4XoUrldcQIHstFaB1VxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"w/UoXI+iXEAAAAAAAAAyQAAAAAAAAPh/FN+0yDs2NkAAAAAAAAAyQEgAWn2B1TZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQEDD9Shcj6JcQAAAAAAAAPh/AbWfER3nW0DD9Shcj6JcQHg1JJK3aFtA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQEAzMzMzM2NFQAAAAAAAAPh/wxRImKP5RUAzMzMzM2NFQCFS4skwGURA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQECyne+nxitIQAAAAAAAAPh/Ljw/3zEjSECyne+nxitIQKv2ObiVZEZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQEAAAAAAACBdQAAAAAAAAPh/EOxmAHgeXEAAAAAAACBdQFRKPrV15ltA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQEBWDi2yna9RQAAAAAAAAPh/B6SHEaOSUUBWDi2yna9RQJt9Xrd6u1BA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQEDZzvdT4/VWQAAAAAAAAPh/ahhzOtDFVUDZzvdT4/VWQCuL73sE3lVA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQEA730+Nlx5SQAAAAAAAAPh/CrTnhBhtUUA730+Nlx5SQOBGUE7Y5lBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQEBSuB6F65FNQAAAAAAAAPh/0lgkAykiS0BSuB6F65FNQMMB7ATFLUxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQECPwvUoXG9bQAAAAAAAAPh/nPqvHEDpWkCPwvUoXG9bQDIYtnrzRFpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"0SLb+X5KQEAAAAAAAAAyQAAAAAAAAPh/qjrEQsaONUAAAAAAAAAyQFw6w4O5ETJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0AzMzMzM2NFQAAAAAAAAPh/r2T5DqyaR0AzMzMzM2NFQMm897RLvkdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0Cyne+nxitIQAAAAAAAAPh/gjhhmqu2SUCyne+nxitIQK3D5kXUokpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0AAAAAAACBdQAAAAAAAAPh/mRhYceCAXEAAAAAAACBdQHxKDZXYcV1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0BWDi2yna9RQAAAAAAAAPh/cc/O42TaUkBWDi2yna9RQJbcy64Pz1JA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0DZzvdT4/VWQAAAAAAAAPh/yDhr/DbCVkDZzvdT4/VWQOYWpH7wrldA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0A730+Nlx5SQAAAAAAAAPh/OVn+iVt+UkA730+Nlx5SQIBj9ztwOFNA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0DRItv5fkpAQAAAAAAAAPh/uLJmErdWQUDRItv5fkpAQIp3WlZQn0JA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0BSuB6F65FNQAAAAAAAAPh/V49eLOPiTUBSuB6F65FNQLI411KsiE9A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"j8L1KFxvW0AAAAAAAAAyQAAAAAAAAPh/ArhIbIOLNUAAAAAAAAAyQMJmA4pc9jZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"7FG4HoXLZECF61G4Hi1nQAAAAAAAAPh/LQ+sEg5BZ0CF61G4Hi1nQJBbdjfQy2ZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"7FG4HoXLZEDD9Shcj6JcQAAAAAAAAPh/6MF6LQbgXUDD9Shcj6JcQDF2RWBNfF1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"7FG4HoXLZEAAAAAAACBdQAAAAAAAAPh/UkWcMZkyXkAAAAAAACBdQH+spRYFU15A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"7FG4HoXLZEDZzvdT4/VWQAAAAAAAAPh/PRWhfTzSV0DZzvdT4/VWQDr4rZJwM1hA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"7FG4HoXLZECPwvUoXG9bQAAAAAAAAPh/ncZu53ehXECPwvUoXG9bQAjFH6LtC1xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"7FG4HoXLZEBI4XoUrldcQAAAAAAAAPh/pJM9YnjHXEBI4XoUrldcQMDWyUPweF1A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUAbL90kBrlUQAAAAAAAAPh/9Xtdu9HnVEAbL90kBrlUQKeogGr7+1NA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUDsUbgehctkQAAAAAAAAPh/K/A6ePYsZEDsUbgehctkQJb8ysGnYWRA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUDD9Shcj6JcQAAAAAAAAPh/yPNaoBtmW0DD9Shcj6JcQN0oEj3u1VtA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUAzMzMzM2NFQAAAAAAAAPh/3z4pzsdkR0AzMzMzM2NFQD4afqOt1kdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUCyne+nxitIQAAAAAAAAPh/P2t8m+qTSECyne+nxitIQGLHIFSAMEpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUDZzvdT4/VWQAAAAAAAAPh/NBaGhls0VkDZzvdT4/VWQFDYM1odH1dA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUA730+Nlx5SQAAAAAAAAPh/zn0yDB6aUUA730+Nlx5SQHuD9S0IjVJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUDRItv5fkpAQAAAAAAAAPh/cPclO3SEQEDRItv5fkpAQEZEeO/EMkJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUBSuB6F65FNQAAAAAAAAPh/lmaA+8vrTEBSuB6F65FNQH8sYz78zU5A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUCPwvUoXG9bQAAAAAAAAPh/dAFU95REWkCPwvUoXG9bQE/0VizqT1pA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Vg4tsp2vUUAAAAAAAAAyQAAAAAAAAPh/wAMLGnGSNEAAAAAAAAAyQID2BfPY0TZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkAzMzMzM2NFQAAAAAAAAPh/BSS8NfW7REAzMzMzM2NFQBbQ7PufO0NA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkCyne+nxitIQAAAAAAAAPh/ohixoYr5RUCyne+nxitIQMaGy+UuzUVA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkAAAAAAACBdQAAAAAAAAPh/1+rFwWTsW0AAAAAAACBdQBMN6n2TDlxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkBWDi2yna9RQAAAAAAAAPh/Zk2qawELUUBWDi2yna9RQLaQa3Une1BA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkDZzvdT4/VWQAAAAAAAAPh/vC8mvuq5VUDZzvdT4/VWQApsGZ06LVZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkA730+Nlx5SQAAAAAAAAPh/nbO9nW3rUEA730+Nlx5SQNeVkgZHDFFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkDRItv5fkpAQAAAAAAAAPh/+ArysDcGPUDRItv5fkpAQKOF+TeiQUBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkBSuB6F65FNQAAAAAAAAPh/AAGwF1VlS0BSuB6F65FNQNL1n3DP4ExA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"AAAAAAAAMkCPwvUoXG9bQAAAAAAAAPh/jpTjTXuMWkCPwvUoXG9bQN7odAbFMVpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"16NwPQq3RkAzMzMzM2NFQAAAAAAAAPh/X9/g086FREAzMzMzM2NFQNn0khCna0ZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Gy/dJAa5VEDD9Shcj6JcQAAAAAAAAPh/evHGx268W0DD9Shcj6JcQGSDb2aemlxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Gy/dJAa5VEAzMzMzM2NFQAAAAAAAAPh/BhoCprf2RUAzMzMzM2NFQDeILxVlgEdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Gy/dJAa5VECyne+nxitIQAAAAAAAAPh/gV5zTLYoSECyne+nxitIQNwVJcPE6klA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Gy/dJAa5VEC4HoXrUQBiQAAAAAAAAPh/1LHNV6ZwYUC4HoXrUQBiQGC86qTjamFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Gy/dJAa5VEBWDi2yna9RQAAAAAAAAPh/fMGsG9KAUUBWDi2yna9RQMqUiWyobFJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Gy/dJAa5VEA730+Nlx5SQAAAAAAAAPh/RH6QC9PFUUA730+Nlx5SQBiZBsd0t1JA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"Gy/dJAa5VECPwvUoXG9bQAAAAAAAAPh/1cFHuDF6WkCPwvUoXG9bQJMQiTPGUFtA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5XXEDsUbgehctkQAAAAAAAAPh/vvjW95+TZEDsUbgehctkQDDXEAfkOmRA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5XXEDD9Shcj6JcQAAAAAAAAPh/DqMQcssXXUDD9Shcj6JcQIrq7hm8JFxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5XXEAzMzMzM2NFQAAAAAAAAPh/tOQ31OuCR0AzMzMzM2NFQI9rHJNv+0VA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5XXECyne+nxitIQAAAAAAAAPh/SKw9s49zSkCyne+nxitIQK8xD9eGF0lA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5XXEAAAAAAACBdQAAAAAAAAPh/dXvRY++GXUAAAAAAACBdQOZ6hnBTlFxA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5XXEA730+Nlx5SQAAAAAAAAPh/9XKKDiYtU0A730+Nlx5SQMA5BWRGaFJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"SOF6FK5XXEDD9Shcj9JlQAAAAAAAAPh/2AgGUaU6ZUDD9Shcj9JlQCrsDbdsRmVA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkAbL90kBrlUQAAAAAAAAPh/EpCcpsoRVUAbL90kBrlUQD51JusoIFRA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkDD9Shcj6JcQAAAAAAAAPh/Eyaqn3/dW0DD9Shcj6JcQDCLZAsXZ1tA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkAzMzMzM2NFQAAAAAAAAPh/2YJWKYyGR0AzMzMzM2NFQH/IL45MAkZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkCyne+nxitIQAAAAAAAAPh/K9vI8vimSkCyne+nxitIQMgEaeyP6UlA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkAAAAAAACBdQAAAAAAAAPh/cAl2HtzrW0AAAAAAACBdQM1YVyKwD1xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkBWDi2yna9RQAAAAAAAAPh/w29KMxc0UkBWDi2yna9RQBVqhxEtQVFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkDZzvdT4/VWQAAAAAAAAPh/V1Ltrev2VUDZzvdT4/VWQLKuOUuDx1ZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkDRItv5fkpAQAAAAAAAAPh/M3mrCn2tQUDRItv5fkpAQIZT2nf9uUJA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkBSuB6F65FNQAAAAAAAAPh/xtVMpsZTTUBSuB6F65FNQGLZaLr8JE9A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkCPwvUoXG9bQAAAAAAAAPh/kUhHLJgPW0CPwvUoXG9bQEo+TnqDVVpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"O99PjZceUkAAAAAAAAAyQAAAAAAAAPh/eq5IvqfMNkAAAAAAAAAyQI4l9RpCSTZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUDD9Shcj6JcQAAAAAAAAPh/lVt4q79pW0DD9Shcj6JcQPG9Ggx9nltA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUCyne+nxitIQAAAAAAAAPh/8mSBwBXPRkCyne+nxitIQHo3xbWnrEhA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUAAAAAAACBdQAAAAAAAAPh/1SMnyrLmW0AAAAAAACBdQF7rv+tQZ1xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUBWDi2yna9RQAAAAAAAAPh/gAiyZNOuUEBWDi2yna9RQNGaB3rgdVBA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUDZzvdT4/VWQAAAAAAAAPh/klIpLPLrVUDZzvdT4/VWQNbUMv2dtFZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUDXo3A9CrdGQAAAAAAAAPh/q/fCnG6UR0DXo3A9CrdGQDHiEGCWrkVA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUA730+Nlx5SQAAAAAAAAPh/aDc+EusMUUA730+Nlx5SQJWU0d8Kz1FA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUDRItv5fkpAQAAAAAAAAPh/goKMKR1oP0DRItv5fkpAQOMDLGOBlEFA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUBSuB6F65FNQAAAAAAAAPh/SOUcdlIyTEBSuB6F65FNQDM1ub1iD05A","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUCPwvUoXG9bQAAAAAAAAPh/0akSu59TWkCPwvUoXG9bQMR9E+jPQVpA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUBI4XoUrldcQAAAAAAAAPh/iIj4w9FHW0BI4XoUrldcQBpFhuSPC1xA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"MzMzMzNjRUAAAAAAAAAyQAAAAAAAAPh/Wx7u+ntOM0AAAAAAAAAyQDrGjG4mTzZA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"UrgeheuRTUDD9Shcj6JcQAAAAAAAAPh/FC23myFGXEDD9Shcj6JcQL7SWFdXiltA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"UrgeheuRTUAzMzMzM2NFQAAAAAAAAPh/PQY1QszCRkAzMzMzM2NFQFK2mPq75URA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"UrgeheuRTUCyne+nxitIQAAAAAAAAPh/9i60Nu+MSUCyne+nxitIQOe2tUQmsEdA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"UrgeheuRTUAAAAAAACBdQAAAAAAAAPh/YyfWtoVsXEAAAAAAACBdQLvZ38PN51tA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"UrgeheuRTUCPwvUoXG9bQAAAAAAAAPh/DddVVeBGW0CPwvUoXG9bQF+CGcL7c1pA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"UrgeheuRTUBI4XoUrldcQAAAAAAAAPh/uwXIum0eW0BI4XoUrldcQA+LmXQcVVtA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"UrgeheuRTUAAAAAAAAAyQAAAAAAAAPh/pG7d2ixZNkAAAAAAAAAyQACF/Sg4YjNA","dtype":"float64","order":"little","shape":[6]},{"__ndarray__":"hetRuB4tZ0CPwvUoXG9bQAAAAAAAAPh/faTTZJZeXECPwvUoXG9bQIF3/jE+rFxA","dtype":"float64","order":"little","shape":[6]}]},"selected":{"id":"5820"},"selection_policy":{"id":"5821"}},"id":"5774","type":"ColumnDataSource"},{"attributes":{"range":null,"value":-7},"id":"5802","type":"Dodge"},{"attributes":{"edge_renderer":{"id":"5786"},"inspection_policy":{"id":"5799"},"layout_provider":{"id":"5775"},"node_renderer":{"id":"5781"},"selection_policy":{"id":"5797"}},"id":"5788","type":"GraphRenderer"},{"attributes":{"axis":{"id":"5749"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"5752","type":"Grid"},{"attributes":{"text":{"field":"index"},"text_align":"center","text_alpha":{"value":0.1},"text_baseline":"middle","text_color":{"value":"black"},"text_font_size":{"value":"9pt"},"x":{"field":"x","transform":{"id":"5801"}},"y":{"field":"y","transform":{"id":"5802"}}},"id":"5807","type":"Text"},{"attributes":{"data_source":{"id":"5773"},"glyph":{"id":"5776"},"hover_glyph":{"id":"5779"},"muted_glyph":{"id":"5780"},"nonselection_glyph":{"id":"5777"},"selection_glyph":{"id":"5778"},"view":{"id":"5782"}},"id":"5781","type":"GlyphRenderer"},{"attributes":{},"id":"5818","type":"Selection"},{"attributes":{"callback":null,"renderers":[{"id":"5788"}],"tooltips":[["index","@{index_hover}"],["Girvan-Newman communities","@{Girvan_hyphen_minus_Newman_communities}"],["node degree","@{node_degree}"],["type","@{type}"]]},"id":"5735","type":"HoverTool"},{"attributes":{"callback":null},"id":"5758","type":"TapTool"},{"attributes":{"graph_layout":{"0":[136.25,144.01],"1":[266.28,91.842],"10":[226.49,18.0],"11":[122.19,45.43],"12":[296.34,174.58],"13":[139.15,82.891],"14":[290.38,113.37],"15":[233.92,72.478],"16":[194.51,42.775],"17":[277.86,59.14],"18":[164.08,185.41],"2":[223.71,48.342],"3":[240.48,116.5],"4":[210.37,194.75],"5":[210.46,114.54],"6":[260.35,32.582],"7":[189.59,109.74],"8":[233.77,166.36],"9":[187.77,70.744]}},"id":"5775","type":"StaticLayoutProvider"},{"attributes":{"source":{"id":"5803"}},"id":"5809","type":"CDSView"},{"attributes":{"range":null},"id":"5801","type":"Dodge"},{"attributes":{},"id":"5821","type":"UnionRenderers"},{"attributes":{"axis_label":"y","bounds":"auto","formatter":{"id":"5771"},"major_label_orientation":"horizontal","ticker":{"id":"5750"},"visible":false},"id":"5749","type":"LinearAxis"},{"attributes":{"data":{"index":["Nick Land","Bruno Latour","Edmund Husserl","Immanuel Kant","Linguistic turn","Graham Harman","Maurice Merleau-Ponty","Continental philosophy","Levi Bryant","Fran\u00e7ois Laruelle","Phenomenology (philosophy)","William McNeill (philosopher)","Steven Shaviro","Ray Brassier","Object-oriented ontology","Quentin Meillassoux","Martin Heidegger","Jos\u00e9 Ortega y Gasset","Manuel DeLanda"],"x":{"__ndarray__":"AAAAAAAIYUAUrkfheqRwQB+F61G49mtAj8L1KFwPbkCkcD0K10tqQB+F61G4TmpAmpmZmZlFcEB7FK5H4bJnQHE9CtejOG1AcT0K16N4Z0BI4XoUrk9sQFyPwvUojF5APQrXo3CFckDNzMzMzGRhQK5H4XoUJnJAPQrXo3A9bUC4HoXrUVBoQPYoXI/CXXFAw/UoXI+CZEA=","dtype":"float64","order":"little","shape":[19]},"y":{"__ndarray__":"uB6F61EAYkDZzvdT4/VWQLKd76fGK0hAAAAAAAAgXUAAAAAAAFhoQMP1KFyPolxA0SLb+X5KQECPwvUoXG9bQOxRuB6Fy2RAVg4tsp2vUUAAAAAAAAAyQNejcD0Kt0ZAw/UoXI/SZUAbL90kBrlUQEjhehSuV1xAO99PjZceUkAzMzMzM2NFQFK4HoXrkU1AhetRuB4tZ0A=","dtype":"float64","order":"little","shape":[19]}},"selected":{"id":"5804"},"selection_policy":{"id":"5817"}},"id":"5803","type":"ColumnDataSource"},{"attributes":{},"id":"5743","type":"LinearScale"},{"attributes":{"data":{"Girvan_hyphen_minus_Newman_communities":[0,0,0,0,0,0,0,0,0,0,0,2,1,0,0,0,0,0,0],"index":{"__ndarray__":"AAAAAAEAAAACAAAAAwAAAAQAAAAFAAAABgAAAAcAAAAIAAAACQAAAAoAAAALAAAADAAAAA0AAAAOAAAADwAAABAAAAARAAAAEgAAAA==","dtype":"int32","order":"little","shape":[19]},"index_hover":["Nick Land","Bruno Latour","Edmund Husserl","Immanuel Kant","Linguistic turn","Graham Harman","Maurice Merleau-Ponty","Continental philosophy","Levi Bryant","Fran\u00e7ois Laruelle","Phenomenology (philosophy)","William McNeill (philosopher)","Steven Shaviro","Ray Brassier","Object-oriented ontology","Quentin Meillassoux","Martin Heidegger","Jos\u00e9 Ortega y Gasset","Manuel DeLanda"],"node_color":["philosopher","philosopher","philosopher","philosopher","movement","Harman","philosopher","movement","philosopher","philosopher","movement","philosopher","philosopher","philosopher","movement","philosopher","philosopher","philosopher","philosopher"],"node_degree":[5,17,21,17,3,22,17,24,9,19,19,3,2,10,11,21,25,16,3],"node_size":{"__ndarray__":"of+PmYqhK0BWVG5Z14syQBoUNLBvjDNAVlRuWdeLMkAsgdleC/QoQGyjAspnxjNAVlRuWdeLMkCXftqYKjQ0QHqZQyIvqy9Au6FtnX0RM0C7oW2dfREzQCyB2V4L9ChAwcOlAtZZJ0AX9vmqkD8wQHOrOz+yojBAGhQ0sG+MM0D04Mg6PWg0QAXDU+9iRDJALIHZXgv0KEA=","dtype":"float64","order":"little","shape":[19]},"type":["philosopher","philosopher","philosopher","philosopher","movement","Harman","philosopher","movement","philosopher","philosopher","movement","philosopher","philosopher","philosopher","movement","philosopher","philosopher","philosopher","philosopher"]},"selected":{"id":"5818"},"selection_policy":{"id":"5819"}},"id":"5773","type":"ColumnDataSource"},{"attributes":{"axis":{"id":"5745"},"grid_line_color":null,"ticker":null},"id":"5748","type":"Grid"},{"attributes":{"factors":["philosopher","movement","Harman"],"palette":["lime","orangered","blue"]},"id":"5772","type":"CategoricalColorMapper"},{"attributes":{"overlay":{"id":"5759"}},"id":"5756","type":"BoxZoomTool"},{"attributes":{},"id":"5819","type":"UnionRenderers"},{"attributes":{"data_source":{"id":"5774"},"glyph":{"id":"5783"},"hover_glyph":{"id":"5785"},"muted_glyph":null,"nonselection_glyph":{"id":"5784"},"selection_glyph":null,"view":{"id":"5787"}},"id":"5786","type":"GlyphRenderer"},{"attributes":{},"id":"5750","type":"BasicTicker"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"5735"},{"id":"5753"},{"id":"5754"},{"id":"5755"},{"id":"5756"},{"id":"5757"},{"id":"5758"}]},"id":"5760","type":"Toolbar"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"5772"}},"size":{"field":"node_size","units":"screen"}},"id":"5776","type":"Circle"},{"attributes":{},"id":"5804","type":"Selection"},{"attributes":{},"id":"5820","type":"Selection"},{"attributes":{"margin":[5,5,5,5],"name":"HSpacer1732109","sizing_mode":"stretch_width"},"id":"5732","type":"Spacer"}],"root_ids":["5731"]},"title":"Bokeh Application","version":"2.2.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('6064').textContent;
+                  var render_items = [{"docid":"899932d5-043b-4020-a6c2-c75a1d1b1c22","root_ids":["5731"],"roots":{"5731":"c1cc7196-487d-4473-81d9-967380409a8e"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
