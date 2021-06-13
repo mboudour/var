@@ -1,0 +1,554 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>BountisErdosTree</title>
+      
+      
+        
+          
+        <style>
+            .panel-widget-box {
+                	min-height: 20px;
+                	background-color: #f5f5f5;
+                	border: 1px solid #e3e3e3 !important;
+                	border-radius: 4px;
+                	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	overflow-x: hidden;
+                	overflow-y: hidden;
+                }
+
+                .scrollable {
+                  overflow: scroll;
+                }
+
+                progress {
+                	appearance: none;
+                	-moz-appearance: none;
+                	-webkit-appearance: none;
+
+                	border: none;
+                	height: 20px;
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                	color: royalblue;
+                	position: relative;
+                	margin: 0 0 1.5em;
+                }
+
+                progress[value]::-webkit-progress-bar {
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                }
+
+                progress[value]::-webkit-progress-value {
+                	position: relative;
+
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress.active:not([value])::before {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress[value]::-moz-progress-bar {
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress:not([value])::-moz-progress-bar {
+                	border-radius:3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+
+                }
+
+                progress.active:not([value])::-moz-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.active:not([value])::-webkit-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.primary[value]::-webkit-progress-value { background-color: #007bff; }
+                progress.primary:not([value])::before { background-color: #007bff; }
+                progress.primary:not([value])::-webkit-progress-bar { background-color: #007bff; }
+                progress.primary::-moz-progress-bar { background-color: #007bff; }
+
+                progress.secondary[value]::-webkit-progress-value { background-color: #6c757d; }
+                progress.secondary:not([value])::before { background-color: #6c757d; }
+                progress.secondary:not([value])::-webkit-progress-bar { background-color: #6c757d; }
+                progress.secondary::-moz-progress-bar { background-color: #6c757d; }
+
+                progress.success[value]::-webkit-progress-value { background-color: #28a745; }
+                progress.success:not([value])::before { background-color: #28a745; }
+                progress.success:not([value])::-webkit-progress-bar { background-color: #28a745; }
+                progress.success::-moz-progress-bar { background-color: #28a745; }
+
+                progress.danger[value]::-webkit-progress-value { background-color: #dc3545; }
+                progress.danger:not([value])::before { background-color: #dc3545; }
+                progress.danger:not([value])::-webkit-progress-bar { background-color: #dc3545; }
+                progress.danger::-moz-progress-bar { background-color: #dc3545; }
+
+                progress.warning[value]::-webkit-progress-value { background-color: #ffc107; }
+                progress.warning:not([value])::before { background-color: #ffc107; }
+                progress.warning:not([value])::-webkit-progress-bar { background-color: #ffc107; }
+                progress.warning::-moz-progress-bar { background-color: #ffc107; }
+
+                progress.info[value]::-webkit-progress-value { background-color: #17a2b8; }
+                progress.info:not([value])::before { background-color: #17a2b8; }
+                progress.info:not([value])::-webkit-progress-bar { background-color: #17a2b8; }
+                progress.info::-moz-progress-bar { background-color: #17a2b8; }
+
+                progress.light[value]::-webkit-progress-value { background-color: #f8f9fa; }
+                progress.light:not([value])::before { background-color: #f8f9fa; }
+                progress.light:not([value])::-webkit-progress-bar { background-color: #f8f9fa; }
+                progress.light::-moz-progress-bar { background-color: #f8f9fa; }
+
+                progress.dark[value]::-webkit-progress-value { background-color: #343a40; }
+                progress.dark:not([value])::-webkit-progress-bar { background-color: #343a40; }
+                progress.dark:not([value])::before { background-color: #343a40; }
+                progress.dark::-moz-progress-bar { background-color: #343a40; }
+
+                progress:not([value])::-webkit-progress-bar {
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+                progress:not([value])::before {
+                	content:" ";
+                	position:absolute;
+                	height: 20px;
+                	top:0;
+                	left:0;
+                	right:0;
+                	bottom:0;
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+
+                @keyframes stripes {
+                  from {background-position: 0%}
+                  to {background-position: 100%}
+                }
+
+        </style>
+        <style>
+            .codehilite .hll { background-color: #ffffcc }
+                .codehilite  { background: #f8f8f8; }
+                .codehilite .c { color: #408080; font-style: italic } /* Comment */
+                .codehilite .err { border: 1px solid #FF0000 } /* Error */
+                .codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+                .codehilite .o { color: #666666 } /* Operator */
+                .codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+                .codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+                .codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+                .codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+                .codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+                .codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+                .codehilite .gd { color: #A00000 } /* Generic.Deleted */
+                .codehilite .ge { font-style: italic } /* Generic.Emph */
+                .codehilite .gr { color: #FF0000 } /* Generic.Error */
+                .codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+                .codehilite .gi { color: #00A000 } /* Generic.Inserted */
+                .codehilite .go { color: #888888 } /* Generic.Output */
+                .codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+                .codehilite .gs { font-weight: bold } /* Generic.Strong */
+                .codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+                .codehilite .gt { color: #0044DD } /* Generic.Traceback */
+                .codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+                .codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+                .codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+                .codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+                .codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+                .codehilite .kt { color: #B00040 } /* Keyword.Type */
+                .codehilite .m { color: #666666 } /* Literal.Number */
+                .codehilite .s { color: #BA2121 } /* Literal.String */
+                .codehilite .na { color: #7D9029 } /* Name.Attribute */
+                .codehilite .nb { color: #008000 } /* Name.Builtin */
+                .codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+                .codehilite .no { color: #880000 } /* Name.Constant */
+                .codehilite .nd { color: #AA22FF } /* Name.Decorator */
+                .codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+                .codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+                .codehilite .nf { color: #0000FF } /* Name.Function */
+                .codehilite .nl { color: #A0A000 } /* Name.Label */
+                .codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+                .codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+                .codehilite .nv { color: #19177C } /* Name.Variable */
+                .codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+                .codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+                .codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+                .codehilite .mf { color: #666666 } /* Literal.Number.Float */
+                .codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+                .codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+                .codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+                .codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+                .codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+                .codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+                .codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+                .codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+                .codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+                .codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+                .codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+                .codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+                .codehilite .sx { color: #008000 } /* Literal.String.Other */
+                .codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+                .codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+                .codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+                .codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+                .codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+                .codehilite .vc { color: #19177C } /* Name.Variable.Class */
+                .codehilite .vg { color: #19177C } /* Name.Variable.Global */
+                .codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+                .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+                .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+                .markdown h1 { margin-block-start: 0.34em }
+                .markdown h2 { margin-block-start: 0.42em }
+                .markdown h3 { margin-block-start: 0.5em }
+                .markdown h4 { margin-block-start: 0.67em }
+                .markdown h5 { margin-block-start: 0.84em }
+                .markdown h6 { margin-block-start: 1.17em }
+                .markdown ul { padding-inline-start: 2em }
+                .markdown ol { padding-inline-start: 2em }
+                .markdown strong { font-weight: 600 }
+                .markdown a { color: -webkit-link }
+                .markdown a { color: -moz-hyperlinkText }
+
+        </style>
+        <style>
+            .json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-row,
+                .json-formatter-row a,
+                .json-formatter-row a:hover {
+                  color: black;
+                  text-decoration: none;
+                }
+                .json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-row .json-formatter-string,
+                .json-formatter-row .json-formatter-stringifiable {
+                  color: green;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-row .json-formatter-number {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-boolean {
+                  color: red;
+                }
+                .json-formatter-row .json-formatter-null {
+                  color: #855A00;
+                }
+                .json-formatter-row .json-formatter-undefined {
+                  color: #ca0b69;
+                }
+                .json-formatter-row .json-formatter-function {
+                  color: #FF20ED;
+                }
+                .json-formatter-row .json-formatter-date {
+                  background-color: rgba(0, 0, 0, 0.05);
+                }
+                .json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: blue;
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-bracket {
+                  color: blue;
+                }
+                .json-formatter-row .json-formatter-key {
+                  color: #00008B;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+                .json-formatter-dark.json-formatter-row {
+                  font-family: monospace;
+                }
+                .json-formatter-dark.json-formatter-row,
+                .json-formatter-dark.json-formatter-row a,
+                .json-formatter-dark.json-formatter-row a:hover {
+                  color: white;
+                  text-decoration: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-row {
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {
+                  opacity: 0.5;
+                  margin-left: 1rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+                  content: "No properties";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+                  content: "[]";
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-string,
+                .json-formatter-dark.json-formatter-row .json-formatter-stringifiable {
+                  color: #31F031;
+                  white-space: pre;
+                  word-wrap: break-word;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-number {
+                  color: #66C2FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-boolean {
+                  color: #EC4242;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-null {
+                  color: #EEC97D;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-undefined {
+                  color: #ef8fbe;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-function {
+                  color: #FD48CB;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-date {
+                  background-color: rgba(255, 255, 255, 0.05);
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-url {
+                  text-decoration: underline;
+                  color: #027BFF;
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-bracket {
+                  color: #9494FF;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-key {
+                  color: #23A0DB;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler-link {
+                  cursor: pointer;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler {
+                  line-height: 1.2rem;
+                  font-size: 0.7rem;
+                  vertical-align: middle;
+                  opacity: 0.6;
+                  cursor: pointer;
+                  padding-right: 0.2rem;
+                }
+                .json-formatter-dark.json-formatter-row .json-formatter-toggler:after {
+                  display: inline-block;
+                  transition: transform 100ms ease-in;
+                  content: "\25BA";
+                }
+                .json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {
+                  opacity: 0;
+                  transition: opacity 0.15s ease-in;
+                  font-style: italic;
+                }
+                .json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {
+                  opacity: 0.6;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+                  transform: rotate(90deg);
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {
+                  display: inline-block;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+                  display: none;
+                }
+                .json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {
+                  display: block;
+                }
+
+        </style>
+        <style>
+            table.panel-df {
+                    margin-left: auto;
+                    margin-right: auto;
+                    border: none;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    color: black;
+                    font-size: 12px;
+                    table-layout: fixed;
+                    width: 100%;
+                }
+
+                .panel-df tr, .panel-df th, .panel-df td {
+                    text-align: right;
+                    vertical-align: middle;
+                    padding: 0.5em 0.5em !important;
+                    line-height: normal;
+                    white-space: normal;
+                    max-width: none;
+                    border: none;
+                }
+
+                .panel-df tbody {
+                    display: table-row-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                }
+
+                .panel-df tbody tr:nth-child(odd) {
+                    background: #f5f5f5;
+                }
+
+                .panel-df thead {
+                    border-bottom: 1px solid black;
+                    vertical-align: bottom;
+                }
+
+                .panel-df tr:hover {
+                    background: lightblue !important;
+                    cursor: pointer;
+                }
+
+        </style>
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.3.min.js" integrity="sha384-T2yuo9Oe71Cz/I4X9Ac5+gpEa5a8PpJCDlqKYO0CfAuEszu1JrXLl8YugMqYe3sM" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="de448690-14da-4063-93af-cebc5678007a" data-root-id="22027"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="22360">
+          {"da88caa0-ea03-4ce9-b037-ee3c81941819":{"roots":{"references":[{"attributes":{"margin":[5,5,5,5],"name":"HSpacer44078","sizing_mode":"stretch_width"},"id":"22028","type":"Spacer"},{"attributes":{"data":{"Erd\u0151s_number":[3,4,0,1,4,1,2,3,4,2,3,4,2,1,2,4,1,2,4,2,3,3,4,3,4,4,1,2,4,1,4,5,4,5,1,2,3,1,2,4,5,4,5,3,4,4,3,2,4,3,3,1,2,1,4,1,2,3,1,2,3,3,4,3,4,4,4,1,2,3,4,1,2,3,4],"Girvan_hyphen_minus_Newman_community":[1,1,0,0,1,2,2,2,2,2,2,1,0,0,0,1,1,1,2,0,0,0,0,0,0,1,0,0,1,0,1,2,0,0,0,0,0,0,0,2,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0],"Louvain_community":[0,0,1,2,0,3,3,3,3,3,3,0,2,4,4,0,1,1,3,5,5,6,6,7,7,0,8,8,0,5,0,3,9,9,1,1,4,7,7,3,3,8,8,8,0,7,2,6,2,1,9,9,9,6,4,10,10,10,1,1,1,10,0,8,8,0,10,11,11,11,11,1,1,1,1],"index":{"__ndarray__":"AAAAAAEAAAACAAAAAwAAAAQAAAAFAAAABgAAAAcAAAAIAAAACQAAAAoAAAALAAAADAAAAA0AAAAOAAAADwAAABAAAAARAAAAEgAAABMAAAAUAAAAFQAAABYAAAAXAAAAGAAAABkAAAAaAAAAGwAAABwAAAAdAAAAHgAAAB8AAAAgAAAAIQAAACIAAAAjAAAAJAAAACUAAAAmAAAAJwAAACgAAAApAAAAKgAAACsAAAAsAAAALQAAAC4AAAAvAAAAMAAAADEAAAAyAAAAMwAAADQAAAA1AAAANgAAADcAAAA4AAAAOQAAADoAAAA7AAAAPAAAAD0AAAA+AAAAPwAAAEAAAABBAAAAQgAAAEMAAABEAAAARQAAAEYAAABHAAAASAAAAEkAAABKAAAA","dtype":"int32","order":"little","shape":[75]},"index_hover":["Tassos C. Bountis","J. P. van der Weele","Paul Erd\u0151s","Steven George Krantz","Spyros N. Pnevmatikos","Mark Kac","Subrahmanyan Chandrasekhar","George Contopoulos","Harry Varvoglis","T. H. Berlin","Louis Witten","Kyriakos Hizanidis","Ravi P. Agarwal","Vsevolod F. Lev","Michael Rudnev","Vassilios M. Rothos","Richard Patrick Morton","Franco Vivaldi","George Bozis","Servet A. Mart\u00ednez","Gr\u00e9goire Nicolis","Francesco Saverio De Blasi","Moses A. Boudourides","Peter Leth Christiansen","Demosthenes Ellinas","Astero G. Provata","Branko Gr\u00fcnbaum","Jaume Llibre","John S. Nicolis","Peter E. Ney","Vasileios Basios","Simos Ichtiaroglou","Efthimia Bora-Senta","Dimitris Kugiumtzis","Ronald Lewis Graham","Panos M. Pardalos","Stephen Wiggins","Richard Ernest Bellman","John L. Casti","Demetrios B. Papadopoulos","Loukas Vlahos","Alessandra Celletti","George Voyatzis","Jean-Pierre Fran\u00e7oise","Dimitri J. Frantzeskakis","George Tsironis","Juan J. Nieto Roig","Petar Stojanov Kenderov","Theodoros E. Karakasidis","Michael N. Vrahatis","Stratis Kounias","John H. Loxton","Jennifer R. Seberry","Peter Manfred Gruber","Makrina Agaoglou","Svante Janson","Georgios Kollias","C. Polymilis","Murray Seymour Klamkin","M. Lawrence Glasser","Athanassios S. Fokas","Charalampos Haris Skokos","Lambros Drossos","Robert S. MacKay","Vassilis Koukouloyannis","Stavros Komineas","Yannis Papaphilippou","Alan J. Hoffman","David Gale","William A. Brock","Athanasios N. Yannacopoulos","Daniel Grieser","Davron Matrasulov","Panayotis G. Kevrekidis","Ioannis Kourakis"],"node_color":[0,0,1,2,0,3,3,3,3,3,3,0,2,4,4,0,1,1,3,5,5,6,6,7,7,0,8,8,0,5,0,3,9,9,1,1,4,7,7,3,3,8,8,8,0,7,2,6,2,1,9,9,9,6,4,10,10,10,1,1,1,10,0,8,8,0,10,11,11,11,11,1,1,1,1],"node_degree":[11,1,14,2,1,3,2,3,1,2,2,1,2,2,2,1,2,2,2,2,1,2,1,3,1,1,2,3,1,2,1,1,2,1,2,2,2,2,2,2,1,2,1,2,1,1,2,2,1,1,2,2,2,2,1,2,3,1,2,2,1,2,1,2,1,1,1,2,2,2,1,2,2,2,1],"node_size":[12,11,15,14,11,14,13,12,11,13,12,11,13,14,13,11,14,13,11,13,12,12,11,12,11,11,14,13,11,14,11,10,11,10,14,13,12,14,13,11,10,11,10,12,11,11,12,13,11,12,12,14,13,14,11,14,13,12,14,13,12,12,11,12,11,11,11,14,13,12,11,14,13,12,11]},"selected":{"id":"22116"},"selection_policy":{"id":"22117"}},"id":"22069","type":"ColumnDataSource"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"22068"}},"size":{"field":"node_size","units":"screen"}},"id":"22074","type":"Circle"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"22068"}},"size":{"field":"node_size","units":"screen"}},"id":"22076","type":"Circle"},{"attributes":{},"id":"22049","type":"SaveTool"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"22068"}},"size":{"field":"node_size","units":"screen"}},"id":"22072","type":"Circle"},{"attributes":{},"id":"22050","type":"PanTool"},{"attributes":{"align":null,"background_fill_color":"white","below":[{"id":"22041"}],"center":[{"id":"22044"},{"id":"22048"}],"left":[{"id":"22045"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"outline_line_alpha":0,"plot_height":1000,"plot_width":1000,"renderers":[{"id":"22084"},{"id":"22104"}],"sizing_mode":"fixed","title":{"id":"22033"},"toolbar":{"id":"22056"},"toolbar_location":null,"x_range":{"id":"22029"},"x_scale":{"id":"22037"},"y_range":{"id":"22030"},"y_scale":{"id":"22039"}},"id":"22032","subtype":"Figure","type":"Plot"},{"attributes":{"fill_color":{"value":"red"},"size":{"field":"node_size","units":"screen"}},"id":"22075","type":"Circle"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"22068"}},"line_alpha":{"value":0.2},"size":{"field":"node_size","units":"screen"}},"id":"22073","type":"Circle"},{"attributes":{"data_source":{"id":"22069"},"glyph":{"id":"22072"},"hover_glyph":{"id":"22075"},"muted_glyph":{"id":"22076"},"nonselection_glyph":{"id":"22073"},"selection_glyph":{"id":"22074"},"view":{"id":"22078"}},"id":"22077","type":"GlyphRenderer"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"22055","type":"BoxAnnotation"},{"attributes":{"callback":null,"renderers":[{"id":"22084"}],"tags":["hv_created"],"tooltips":[["index","@{index_hover}"],["Erd\u0151s number","@{Erd\u0151s_number}"],["Girvan-Newman community","@{Girvan_hyphen_minus_Newman_community}"],["Louvain community","@{Louvain_community}"],["node degree","@{node_degree}"]]},"id":"22031","type":"HoverTool"},{"attributes":{"text":{"field":"index"},"text_align":"center","text_baseline":"middle","text_color":{"value":"darkslategrey"},"text_font_size":{"value":"9pt"},"x":{"field":"x","transform":{"id":"22097"}},"y":{"field":"y","transform":{"id":"22098"}}},"id":"22102","type":"Text"},{"attributes":{"text":{"field":"index"},"text_align":"center","text_alpha":{"value":0.1},"text_baseline":"middle","text_color":{"value":"darkslategrey"},"text_font_size":{"value":"9pt"},"x":{"field":"x","transform":{"id":"22097"}},"y":{"field":"y","transform":{"id":"22098"}}},"id":"22103","type":"Text"},{"attributes":{"source":{"id":"22069"}},"id":"22078","type":"CDSView"},{"attributes":{},"id":"22115","type":"UnionRenderers"},{"attributes":{"end":1010.68005,"reset_end":1010.68005,"reset_start":-42.927049999999994,"start":-42.927049999999994,"tags":[[["x","x",null]]]},"id":"22029","type":"Range1d"},{"attributes":{"line_color":{"value":"lightblue"},"line_width":{"value":2}},"id":"22079","type":"MultiLine"},{"attributes":{"data_source":{"id":"22099"},"glyph":{"id":"22102"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"22103"},"selection_glyph":null,"view":{"id":"22105"}},"id":"22104","type":"GlyphRenderer"},{"attributes":{"text":"The Paul Erd\u0151s rooted co-authorship tree of Tassos C. Bountis and co-workers (colored in 12 Louvain communities)","text_color":{"value":"black"},"text_font_size":{"value":"9pt"}},"id":"22033","type":"Title"},{"attributes":{"children":[{"id":"22028"},{"id":"22032"},{"id":"22214"}],"margin":[0,0,0,0],"name":"Row44074","tags":["embedded"]},"id":"22027","type":"Row"},{"attributes":{"end":907.7385,"reset_end":907.7385,"reset_start":-112.74849999999999,"start":-112.74849999999999,"tags":[[["y","y",null]]]},"id":"22030","type":"Range1d"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"22080","type":"MultiLine"},{"attributes":{"callback":null},"id":"22054","type":"TapTool"},{"attributes":{},"id":"22067","type":"BasicTickFormatter"},{"attributes":{"margin":[5,5,5,5],"name":"HSpacer44079","sizing_mode":"stretch_width"},"id":"22214","type":"Spacer"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"22031"},{"id":"22049"},{"id":"22050"},{"id":"22051"},{"id":"22052"},{"id":"22053"},{"id":"22054"}]},"id":"22056","type":"Toolbar"},{"attributes":{},"id":"22037","type":"LinearScale"},{"attributes":{"line_color":{"value":"green"},"line_width":{"value":2}},"id":"22081","type":"MultiLine"},{"attributes":{},"id":"22113","type":"UnionRenderers"},{"attributes":{},"id":"22114","type":"Selection"},{"attributes":{},"id":"22039","type":"LinearScale"},{"attributes":{"graph_layout":{"0":[534.23,130.0],"1":[627.48,80.0],"10":[333.45,603.11],"11":[469.58,102.05],"12":[367.36,466.32],"13":[508.04,478.4],"14":[496.98,590.0],"15":[592.09,102.46],"16":[528.2,303.04],"17":[532.1,206.77],"18":[160.6,470.72],"19":[447.5,539.33],"2":[520.17,402.77],"20":[402.59,619.18],"21":[567.47,660.57],"22":[573.51,748.26],"23":[742.05,246.34],"24":[794.15,178.35],"25":[440.0,42.552],"26":[600.05,440.44],"27":[685.26,488.84],"28":[617.75,59.895],"29":[488.11,452.81],"3":[456.19,420.96],"30":[496.97,55.0],"31":[78.643,481.2],"32":[695.06,714.68],"33":[728.66,789.99],"34":[567.52,372.32],"35":[650.88,333.69],"36":[478.53,675.0],"37":[576.28,344.73],"38":[654.49,290.39],"39":[287.53,678.41],"4":[516.73,5.0],"40":[244.52,747.58],"41":[816.63,609.59],"42":[889.11,648.29],"43":[742.54,560.44],"44":[588.55,35.571],"45":[833.35,230.0],"46":[285.34,515.36],"47":[557.29,567.47],"48":[211.43,564.43],"49":[734.5,300.38],"5":[430.25,442.18],"50":[657.32,634.14],"51":[568.33,464.28],"52":[615.82,548.98],"53":[539.55,505.0],"54":[459.88,760.0],"55":[597.96,398.04],"56":[692.64,396.52],"57":[763.78,437.27],"58":[501.39,330.0],"59":[444.97,271.96],"6":[335.63,428.32],"60":[376.84,210.71],"61":[782.95,367.29],"62":[580.0,15.0],"63":[774.52,470.0],"64":[863.55,485.39],"65":[441.15,79.275],"66":[871.68,350.0],"67":[450.58,375.19],"68":[361.19,343.39],"69":[273.32,309.03],"7":[240.83,450.0],"70":[191.61,273.43],"71":[467.8,349.01],"72":[389.5,295.68],"73":[310.82,241.11],"74":[239.56,187.74],"8":[168.5,386.9],"9":[385.23,523.35]}},"id":"22071","type":"StaticLayoutProvider"},{"attributes":{"high":11,"low":0,"palette":["lime","dodgerblue","gold","orangered","yellow","green","magenta"]},"id":"22068","type":"LinearColorMapper"},{"attributes":{},"id":"22065","type":"BasicTickFormatter"},{"attributes":{"data_source":{"id":"22070"},"glyph":{"id":"22079"},"hover_glyph":{"id":"22081"},"muted_glyph":null,"nonselection_glyph":{"id":"22080"},"selection_glyph":null,"view":{"id":"22083"}},"id":"22082","type":"GlyphRenderer"},{"attributes":{},"id":"22116","type":"Selection"},{"attributes":{"axis_label":"x","bounds":"auto","formatter":{"id":"22065"},"major_label_orientation":"horizontal","ticker":{"id":"22042"},"visible":false},"id":"22041","type":"LinearAxis"},{"attributes":{"range":null},"id":"22097","type":"Dodge"},{"attributes":{"source":{"id":"22070"}},"id":"22083","type":"CDSView"},{"attributes":{},"id":"22117","type":"UnionRenderers"},{"attributes":{"overlay":{"id":"22055"}},"id":"22052","type":"BoxZoomTool"},{"attributes":{},"id":"22042","type":"BasicTicker"},{"attributes":{},"id":"22053","type":"ResetTool"},{"attributes":{},"id":"22100","type":"Selection"},{"attributes":{"axis":{"id":"22041"},"grid_line_color":null,"ticker":null},"id":"22044","type":"Grid"},{"attributes":{},"id":"22095","type":"NodesAndLinkedEdges"},{"attributes":{"source":{"id":"22099"}},"id":"22105","type":"CDSView"},{"attributes":{"data":{"end":{"__ndarray__":"AQAAAAQAAAALAAAADwAAABkAAAAcAAAAHgAAACwAAAARAAAAPgAAAEEAAAADAAAABQAAAB0AAAAaAAAADQAAACIAAAAlAAAAMwAAADUAAAAQAAAANwAAADoAAABDAAAARwAAAAwAAAAGAAAACQAAAAcAAAAIAAAAEgAAAAoAAAAnAAAALgAAAA4AAAAkAAAAEQAAAB8AAAAUAAAAHQAAABYAAAAvAAAAGAAAACYAAAAtAAAAGwAAACsAAAA/AAAAIQAAADIAAAAjAAAAMQAAADYAAAAmAAAAKAAAACoAAAArAAAAMAAAADUAAAA0AAAANAAAADgAAAA5AAAAPQAAADsAAAA8AAAAQgAAAEAAAABEAAAARQAAAEYAAABIAAAASQAAAEoAAAA=","dtype":"int32","order":"little","shape":[74]},"start":{"__ndarray__":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAMAAAAFAAAABQAAAAYAAAAHAAAABwAAAAkAAAAKAAAADAAAAA0AAAAOAAAAEAAAABIAAAATAAAAEwAAABUAAAAVAAAAFwAAABcAAAAXAAAAGgAAABsAAAAbAAAAIAAAACAAAAAiAAAAIwAAACQAAAAlAAAAJwAAACkAAAApAAAALgAAAC8AAAAyAAAAMwAAADcAAAA4AAAAOAAAADoAAAA7AAAAPQAAAD8AAABDAAAARAAAAEUAAABHAAAASAAAAEkAAAA=","dtype":"int32","order":"little","shape":[74]}},"selected":{"id":"22114"},"selection_policy":{"id":"22115"}},"id":"22070","type":"ColumnDataSource"},{"attributes":{"axis_label":"y","bounds":"auto","formatter":{"id":"22067"},"major_label_orientation":"horizontal","ticker":{"id":"22046"},"visible":false},"id":"22045","type":"LinearAxis"},{"attributes":{},"id":"22051","type":"WheelZoomTool"},{"attributes":{"data":{"index":["Tassos C. Bountis","J. P. van der Weele","Paul Erd\u0151s","Steven George Krantz","Spyros N. Pnevmatikos","Mark Kac","Subrahmanyan Chandrasekhar","George Contopoulos","Harry Varvoglis","T. H. Berlin","Louis Witten","Kyriakos Hizanidis","Ravi P. Agarwal","Vsevolod F. Lev","Michael Rudnev","Vassilios M. Rothos","Richard Patrick Morton","Franco Vivaldi","George Bozis","Servet A. Mart\u00ednez","Gr\u00e9goire Nicolis","Francesco Saverio De Blasi","Moses A. Boudourides","Peter Leth Christiansen","Demosthenes Ellinas","Astero G. Provata","Branko Gr\u00fcnbaum","Jaume Llibre","John S. Nicolis","Peter E. Ney","Vasileios Basios","Simos Ichtiaroglou","Efthimia Bora-Senta","Dimitris Kugiumtzis","Ronald Lewis Graham","Panos M. Pardalos","Stephen Wiggins","Richard Ernest Bellman","John L. Casti","Demetrios B. Papadopoulos","Loukas Vlahos","Alessandra Celletti","George Voyatzis","Jean-Pierre Fran\u00e7oise","Dimitri J. Frantzeskakis","George Tsironis","Juan J. Nieto Roig","Petar Stojanov Kenderov","Theodoros E. Karakasidis","Michael N. Vrahatis","Stratis Kounias","John H. Loxton","Jennifer R. Seberry","Peter Manfred Gruber","Makrina Agaoglou","Svante Janson","Georgios Kollias","C. Polymilis","Murray Seymour Klamkin","M. Lawrence Glasser","Athanassios S. Fokas","Charalampos Haris Skokos","Lambros Drossos","Robert S. MacKay","Vassilis Koukouloyannis","Stavros Komineas","Yannis Papaphilippou","Alan J. Hoffman","David Gale","William A. Brock","Athanasios N. Yannacopoulos","Daniel Grieser","Davron Matrasulov","Panayotis G. Kevrekidis","Ioannis Kourakis"],"x":{"__ndarray__":"pHA9CtexgECkcD0K15uDQI/C9ShcQYBA16NwPQqDfECkcD0K1yWAQAAAAAAA5HpArkfhehT6dEDD9ShcjxpuQAAAAAAAEGVASOF6FK4TeEAzMzMzM9d0QOF6FK5HWX1A9ihcj8L1dkBxPQrXo8B/QEjhehSuD39AH4XrUbiAgkCamZmZmYGAQM3MzMzMoIBAMzMzMzMTZEAAAAAAAPh7QD0K16NwKXlA9ihcj8K7gUCuR+F6FOyBQGZmZmZmMIdAMzMzMzPRiEAAAAAAAIB7QGZmZmZmwIJArkfhehRqhUAAAAAAAE6DQPYoXI/CgX5A7FG4HoUPf0D+1HjpJqlTQBSuR+F6uIVA4XoUrkfFhkBcj8L1KLyBQNejcD0KV4RAFK5H4XrofUAK16NwPQKCQFK4HoXrc4RAFK5H4Xr4cUBxPQrXo5BuQNejcD0KhYlAexSuR+HIi0C4HoXrUTSHQGZmZmZmZIJAzczMzMwKikA9CtejcNVxQLgehetRaoFA9ihcj8JtakAAAAAAAPSGQMP1KFyPioRAcT0K16PCgUDD9Shcjz6DQGZmZmZm3IBArkfhehS+fEBI4XoUrq+CQIXrUbgepYVACtejcD3eh0AK16NwPVZ/QOxRuB6Fz3tAPQrXo3CNd0CamZmZmXeIQAAAAAAAIIJAXI/C9Sg0iEBmZmZmZvyKQGZmZmZmkntAPQrXo3A9i0DhehSuRyl8QNejcD0Kk3ZAhetRuB4VcUDsUbgehfNnQM3MzMzMPH1AAAAAAABYeECF61G4Hm1zQFK4HoXr8W1A","dtype":"float64","order":"little","shape":[75]},"y":{"__ndarray__":"AAAAAABAYEAAAAAAAABUQLgehetRLHlAj8L1KFxPekAAAAAAAAAUQHsUrkfhontAhetRuB7FekAAAAAAACB8QGZmZmZmLnhAzczMzMxagEB7FK5H4diCQDMzMzMzg1lAhetRuB4lfUBmZmZmZuZ9QAAAAAAAcIJAPQrXo3CdWUBxPQrXo/ByQHE9Ctej2GlA7FG4HoVrfUBxPQrXo9qAQD0K16NwWYNAw/UoXI+khECuR+F6FGKHQHsUrkfhym5AMzMzMzNLZkAtsp3vp0ZFQNejcD0Kh3tAPQrXo3CNfkDD9Shcj/JNQClcj8L1THxAAAAAAACAS0AzMzMzMxN+QD0K16NwVYZAUrgeheuviECF61G4HkV3QNejcD0K23RAAAAAAAAYhUBI4XoUrot1QArXo3A9JnJA4XoUrkczhUBxPQrXo1yHQB+F61G4DINAuB6F61FChEDsUbgehYOBQAwCK4cWyUFAAAAAAADAbEB7FK5H4RqAQPYoXI/Cu4FAPQrXo3CjgUCuR+F6FMZyQIXrUbge0YNAFK5H4XoEfUCkcD0K1yeBQAAAAAAAkH9AAAAAAADAh0BxPQrXo+B4QLgehetRyHhAuB6F61FUe0AAAAAAAKB0QI/C9Shc/3BAH4XrUbhWakBxPQrXo/R2QAAAAAAAAC5AAAAAAABgfUAK16NwPVZ+QJqZmZmZ0VNAAAAAAADgdUDXo3A9CnN3QArXo3A9dnVAFK5H4XpQc0B7FK5H4RZxQFyPwvUo0HVAexSuR+F6ckDsUbgehSNuQEjhehSud2dA","dtype":"float64","order":"little","shape":[75]}},"selected":{"id":"22100"},"selection_policy":{"id":"22113"}},"id":"22099","type":"ColumnDataSource"},{"attributes":{},"id":"22046","type":"BasicTicker"},{"attributes":{"range":null,"value":-12},"id":"22098","type":"Dodge"},{"attributes":{"axis":{"id":"22045"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"22048","type":"Grid"},{"attributes":{},"id":"22093","type":"NodesAndLinkedEdges"},{"attributes":{"edge_renderer":{"id":"22082"},"inspection_policy":{"id":"22095"},"layout_provider":{"id":"22071"},"node_renderer":{"id":"22077"},"selection_policy":{"id":"22093"}},"id":"22084","type":"GraphRenderer"}],"root_ids":["22027"]},"title":"Bokeh Application","version":"2.2.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('22360').textContent;
+                  var render_items = [{"docid":"da88caa0-ea03-4ce9-b037-ee3c81941819","root_ids":["22027"],"roots":{"22027":"de448690-14da-4063-93af-cebc5678007a"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
