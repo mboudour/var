@@ -1,0 +1,132 @@
+{
+  "At an abandoned hotel, a police squad corners Trinity, who overpowers them with superhuman abilities.": [
+    {"subject": "police squad", "relationship": "corners", "object": "Trinity"},
+    {"subject": "Trinity", "relationship": "overpowers", "object": "police squad"}
+  ],
+  "Trinity contacts him and tells him a man named Morpheus has the answers Neo seeks.": [
+    {"subject": "Trinity", "relationship": "contacts", "object": "Neo"},
+    {"subject": "Trinity", "relationship": "tells", "object": "Neo"},
+    {"subject": "Trinity", "relationship": "has", "object": "answers"},
+    {"subject": "Trinity", "relationship": "seeks", "object": "Neo"}
+  ],
+  "A team of Agents and police, led by Agent Smith, arrives at Neo's workplace in search of him.": [
+    {"subject": "Agents and police", "relationship": "arrives at", "object": "Neo's workplace"},
+    {"subject": "Agents and police", "relationship": "leads by", "object": "Agent Smith"},
+    {"subject": "Agents and police", "relationship": "search of", "object": "him"}
+  ],
+  "When Neo refuses to cooperate, they fuse his mouth shut, pin him down, and implant a robotic 'bug' in his abdomen.": [
+    {"subject": "they", "relationship": "fuse", "object": "his mouth"},
+    {"subject": "they", "relationship": "pin down", "object": "him"},
+    {"subject": "they", "relationship": "implant", "object": "a robotic 'bug'"},
+    {"subject": "a robotic 'bug'", "relationship": "in", "object": "his abdomen"}
+  ],
+  "Neo wakes up from what he believes to be a nightmare.": [
+    {"subject": "Neo", "relationship": "wakes up", "object": "what he believes"},
+    {"subject": "what", "relationship": "believes to be", "object": "a nightmare"}
+  ],
+  "Neo takes the red pill, and his reality begins to distort, awakening in a liquid-filled pod among countless other pods, containing other humans.": [
+    {"subject": "Neo", "relationship": "takes", "object": "the red pill"},
+    {"subject": "his reality", "relationship": "begins to distort", "object": "Neo"},
+    {"subject": "Neo", "relationship": "awakening", "object": "in a liquid-filled pod"},
+    {"subject": "in a liquid-filled pod", "relationship": "among", "object": "countless other pods"},
+    {"subject": "countless other pods", "relationship": "containing", "object": "other humans"}
+  ],
+  "Morpheus and his crew are a group of rebels who hack into the Matrix to 'unplug' enslaved humans and recruit them; their understanding of the Matrix's simulated nature allows them to bend its physical laws.": [
+    {"subject": "Morpheus and his crew", "relationship": "are", "object": "a group of rebels"},
+    {"subject": "a group of rebels", "relationship": "hack into", "object": "the Matrix"},
+    {"subject": "a group of rebels", "relationship": "'unplug'", "object": "enslaved humans"},
+    {"subject": "a group of rebels", "relationship": "recruit", "object": "them"},
+    {"subject": "their understanding", "relationship": "of", "object": "the Matrix's simulated nature"},
+    {"subject": "the Matrix's simulated nature", "relationship": "allows them to bend", "object": "its physical laws"}
+  ],
+  "Morpheus warns Neo that death within the Matrix kills the physical body too and explains that the Agents are sentient programs that eliminate threats to the system, while machines called Sentinels eliminate rebels in the real world.": [
+    {"subject": "Morpheus", "relationship": "warns", "object": "Neo"},
+    {"subject": "death", "relationship": "within", "object": "the Matrix kills the physical body"},
+    {"subject": "the Agents", "relationship": "are", "object": "sentient programs"},
+    {"subject": "sentient programs", "relationship": "eliminate", "object": "threats to the system"},
+    {"subject": "machines", "relationship": "called", "object": "Sentinels"},
+    {"subject": "Sentinels", "relationship": "eliminate", "object": "rebels in the real world"}
+  ],
+  "Neo's prowess during virtual training cements Morpheus's belief that Neo is 'the One', a human prophesied to free humankind.": [
+    {"subject": "Neo's prowess", "relationship": "during", "object": "virtual training cements"},
+    {"subject": "Morpheus's belief", "relationship": "that", "object": "Neo is 'the One'"},
+    {"subject": "'the One'", "relationship": "prophesied to", "object": "free humankind"}
+  ],
+  "The group enters the Matrix to visit the Oracle, a prophet-like program who predicted that the One would emerge.": [
+    {"subject": "the group", "relationship": "enters", "object": "the Matrix"},
+    {"subject": "the group", "relationship": "visits", "object": "the Oracle"},
+    {"subject": "the Oracle", "relationship": "predicted", "object": "that the One would emerge"}
+  ],
+  "She implies to Neo that he is not the One and warns that he will have to choose between Morpheus's life and his own.": [
+    {"subject": "She", "relationship": "implies", "object": "to Neo"},
+    {"subject": "Neo", "relationship": "is", "object": "not the One"},
+    {"subject": "She", "relationship": "warns", "object": "that he will have to choose"},
+    {"subject": "he", "relationship": "choose between", "object": "Morpheus's life and his own"}
+  ],
+  "Before they can leave the Matrix, Agents and police ambush the group, tipped off by Cypher, a disgruntled crew member who has betrayed Morpheus in exchange for a deal to be plugged back into the Matrix to live a comfortable life.": [
+    {"subject": "they", "relationship": "leave the Matrix"},
+    {"subject": "Agents and police", "relationship": "ambush", "object": "the group"},
+    {"subject": "the group", "relationship": "tipped off by", "object": "Cypher"},
+    {"subject": "Cypher", "relationship": "betrayed", "object": "Morpheus"},
+    {"subject": "Cypher", "relationship": "in exchange for", "object": "a deal to be plugged back into the Matrix"},
+    {"subject": "a deal to be plugged back into the Matrix", "relationship": "to live", "object": "a comfortable life"}
+  ],
+  "To buy time for the others, Morpheus fights Smith and is captured.": [
+    {"subject": "Morpheus", "relationship": "fights", "object": "Smith"},
+    {"subject": "Morpheus", "relationship": "is captured", "object": ""}
+  ],
+  "Cypher exits the Matrix and murders the other crew members as they lie unconscious.": [
+    {"subject": "Cypher", "relationship": "exits", "object": "the Matrix"},
+    {"subject": "Cypher", "relationship": "murders", "object": "the other crew members"},
+    {"subject": "the other crew members", "relationship": "as", "object": "they lie unconscious"}
+  ],
+  "Before Cypher can kill Neo and Trinity, crew member Tank regains consciousness and kills him before pulling Neo and Trinity from the Matrix.": [
+    {"subject": "Cypher", "relationship": "kill", "object": "Neo and Trinity"},
+    {"subject": "Tank", "relationship": "regains consciousness"},
+    {"subject": "Tank", "relationship": "kills", "object": "Cypher"},
+    {"subject": "Tank", "relationship": "pulling", "object": "Neo and Trinity"},
+    {"subject": "Tank", "relationship": "from", "object": "the Matrix"}
+  ],
+  "The Agents interrogate Morpheus to learn his access codes to the mainframe computer in Zion, which would allow them to destroy it.": [
+    {"subject": "The Agents", "relationship": "interrogate", "object": "Morpheus"},
+    {"subject": "Morpheus", "relationship": "learn", "object": "his access codes"},
+    {"subject": "his access codes", "relationship": "to", "object": "the mainframe computer in Zion"},
+    {"subject": "the mainframe computer in Zion", "relationship": "allow", "object": "them to destroy it"}
+  ],
+  "Neo resolves to return to the Matrix to rescue Morpheus, as the Oracle prophesied; Trinity insists she accompany him.": [
+    {"subject": "Neo", "relationship": "resolves to", "object": "return to the Matrix"},
+    {"subject": "return to the Matrix", "relationship": "to rescue", "object": "Morpheus"},
+    {"subject": "the Oracle", "relationship": "prophesied", "object": "as the Oracle prophesied"},
+    {"subject": "Trinity", "relationship": "insists", "object": "she accompany him"}
+  ],
+  "While rescuing Morpheus, Neo gains confidence in his abilities, performing feats comparable to those of the Agents.": [
+    {"subject": "Neo", "relationship": "rescuing", "object": "Morpheus"},
+    {"subject": "Neo", "relationship": "gains", "object": "confidence in his abilities"},
+    {"subject": "Neo's abilities", "relationship": "performing", "object": "feats comparable to those of the Agents"}
+  ],
+  "After Morpheus and Trinity safely exit the Matrix, Smith ambushes and appears to kill Neo.": [
+    {"subject": "Morpheus and Trinity", "relationship": "safely exit", "object": "the Matrix"},
+    {"subject": "Smith", "relationship": "ambushes", "object": "Neo"},
+    {"subject": "Smith", "relationship": "appears to kill", "object": "Neo"}
+  ],
+  "While a group of Sentinels attack the Nebuchadnezzar, Trinity confesses her love for Neo and says the Oracle told her she would fall in love with the One.": [
+    {"subject": "a group of Sentinels", "relationship": "attack", "object": "the Nebuchadnezzar"},
+    {"subject": "Trinity", "relationship": "confesses", "object": "her love for Neo"},
+    {"subject": "the Oracle", "relationship": "told", "object": "her she would fall in love with the One"}
+  ],
+  "Neo is revived, with newfound abilities to perceive and control the Matrix; he easily defeats Smith, prompting the other Agents to flee and he leaves the Matrix just as the ship's electromagnetic pulse disables the Sentinels.": [
+    {"subject": "Neo", "relationship": "is revived"},
+    {"subject": "Neo", "relationship": "with", "object": "newfound abilities to perceive and control the Matrix"},
+    {"subject": "Neo", "relationship": "defeats", "object": "Smith"},
+    {"subject": "Smith", "relationship": "prompting", "object": "the other Agents to flee"},
+    {"subject": "he", "relationship": "leaves", "object": "the Matrix"},
+    {"subject": "the ship's electromagnetic pulse", "relationship": "disables", "object": "the Sentinels"}
+  ],
+  "Back in the Matrix, Neo makes a telephone call, promising the machines that he will show their prisoners 'a world where anything is possible.' He hangs up and flies away.": [
+    {"subject": "Neo", "relationship": "makes", "object": "a telephone call"},
+    {"subject": "Neo", "relationship": "promising", "object": "the machines"},
+    {"subject": "the machines", "relationship": "that", "object": "he will show their prisoners 'a world where anything is possible'"},
+    {"subject": "Neo", "relationship": "hangs up"},
+    {"subject": "Neo", "relationship": "flies away"}
+  ]
+}
