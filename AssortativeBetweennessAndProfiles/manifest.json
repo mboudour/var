@@ -1,0 +1,323 @@
+{
+  "project": "CBAP20",
+  "datasets": [
+    {
+      "id": "epstein_emails",
+      "kind": "email",
+      "directed": true,
+      "weighted": true,
+      "temporal": true,
+      "raw_path": "computations/data/raw/Epstein_emails_from_jmail_ALL_chrs.csv",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "enron_emails_directed",
+      "kind": "email",
+      "directed": true,
+      "weighted": true,
+      "temporal": false,
+      "raw_path": "computations/data/raw/enron_edges.txt",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "email_Eu_core",
+      "kind": "email",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/email-Eu-core.txt.gz",
+      "snap_labels_url": "https://snap.stanford.edu/data/email-Eu-core-department-labels.txt.gz",
+      "partition": {
+        "type": "attribute",
+        "source": "department_labels",
+        "params": {}
+      }
+    },
+    {
+      "id": "congress_Twitter",
+      "kind": "twitter",
+      "directed": true,
+      "weighted": true,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/congress_network.zip",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "wiki_Vote",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/wiki-Vote.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "CollegeMsg",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": true,
+      "snap_url": "https://snap.stanford.edu/data/CollegeMsg.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "soc_Epinions1",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/soc-Epinions1.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "soc_sign_bitcoinotc",
+      "kind": "snap",
+      "directed": true,
+      "weighted": true,
+      "temporal": true,
+      "snap_url": "https://snap.stanford.edu/data/soc-sign-bitcoinotc.csv.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "soc_sign_epinions",
+      "kind": "snap",
+      "directed": true,
+      "weighted": true,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/soc-sign-epinions.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "p2p_Gnutella08",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/p2p-Gnutella08.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "cit_HepTh",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/cit-HepTh.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "ca_GrQc",
+      "kind": "snap",
+      "directed": false,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/ca-GrQc.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "ca_HepTh",
+      "kind": "snap",
+      "directed": false,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/ca-HepTh.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "ca_AstroPh",
+      "kind": "snap",
+      "directed": false,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/ca-AstroPh.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "web_NotreDame",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/web-NotreDame.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "web_Stanford",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/web-Stanford.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "soc_Slashdot0811",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/soc-Slashdot0811.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "soc_Slashdot0902",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/soc-Slashdot0902.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "p2p_Gnutella09",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/p2p-Gnutella09.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    },
+    {
+      "id": "p2p_Gnutella06",
+      "kind": "snap",
+      "directed": true,
+      "weighted": false,
+      "temporal": false,
+      "snap_url": "https://snap.stanford.edu/data/p2p-Gnutella06.txt.gz",
+      "partition": {
+        "type": "structural",
+        "source": "louvain_undirected_projection",
+        "params": {
+          "resolution": 1.0,
+          "seed": 0
+        }
+      }
+    }
+  ]
+}
