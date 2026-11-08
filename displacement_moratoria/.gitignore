@@ -1,0 +1,2 @@
+data_raw/sr/*.csv
+__pycache__/

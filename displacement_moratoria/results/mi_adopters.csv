@@ -1,0 +1,189 @@
+geoid,name,kind,county,date,sources,dated_by_extension
+2602506720,Bedford,township,Calhoun,2025-01-06,SitingRadar,False
+2609716060,Clark,township,Mackinac,2025-06-15,trackers,False
+2611523400,Dundee,township,Monroe,2025-10-01,SitingRadar+trackers,False
+2616150680,Manchester,township,Washtenaw,2025-10-14,trackers,False
+2611577140,Summerfield,township,Monroe,2025-11-17,SitingRadar,False
+2616164560,Pittsfield,township,Washtenaw,2025-11-18,trackers,False
+2609339560,Howell,township,Livingston,2025-11-20,trackers,False
+2609381160,Tyrone,township,Livingston,2025-12-02,SitingRadar+trackers,False
+2610734760,Green,township,Mecosta,2025-12-09,trackers,False
+2612500400,Addison,township,Oakland,2025-12-15,SitingRadar,False
+2612575760,Springfield,township,Oakland,2025-12-15,trackers,False
+2614929060,Florence,township,St. Joseph,2025-12-15,SitingRadar,False
+2606552180,Mason,city,Ingham,2026-01-06,SitingRadar+trackers,False
+2612558980,Northville,city,Oakland,2026-01-06,trackers,False
+2616358980,Northville,city,Wayne,2026-01-06,trackers,False
+2601764180,Pinconning,township,Bay,2026-01-12,SitingRadar,False
+2602551960,Marshall,township,Calhoun,2026-01-12,SitingRadar,False
+2616171140,Saline,city,Washtenaw,2026-01-12,trackers,False
+2606504240,Aurelius,township,Ingham,2026-01-13,SitingRadar,False
+2614570520,Saginaw,city,Saginaw,2026-01-13,trackers,False
+2606587440,Williamstown,township,Ingham,2026-01-14,SitingRadar+trackers,False
+2609903540,Armada,township,Macomb,2026-01-14,trackers,False
+2616379000,Taylor,city,Wayne,2026-01-15,trackers,False
+2604933300,Grand Blanc,township,Genesee,2026-01-21,trackers,False
+2612565440,Pontiac,city,Oakland,2026-01-21,trackers,False
+2614735220,Greenwood,township,St. Clair,2026-01-21,SitingRadar,False
+2616177800,Sylvan,township,Washtenaw,2026-01-22,trackers,False
+2604560700,Oneida,township,Eaton,2026-01-24,SitingRadar,False
+2606587420,Williamston,city,Ingham,2026-01-26,SitingRadar,False
+2612575100,South Lyon,city,Oakland,2026-02-01,trackers,False
+2616103020,Ann Arbor,township,Washtenaw,2026-02-01,trackers,False
+2609946900,Lenox,township,Macomb,2026-02-02,trackers,False
+2616149120,Lodi,township,Washtenaw,2026-02-03,trackers,False
+2609976460,Sterling Heights,city,Macomb,2026-02-04,trackers,False
+2608174460,Solon,township,Kent,2026-02-05,SitingRadar+trackers,False
+2602107400,Benton,township,Berrien,2026-02-09,SitingRadar,False
+2611751340,Maple Valley,township,Montcalm,2026-02-09,SitingRadar,False
+2612535640,Groveland,township,Oakland,2026-02-09,SitingRadar,False
+2611526320,Erie,township,Monroe,2026-02-10,SitingRadar+trackers,False
+2614509400,Blumfield,township,Saginaw,2026-02-10,SitingRadar,False
+2614717520,Columbus,township,St. Clair,2026-02-10,SitingRadar,False
+2615175500,Speaker,township,Sanilac,2026-02-10,SitingRadar,False
+2607536400,Hanover,township,Jackson,2026-02-11,SitingRadar,False
+2612562040,Oxford,township,Oakland,2026-02-11,SitingRadar,False
+2612569580,Rose,township,Oakland,2026-02-11,SitingRadar,False
+2616381660,Van Buren,township,Wayne,2026-02-11,SitingRadar,False
+2609351640,Marion,township,Livingston,2026-02-12,SitingRadar,False
+2616189100,York,township,Washtenaw,2026-02-12,trackers,False
+2603723580,Eagle,township,Clinton,2026-02-17,SitingRadar+trackers,False
+2604927780,Fenton,township,Genesee,2026-02-17,SitingRadar,False
+2612538720,Holly,township,Oakland,2026-02-18,SitingRadar,False
+2615725720,Elmwood,township,Tuscola,2026-02-18,SitingRadar,False
+2609340900,Iosco,township,Livingston,2026-02-19,SitingRadar,False
+2610708320,Big Rapids,township,Mecosta,2026-02-23,trackers,False
+2602551520,Marengo,township,Calhoun,2026-02-24,SitingRadar,False
+2613748140,Livingston,township,Otsego,2026-02-24,SitingRadar,False
+2616189140,Ypsilanti,city,Washtenaw,2026-03-03,SitingRadar+trackers,False
+2614515160,Chesaning,township,Saginaw,2026-03-05,SitingRadar,False
+2607761400,Oshtemo,township,Kalamazoo,2026-03-10,SitingRadar,False
+2606560800,Onondaga,township,Ingham,2026-03-12,SitingRadar,False
+2606576580,Stockbridge,township,Ingham,2026-03-16,SitingRadar,False
+2607717680,Comstock,township,Kalamazoo,2026-03-16,SitingRadar,False
+2614530220,Frankenmuth,township,Saginaw,2026-03-16,SitingRadar,False
+2603724120,East Lansing,city,Clinton,2026-03-17,trackers,False
+2606524120,East Lansing,city,Ingham,2026-03-17,trackers,False
+2611586740,Whiteford,township,Monroe,2026-03-17,SitingRadar,False
+2606547080,Leroy,township,Ingham,2026-03-18,SitingRadar,False
+2606549040,Locke,township,Ingham,2026-03-19,SitingRadar,False
+2612310500,Bridgeton,township,Newaygo,2026-03-23,SitingRadar,False
+2612584240,Waterford,township,Oakland,2026-03-23,SitingRadar+trackers,False
+2607577200,Summit,township,Jackson,2026-03-24,SitingRadar,False
+2612303700,Ashland,township,Newaygo,2026-04-14,SitingRadar,False
+2606521420,Delhi,township,Ingham,2026-04-15,trackers,False
+2610573240,Sherman,township,Mason,2026-04-21,SitingRadar,False
+2611526880,Exeter,township,Monroe,2026-04-21,SitingRadar,False
+2614368200,Richfield,township,Roscommon,2026-04-21,SitingRadar,False
+2616189160,Ypsilanti,township,Washtenaw,2026-04-22,trackers,False
+2611530820,Frenchtown,township,Monroe,2026-04-28,SitingRadar,False
+2605500200,Acme,township,Grand Traverse,2026-05-05,SitingRadar+trackers,False
+2601730400,Fraser,township,Bay,2026-05-11,SitingRadar,False
+2603547620,Lincoln,township,Clare,2026-05-11,SitingRadar,False
+2604126380,Escanaba,township,Delta,2026-05-11,SitingRadar,False
+2601985160,Weldon,township,Benzie,2026-05-12,SitingRadar,False
+2603974760,South Branch,township,Crawford,2026-05-12,SitingRadar,False
+2605534960,Green Lake,township,Grand Traverse,2026-05-12,SitingRadar,False
+2608735840,Hadley,township,Lapeer,2026-05-12,SitingRadar,False
+2610752780,Mecosta,township,Mecosta,2026-05-12,SitingRadar,False
+2610755600,Morton,township,Mecosta,2026-05-12,SitingRadar,False
+2611141760,Jerome,township,Midland,2026-05-13,SitingRadar,False
+2608711900,Burnside,township,Lapeer,2026-05-18,SitingRadar+trackers,False
+2606553140,Meridian,township,Ingham,2026-05-19,trackers,False
+2615903500,Arlington,township,Van Buren,2026-05-20,SitingRadar,False
+2602741600,Jefferson,township,Cass,2026-05-21,SitingRadar,False
+2602763380,Penn,township,Cass,2026-05-21,SitingRadar,False
+2606344300,Lake,township,Huron,2026-05-21,SitingRadar,False
+2609984120,Washington,township,Macomb,2026-05-23,SitingRadar+trackers,False
+2608725160,Elba,township,Lapeer,2026-05-26,SitingRadar,False
+2609770840,St. Ignace,city,Mackinac,2026-06-01,SitingRadar,False
+2612510040,Brandon,township,Oakland,2026-06-01,SitingRadar,False
+2602305800,Batavia,township,Branch,2026-06-02,SitingRadar,False
+2610128040,Filer,township,Manistee,2026-06-02,SitingRadar,False
+2615964280,Pine Grove,township,Van Buren,2026-06-03,SitingRadar,False
+2604929000,Flint,city,Genesee,2026-06-08,trackers,False
+2611140620,Ingersoll,township,Midland,2026-06-08,SitingRadar+trackers,False
+2613901360,Allendale,township,Ottawa,2026-06-08,SitingRadar,False
+2605938480,Hillsdale,township,Hillsdale,2026-06-09,SitingRadar,False
+2611726720,Evergreen,township,Montcalm,2026-06-10,SitingRadar,False
+2609169360,Rome,township,Lenawee,2026-06-11,SitingRadar,False
+2602115480,Chikaming,township,Berrien,2026-06-16,SitingRadar,False
+2601566260,Prairieville,township,Barry,2026-06-17,SitingRadar,False
+2615984820,Waverly,township,Van Buren,2026-07-02,SitingRadar,False
+2609100440,Adrian,city,Lenawee,2026-07-06,SitingRadar,False
+2606911740,Burleigh,township,Iosco,2026-07-07,SitingRadar,False
+2607717980,Cooper,township,Kalamazoo,2026-07-13,SitingRadar,False
+2603949520,Lovells,township,Crawford,2026-07-14,SitingRadar,False
+2608723160,Dryden,township,Lapeer,2026-07-14,SitingRadar,False
+2610385540,West Branch,township,Marquette,2026-07-14,SitingRadar,False
+2610563600,Pere Marquette,township,Mason,2026-07-14,SitingRadar,False
+2616536600,Haring,township,Wexford,2026-07-14,SitingRadar+trackers,False
+2607508760,Blackman,township,Jackson,2026-07-20,SitingRadar,False
+2612130980,Fruitland,township,Muskegon,2026-07-20,SitingRadar,False
+2607769820,Ross,township,Kalamazoo,2026-07-21,SitingRadar,False
+2607742180,Kalamazoo,township,Kalamazoo,2026-07-27,SitingRadar,False
+2603746000,Lansing,city,Clinton,2026-07-28,SitingRadar,False
+2604546000,Lansing,city,Eaton,2026-07-28,SitingRadar,False
+2606546000,Lansing,city,Ingham,2026-07-28,SitingRadar,False
+2606761160,Orleans,township,Ionia,2026-07-30,SitingRadar,False
+2602361840,Ovid,township,Branch,2026-08-10,SitingRadar,False
+2605927580,Fayette,township,Hillsdale,2026-08-10,SitingRadar,False
+2611549180,London,township,Monroe,2026-08-10,SitingRadar+trackers,False
+2602157780,Niles,township,Berrien,2026-08-11,SitingRadar,False
+2604131400,Garden,township,Delta,2026-08-11,SitingRadar,False
+2608134560,Grattan,township,Kent,2026-08-11,SitingRadar,False
+2600571720,Saugatuck,township,Allegan,2026-08-12,SitingRadar,False
+2601345560,L'Anse,township,Baraga,2026-08-12,SitingRadar,False
+2602511820,Burlington,township,Calhoun,2026-08-13,SitingRadar,False
+2602525935,Emmett,township,Calhoun,2026-08-13,SitingRadar,False
+2607742160,Kalamazoo,city,Kalamazoo,2026-08-17,SitingRadar+trackers,False
+2614712020,Burtchville,township,St. Clair,2026-08-17,SitingRadar,False
+2602739480,Howard,township,Cass,2026-08-18,SitingRadar,False
+2609109020,Blissfield,township,Lenawee,2026-08-18,SitingRadar,False
+2612373120,Sheridan,township,Newaygo,2026-08-18,SitingRadar,False
+2610325820,Ely,township,Marquette,2026-08-19,SitingRadar,False
+2605784080,Washington,township,Gratiot,2026-08-20,SitingRadar,False
+2612319960,Dayton,township,Newaygo,2026-08-20,SitingRadar,False
+2615563700,Perry,city,Shiawassee,2026-08-20,SitingRadar,False
+2605531580,Garfield,township,Grand Traverse,2026-08-25,SitingRadar+trackers,False
+2600347540,Limestone,township,Alger,2026-08-26,SitingRadar+trackers,False
+2612588140,Wixom,city,Oakland,2026-09-01,trackers,False
+2614782900,Wales,township,St. Clair,2026-09-01,SitingRadar,True
+2612333000,Goodwell,township,Newaygo,2026-09-02,SitingRadar,False
+2608942320,Kasson,township,Leelanau,2026-09-09,SitingRadar,False
+2612763560,Pentwater,township,Oceana,2026-09-09,SitingRadar+trackers,False
+2613989280,Zeeland,township,Ottawa,2026-09-09,trackers,False
+2603111980,Burt,township,Cheboygan,2026-09-10,SitingRadar,False
+2601901640,Almira,township,Benzie,2026-09-14,SitingRadar,False
+2605523800,East Bay,township,Grand Traverse,2026-09-14,SitingRadar+trackers,False
+2604507080,Bellevue,township,Eaton,2026-09-15,SitingRadar+trackers,False
+2607768260,Richland,township,Kalamazoo,2026-09-15,SitingRadar,False
+2605384380,Watersmeet,township,Gogebic,2026-09-16,SitingRadar,False
+2608112500,Caledonia,township,Kent,2026-09-16,SitingRadar,True
+2612125080,Egelston,township,Muskegon,2026-09-17,SitingRadar,False
+2602530500,Fredonia,township,Calhoun,2026-09-21,SitingRadar,False
+2607517400,Columbia,township,Jackson,2026-09-21,SitingRadar+trackers,False
+2609310640,Brighton,township,Livingston,2026-09-21,SitingRadar+trackers,False
+2614723820,East China,township,St. Clair,2026-09-21,SitingRadar,False
+2614765840,Port Huron,township,St. Clair,2026-09-21,SitingRadar+trackers,False
+2616321000,Dearborn,city,Wayne,2026-09-22,trackers,False
+2605508880,Blair,township,Grand Traverse,2026-09-29,SitingRadar+trackers,False
+2601732040,Gibson,township,Bay,2026-09-30,SitingRadar+trackers,False
+2601303660,Arvon,township,Baraga,2026-10-05,SitingRadar+trackers,False
+2602317040,Coldwater,township,Branch,2026-10-05,SitingRadar+trackers,False
+2604510920,Brookfield,township,Eaton,2026-10-05,SitingRadar+trackers,False
+2601942000,Joyfield,township,Benzie,2026-10-07,SitingRadar+trackers,False
+2615155320,Moore,township,Sanilac,2026-10-07,SitingRadar+trackers,False
+2603530560,Freeman,township,Clare,2026-10-08,SitingRadar+trackers,False
+2611727900,Ferris,township,Montcalm,2026-10-09,SitingRadar+trackers,False
+2604515260,Chester,township,Eaton,2026-10-12,SitingRadar+trackers,False
+2612338860,Home,township,Newaygo,2026-10-12,SitingRadar+trackers,False
+2601755920,Mount Forest,township,Bay,2026-10-13,SitingRadar+trackers,False
+2604583180,Walton,township,Eaton,2026-10-13,SitingRadar+trackers,False
+2604768060,Resort,township,Emmet,2026-10-13,SitingRadar+trackers,False
+2606352600,Meade,township,Huron,2026-10-13,SitingRadar+trackers,False
+2608946700,Leelanau,township,Leelanau,2026-10-13,SitingRadar+trackers,False
+2612114100,Cedar Creek,township,Muskegon,2026-10-13,SitingRadar+trackers,False
+2614768620,Riley,township,St. Clair,2026-10-13,SitingRadar+trackers,False
+2613941520,Jamestown,township,Ottawa,2026-10-19,SitingRadar,False
+2614770700,St. Clair,township,St. Clair,2026-10-19,SitingRadar+trackers,False
