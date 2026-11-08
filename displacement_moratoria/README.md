@@ -25,7 +25,7 @@ The version used in the manuscript was downloaded on 8 November 2026. `results/m
 
 ## Running
 
-Python 3.10 or later.
+The results were produced with Python 3.13 and the package versions pinned in `requirements.txt`; Graphviz must be installed for `pygraphviz`.
 
 ```
 pip install -r requirements.txt
@@ -33,4 +33,6 @@ python3 paper_computations.py --out .
 python3 michigan_illustration.py
 ```
 
-`paper_computations.py` takes about one minute and uses a fixed random seed. `pygraphviz` requires Graphviz to be installed on the system.
+`paper_computations.py` takes about one minute and uses a fixed random seed (20261108), as does the permutation baseline in `michigan_illustration.py`. Each script rewrites the files in `results/`, `tables/` and `figures/`; the versions committed here are those reported in the manuscript.
+
+The version cited in the manuscript is the release `displacement-moratoria-v1.0` of this repository.

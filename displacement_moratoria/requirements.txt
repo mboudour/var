@@ -1,7 +1,8 @@
-numpy>=2.0
-scipy>=1.13
-pandas>=2.2
-networkx>=3.3
-matplotlib>=3.8
-shapely>=2.0
-pygraphviz>=1.12
+# Versions used to produce the results in this folder (Python 3.13)
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.5
+networkx==3.7
+matplotlib==3.11.2
+shapely==2.2.0
+pygraphviz==2.0.4
