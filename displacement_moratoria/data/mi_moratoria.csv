@@ -1,0 +1,75 @@
+name,kind,county,date,date_precision,source,note
+Clark,township,Mackinac,2025-06-15,month,WKAR,
+Dundee,township,Monroe,2025-10-01,day,WKAR;datacenterbans,
+Manchester,township,Washtenaw,2025-10-14,day,WKAR;datacenterbans,
+Pittsfield,township,Washtenaw,2025-11-18,day,WKAR;datacenterbans,
+Howell,township,Livingston,2025-11-20,day,WKAR;datacenterbans,
+Tyrone,township,Livingston,2025-12-02,day,WKAR;datacenterbans,county inferred (Livingston); Kent County also has a Tyrone Township
+Green,township,Mecosta,2025-12-09,day,WKAR;datacenterbans;DataCenterWatch,
+Springfield,township,Oakland,2025-12-15,month,WKAR;datacenterbans,county inferred (Oakland); other Springfield Townships exist
+Mason,city,Ingham,2026-01-06,day,WKAR;datacenterbans,lifted 2026-02-03
+Northville,city,Wayne,2026-01-06,day,WKAR;datacenterbans,city spans Wayne and Oakland
+Northville,city,Oakland,2026-01-06,day,WKAR;datacenterbans,city spans Wayne and Oakland
+Saline,city,Washtenaw,2026-01-12,day,WKAR;datacenterbans;DataCenterWatch,
+Saginaw,city,Saginaw,2026-01-13,day,WKAR;datacenterbans,
+Armada,township,Macomb,2026-01-14,day,WKAR;datacenterbans;Armada Twp,
+Taylor,city,Wayne,2026-01-15,month,WKAR;datacenterbans,
+Grand Blanc,township,Genesee,2026-01-21,day,WKAR;datacenterbans,
+Pontiac,city,Oakland,2026-01-21,day,WKAR;datacenterbans,
+Sylvan,township,Washtenaw,2026-01-22,day,WKAR,
+Ann Arbor,township,Washtenaw,2026-02-01,month,datacenterbans;WKAR,
+South Lyon,city,Oakland,2026-02-01,day,datacenterbans;WKAR,WKAR gives Feb. 10
+Lenox,township,Macomb,2026-02-02,day,WKAR;datacenterbans;Lenox Twp,
+Lodi,township,Washtenaw,2026-02-03,day,WKAR;datacenterbans,
+Sterling Heights,city,Macomb,2026-02-04,day,WKAR;datacenterbans,
+Solon,township,Kent,2026-02-05,approximate,WKAR;Baldori,extended by Resolution 26-10 (2026-07-13)
+Erie,township,Monroe,2026-02-10,day,WKAR;datacenterbans,limited moratorium
+York,township,Washtenaw,2026-02-12,day,WKAR,
+Eagle,township,Clinton,2026-02-17,day,Baldori,
+Williamstown,township,Ingham,2026-02-15,month,Baldori,
+Big Rapids,township,Mecosta,2026-02-23,day,WKAR,
+Ypsilanti,city,Washtenaw,2026-03-03,day,datacenterbans,
+East Lansing,city,Ingham,2026-03-17,day,datacenterbans,city spans Ingham and Clinton
+East Lansing,city,Clinton,2026-03-17,day,datacenterbans,city spans Ingham and Clinton
+Waterford,township,Oakland,2026-03-23,day,Waterford Twp minutes,
+Delhi,township,Ingham,2026-04-15,month,Michigan Advance,12-month moratorium adopted April 2026
+Ypsilanti,township,Washtenaw,2026-04-22,day,datacenterbans;Planet Detroit,YCUA water and sewer service moratorium
+Meridian,township,Ingham,2026-05-19,day,datacenterbans;Michigan Public,
+Washington,township,Macomb,2026-05-23,day,datacenterbans,
+Flint,city,Genesee,2026-06-08,day,datacenterbans,
+Haring,township,Wexford,2026-07-14,day,datacenterbans,
+Kalamazoo,city,Kalamazoo,2026-08-18,day,datacenterbans,
+Garfield,township,Grand Traverse,2026-08-25,day,datacenterbans;Michigan Advance,
+Wixom,city,Oakland,2026-09-01,day,datacenterbans,ended early; replaced by zoning restrictions
+Zeeland,township,Ottawa,2026-09-09,day,datacenterbans,
+London,township,Monroe,2026-09-14,day,SitingRadar,
+East Bay,township,Grand Traverse,2026-09-14,day,SitingRadar,listed as extended; original adoption date not given
+Port Huron,township,St. Clair,2026-09-21,day,SitingRadar,
+Columbia,township,Jackson,2026-09-21,day,SitingRadar,
+Brighton,township,Livingston,2026-09-21,day,SitingRadar,
+Dearborn,city,Wayne,2026-09-22,day,SitingRadar,
+Limestone,township,Alger,2026-09-23,day,SitingRadar,
+Gibson,township,Bay,2026-09-30,day,SitingRadar,
+Coldwater,township,Branch,2026-10-05,day,SitingRadar,
+Brookfield,township,Eaton,2026-10-05,day,SitingRadar,
+Arvon,township,Baraga,2026-10-05,day,SitingRadar,
+Moore,township,Sanilac,2026-10-07,day,SitingRadar,
+Joyfield,township,Benzie,2026-10-07,day,SitingRadar,
+Freeman,township,Clare,2026-10-08,day,SitingRadar,
+Ferris,township,Montcalm,2026-10-09,day,SitingRadar,
+Ingersoll,township,Midland,2026-10-12,day,SitingRadar,
+Home,township,Newaygo,2026-10-12,day,SitingRadar,
+Chester,township,Eaton,2026-10-12,day,SitingRadar,
+Acme,township,Grand Traverse,2026-10-12,day,SitingRadar,listed as extended; original adoption date not given
+Riley,township,St. Clair,2026-10-13,day,SitingRadar,
+Resort,township,Emmet,2026-10-13,day,SitingRadar,
+Meade,township,Huron,2026-10-13,day,SitingRadar,
+Leelanau,township,Leelanau,2026-10-13,day,SitingRadar,
+Cedar Creek,township,Muskegon,2026-10-13,day,SitingRadar,
+Blair,township,Grand Traverse,2026-10-13,day,SitingRadar,
+Walton,township,Eaton,2026-10-13,day,SitingRadar,
+Mount Forest,township,Bay,2026-10-13,day,SitingRadar,listed as extended; original adoption date not given
+Pentwater,township,Oceana,2026-10-14,day,SitingRadar,
+St. Clair,township,St. Clair,2026-10-19,day,SitingRadar,
+Bellevue,township,Eaton,2026-10-20,day,SitingRadar,
+Burnside,township,Lapeer,2026-10-26,day,SitingRadar,

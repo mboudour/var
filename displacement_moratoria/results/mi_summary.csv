@@ -1,0 +1,25 @@
+units,1539
+edges,3413
+components,6
+mean_degree,4.435347628330084
+isolates,3
+from_sitingradar_only,114
+from_trackers_only,31
+from_both,43
+dated_by_extension,2
+adopters,188
+adopter_components,100
+largest_adopter_component,15
+final_cut_share,0.21084898719897982
+final_r,0.09497456653896552
+final_r_null_mean,-0.001643775120229049
+final_r_null_q975,0.01961405003355802
+final_vol_share,0.13460689587522684
+adoptions_lowering_exposure,1
+adoptions_unchanged_exposure,1
+adoptions_total,188
+max_weight_frac,0.5333333333333333
+max_weight_frac_unit,Brandon township
+r_county,0.6756532296660664
+first_date,2025-01-06
+last_date,2026-10-19
